@@ -1,4 +1,4 @@
-﻿namespace Universa.Core
+﻿namespace Universe.Core
 {
     public abstract class BusinessObject<T>
     {

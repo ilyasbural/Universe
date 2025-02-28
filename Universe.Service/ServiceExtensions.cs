@@ -115,8 +115,8 @@
             Service.AddScoped<IUserSettingsService, UserSettingsManager>();
             Service.AddScoped<IUserTypeService, UserTypeManager>();
             Service.AddScoped<IUserVideoService, UserVideoManager>();
-
-			Service.AddScoped<IValidator<Ability>, AbilityValidator>();
+			
+            Service.AddScoped<IValidator<Ability>, AbilityValidator>();
 			Service.AddScoped<IValidator<AnnounceDetail>, AnnounceDetailValidator>();
 			Service.AddScoped<IValidator<AnnounceLog>, AnnounceLogValidator>();
 			Service.AddScoped<IValidator<Announce>, AnnounceValidator>();
@@ -167,7 +167,6 @@
 			Service.AddScoped<IValidator<UserType>, UserTypeValidator>();
 			Service.AddScoped<IValidator<User>, UserValidator>();
 			Service.AddScoped<IValidator<UserVideo>, UserVideoValidator>();
-
 			return Service;
         }
     }
