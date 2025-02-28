@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Universe.DataAccess", "Univ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Universe.Service", "Universe.Service\Universe.Service.csproj", "{04436B23-8F60-4212-BB1E-CCA3867BD06D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Universe.Common", "Universe.Common\Universe.Common.csproj", "{C8D46EA7-8953-438C-9701-90D822C14612}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{04436B23-8F60-4212-BB1E-CCA3867BD06D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04436B23-8F60-4212-BB1E-CCA3867BD06D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04436B23-8F60-4212-BB1E-CCA3867BD06D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8D46EA7-8953-438C-9701-90D822C14612}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8D46EA7-8953-438C-9701-90D822C14612}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8D46EA7-8953-438C-9701-90D822C14612}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8D46EA7-8953-438C-9701-90D822C14612}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

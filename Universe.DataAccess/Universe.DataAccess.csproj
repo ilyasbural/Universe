@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Universe.Common\Universe.Common.csproj" />
     <ProjectReference Include="..\Universe.Core\Universe.Core.csproj" />
   </ItemGroup>
 
