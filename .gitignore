@@ -17,3 +17,6 @@
 /.vs/Universe
 /Universe.Presentation/Universe.Presentation.csproj.user
 /Universe.slnLaunch.user
+/Universe.Platform/bin/Debug/net9.0
+/Universe.Platform/obj
+/Universe.Platform/Universe.Platform.csproj.user
