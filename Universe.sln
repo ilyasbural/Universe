@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Universe.Core", "Universe.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Universe.DataAccess", "Universe.DataAccess\Universe.DataAccess.csproj", "{45A14E93-57CF-4FED-92F4-F0CF14D59553}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Universe.Service", "Universe.Service\Universe.Service.csproj", "{04436B23-8F60-4212-BB1E-CCA3867BD06D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{45A14E93-57CF-4FED-92F4-F0CF14D59553}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45A14E93-57CF-4FED-92F4-F0CF14D59553}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45A14E93-57CF-4FED-92F4-F0CF14D59553}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04436B23-8F60-4212-BB1E-CCA3867BD06D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04436B23-8F60-4212-BB1E-CCA3867BD06D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04436B23-8F60-4212-BB1E-CCA3867BD06D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04436B23-8F60-4212-BB1E-CCA3867BD06D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
