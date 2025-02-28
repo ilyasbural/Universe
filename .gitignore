@@ -12,3 +12,8 @@
 /Universe.Service/obj
 /Universe.Common/bin/Debug/net9.0
 /Universe.Common/obj
+/Universe.Presentation/bin/Debug/net9.0
+/Universe.Presentation/obj
+/.vs/Universe
+/Universe.Presentation/Universe.Presentation.csproj.user
+/Universe.slnLaunch.user
