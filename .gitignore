@@ -10,3 +10,5 @@
 /Universe.DataAccess/obj
 /Universe.Service/bin/Debug/net9.0
 /Universe.Service/obj
+/Universe.Common/bin/Debug/net9.0
+/Universe.Common/obj
