@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35825.156 d17.13
+VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Universe.Core", "Universe.Core\Universe.Core.csproj", "{9BDB1A75-E9E9-47C4-A5FC-209712B90B2D}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Universe.Common", "Universe.Common\Universe.Common.csproj", "{C8D46EA7-8953-438C-9701-90D822C14612}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Universe.Presentation", "Universe.Presentation\Universe.Presentation.csproj", "{EA11D9A3-5EAB-4EBC-B4B2-40609B505D3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Universe.Platform", "Universe.Platform\Universe.Platform.csproj", "{9420EF6A-3C4B-4A2A-8CC6-3966AC4AC11E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{EA11D9A3-5EAB-4EBC-B4B2-40609B505D3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA11D9A3-5EAB-4EBC-B4B2-40609B505D3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA11D9A3-5EAB-4EBC-B4B2-40609B505D3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9420EF6A-3C4B-4A2A-8CC6-3966AC4AC11E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9420EF6A-3C4B-4A2A-8CC6-3966AC4AC11E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9420EF6A-3C4B-4A2A-8CC6-3966AC4AC11E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9420EF6A-3C4B-4A2A-8CC6-3966AC4AC11E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
