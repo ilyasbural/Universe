@@ -1,25 +1,32 @@
 using Universe.Service;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder Builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+Builder.Services.AddControllers();
+Builder.Services.LoadServices();
+Builder.Services.AddSwaggerGen();
+Builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+Builder.Services.AddOpenApi();
 
-builder.Services.AddControllers();
-builder.Services.LoadServices();
-//builder.Services.AddSwaggerGen();
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
-
-var app = builder.Build();
+var app = Builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-	app.MapOpenApi();
-}
+//if (app.Environment.IsDevelopment())
+//{
+//	app.MapOpenApi();
+//}
 
-app.UseHttpsRedirection();
+app.UseSwagger();
+app.UseSwaggerUI();
+
+//if (app.Environment.IsDevelopment())
+//{
+//	app.UseSwagger();
+//	app.UseSwaggerUI();
+//}
+
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+app.UseCors();
 app.Run();
