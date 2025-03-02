@@ -1,8 +1,13 @@
 ﻿@page "/announcedetail"
+@inject HttpClient Http
 
 <h3>AnnounceDetail</h3>
 
 @code
 {
-
+    private AnnounceDetailResponse Response;
+    protected override async Task OnInitializedAsync()
+    {
+        Response = await Http.GetFromJsonAsync<AnnounceDetailResponse>("http://192.168.1.100/api/administrator?id=2&option=5");
+    }
 }
