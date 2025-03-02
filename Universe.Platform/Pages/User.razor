@@ -1,8 +1,9 @@
 ﻿@using Universe.Common;
-@page "/announce"
+
+@page "/user"
 @inject HttpClient Http
 
-<NavLink href="administrator/create">Ekle</NavLink>
+<NavLink href="user/create">Ekle</NavLink>
 
 @if (Response == null)
 {
@@ -10,7 +11,7 @@
 }
 else
 {
-    @* <table class="table">
+    <table class="table">
         <thead>
             <tr>
                 <th>ID</th>
@@ -24,7 +25,7 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var Administrator in Response.List)
+            @* @foreach (var Administrator in Response.List)
             {
                 <tr>
                     <td>@Administrator.ID</td>
@@ -36,16 +37,16 @@ else
                     <td><NavLink href="administrator/update">Düzenle</NavLink></td>
                     <td><NavLink href="administrator/delete">Sil</NavLink></td>
                 </tr>
-            }
+            } *@
         </tbody>
-    </table> *@
+    </table>
 }
 
 @code
 {
-    private AnnounceResponse Response;
+    private UserResponse Response;
     protected override async Task OnInitializedAsync()
     {
-        Response = await Http.GetFromJsonAsync<AnnounceResponse>("http://192.168.1.100/api/administrator?id=2&option=5");
+        Response = await Http.GetFromJsonAsync<UserResponse>("http://192.168.1.100/api/administrator?id=2&option=5");
     }
 }
