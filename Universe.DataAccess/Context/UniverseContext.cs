@@ -60,7 +60,7 @@
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"Server = NATILUS; Database = UNIVERSE; User Id = sa; Password = oxLwep2bc1FiUKQsPCK9xoztwr8eATK0EHM6TuO8cWGL4QJmTa; TrustServerCertificate=True");
+                optionsBuilder.UseSqlServer(@"Server = 192.168.1.100; Database = UNIVERSE; User Id = sa; Password = oxLwep2bc1FiUKQsPCK9xoztwr8eATK0EHM6TuO8cWGL4QJmTa; TrustServerCertificate=True");
             }
         }
 
