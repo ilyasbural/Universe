@@ -5,5 +5,9 @@
 
 @code
 {
-
+    private UserCertificateResponse Response;
+    protected override async Task OnInitializedAsync()
+    {
+        Response = await Http.GetFromJsonAsync<UserCertificateResponse>("http://192.168.1.100/api/administrator?id=2&option=5");
+    }
 }

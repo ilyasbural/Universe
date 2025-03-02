@@ -6,5 +6,9 @@
 
 @code
 {
-
+    private JobPostingDetailResponse Response;
+    protected override async Task OnInitializedAsync()
+    {
+        Response = await Http.GetFromJsonAsync<JobPostingDetailResponse>("http://192.168.1.100/api/administrator?id=2&option=5");
+    }
 }
