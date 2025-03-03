@@ -20,7 +20,7 @@
 			Response<UserTypeResponse> Response = await Service.InsertAsync(Model);
 			return new Response<UserTypeResponse>
 			{
-				Data = Response.Data
+				ResponseData = Response.ResponseData
 			};
 		}
 
@@ -31,7 +31,7 @@
 			Response<UserTypeResponse> Response = await Service.UpdateAsync(Model);
 			return new Response<UserTypeResponse>
 			{
-				Data = Response.Data
+				ResponseData = Response.ResponseData
 			};
 		}
 
@@ -42,7 +42,7 @@
 			Response<UserTypeResponse> Response = await Service.DeleteAsync(Model);
 			return new Response<UserTypeResponse>
 			{
-				Data = Response.Data
+				ResponseData = Response.ResponseData
 			};
 		}
 

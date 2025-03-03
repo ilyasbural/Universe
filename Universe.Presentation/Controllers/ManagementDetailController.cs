@@ -20,7 +20,7 @@
 			Response<ManagementDetailResponse> Response = await Service.InsertAsync(Model);
 			return new Response<ManagementDetailResponse>
 			{
-				Data = Response.Data
+				ResponseData = Response.ResponseData
 			};
 		}
 

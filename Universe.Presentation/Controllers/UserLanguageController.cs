@@ -20,7 +20,7 @@
 			Response<UserLanguageResponse> Response = await Service.InsertAsync(Model);
 			return new Response<UserLanguageResponse>
 			{
-				Data = Response.Data
+				ResponseData = Response.ResponseData
 			};
 		}
 
@@ -31,7 +31,7 @@
 			Response<UserLanguageResponse> Response = await Service.UpdateAsync(Model);
 			return new Response<UserLanguageResponse>
 			{
-				Data = Response.Data
+				ResponseData = Response.ResponseData
 			};
 		}
 
@@ -42,7 +42,7 @@
 			Response<UserLanguageResponse> Response = await Service.DeleteAsync(Model);
 			return new Response<UserLanguageResponse>
 			{
-				Data = Response.Data
+				ResponseData = Response.ResponseData
 			};
 		}
 

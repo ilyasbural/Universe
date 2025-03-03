@@ -20,7 +20,7 @@
 			Response<UserVideoResponse> Response = await Service.InsertAsync(Model);
 			return new Response<UserVideoResponse>
 			{
-				Data = Response.Data
+				ResponseData = Response.ResponseData
 			};
 		}
 
@@ -31,7 +31,7 @@
 			Response<UserVideoResponse> Response = await Service.UpdateAsync(Model);
 			return new Response<UserVideoResponse>
 			{
-				Data = Response.Data
+				ResponseData = Response.ResponseData
 			};
 		}
 
@@ -42,7 +42,7 @@
 			Response<UserVideoResponse> Response = await Service.DeleteAsync(Model);
 			return new Response<UserVideoResponse>
 			{
-				Data = Response.Data
+				ResponseData = Response.ResponseData
 			};
 		}
 
