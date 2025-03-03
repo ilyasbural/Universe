@@ -77,9 +77,7 @@
             Collection = await UnitOfWork.Ability.SelectAsync(x => x.IsActive == true);
             return new Response<AbilityResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
+                ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList(),
             };
         }
 
