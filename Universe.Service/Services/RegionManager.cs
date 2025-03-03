@@ -77,7 +77,7 @@
             Collection = await UnitOfWork.Region.SelectAsync(x => x.IsActive == true);
             return new Response<RegionResponse>
             {
-				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+				ResponseCollection = Collection.Select(x => new RegionResponse { Id = x.Id }).ToList()
 			};
         }
 
@@ -86,7 +86,7 @@
             Collection = await UnitOfWork.Region.SelectAsync(x => x.Id == Model.Id && x.IsActive == true);
             return new Response<RegionResponse>
             {
-				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+				ResponseCollection = Collection.Select(x => new RegionResponse { Id = x.Id }).ToList()
 			};
         }
     }

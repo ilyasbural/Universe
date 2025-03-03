@@ -76,7 +76,7 @@
             Collection = await UnitOfWork.Management.SelectAsync(x => x.IsActive == true);
             return new Response<ManagementResponse>
             {
-				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+				ResponseCollection = Collection.Select(x => new ManagementResponse { Id = x.Id }).ToList()
 			};
         }
 
@@ -85,7 +85,7 @@
             Collection = await UnitOfWork.Management.SelectAsync(x => x.Id == Model.Id && x.IsActive == true);
             return new Response<ManagementResponse>
             {
-				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+				ResponseCollection = Collection.Select(x => new ManagementResponse { Id = x.Id }).ToList()
 			};
         }
     }

@@ -77,7 +77,7 @@
             Collection = await UnitOfWork.Network.SelectAsync(x => x.IsActive == true);
             return new Response<NetworkResponse>
             {
-				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+				ResponseCollection = Collection.Select(x => new NetworkResponse { Id = x.Id }).ToList()
 			};
         }
 
@@ -86,7 +86,7 @@
             Collection = await UnitOfWork.Network.SelectAsync(x => x.Id == Model.Id && x.IsActive == true);
             return new Response<NetworkResponse>
             {
-				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+				ResponseCollection = Collection.Select(x => new NetworkResponse { Id = x.Id }).ToList()
 			};
         }
     }

@@ -85,7 +85,7 @@
             Collection = await UnitOfWork.UserLanguage.SelectAsync(x => x.IsActive == true, x => x.User, x => x.Language);
             return new Response<UserLanguageResponse>
             {
-				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+				ResponseCollection = Collection.Select(x => new UserLanguageResponse { Id = x.Id }).ToList()
 			};
         }
 
@@ -94,7 +94,7 @@
             Collection = await UnitOfWork.UserLanguage.SelectAsync(x => x.Id == Model.Id && x.IsActive == true, x => x.User, x => x.Language);
             return new Response<UserLanguageResponse>
             {
-				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+				ResponseCollection = Collection.Select(x => new UserLanguageResponse { Id = x.Id }).ToList()
 			};
         }
     }

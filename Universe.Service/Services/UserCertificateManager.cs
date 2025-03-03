@@ -85,7 +85,7 @@
             Collection = await UnitOfWork.UserCertificate.SelectAsync(x => x.IsActive == true, x => x.User, x => x.Certificate);
             return new Response<UserCertificateResponse>
             {
-				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+				ResponseCollection = Collection.Select(x => new UserCertificateResponse { Id = x.Id }).ToList()
 			};
         }
 
@@ -94,7 +94,7 @@
             Collection = await UnitOfWork.UserCertificate.SelectAsync(x => x.Id == Model.Id && x.IsActive == true, x => x.User, x => x.Certificate);
             return new Response<UserCertificateResponse>
             {
-				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+				ResponseCollection = Collection.Select(x => new UserCertificateResponse { Id = x.Id }).ToList()
 			};
         }
     }

@@ -77,7 +77,7 @@
             Collection = await UnitOfWork.MessageBox.SelectAsync(x => x.IsActive == true);
             return new Response<MessageBoxResponse>
             {
-				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+				ResponseCollection = Collection.Select(x => new MessageBoxResponse { Id = x.Id }).ToList()
 			};
         }
 
@@ -86,7 +86,7 @@
             Collection = await UnitOfWork.MessageBox.SelectAsync(x => x.Id == Model.Id && x.IsActive == true);
             return new Response<MessageBoxResponse>
             {
-				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+				ResponseCollection = Collection.Select(x => new MessageBoxResponse { Id = x.Id }).ToList()
 			};
         }
     }

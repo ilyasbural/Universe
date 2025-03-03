@@ -81,7 +81,7 @@
             Collection = await UnitOfWork.UserPublish.SelectAsync(x => x.IsActive == true, x => x.User);
             return new Response<UserPublishResponse>
             {
-				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+				ResponseCollection = Collection.Select(x => new UserPublishResponse { Id = x.Id }).ToList()
 			};
         }
 
@@ -90,7 +90,7 @@
             Collection = await UnitOfWork.UserPublish.SelectAsync(x => x.Id == Model.Id && x.IsActive == true, x => x.User);
             return new Response<UserPublishResponse>
             {
-				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+				ResponseCollection = Collection.Select(x => new UserPublishResponse { Id = x.Id }).ToList()
 			};
         }
     }

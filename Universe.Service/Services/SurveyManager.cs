@@ -77,7 +77,7 @@
             Collection = await UnitOfWork.Survey.SelectAsync(x => x.IsActive == true);
             return new Response<SurveyResponse>
             {
-				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+				ResponseCollection = Collection.Select(x => new SurveyResponse { Id = x.Id }).ToList()
 			};
         }
 
@@ -86,7 +86,7 @@
             Collection = await UnitOfWork.Survey.SelectAsync(x => x.Id == Model.Id && x.IsActive == true);
             return new Response<SurveyResponse>
             {
-				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+				ResponseCollection = Collection.Select(x => new SurveyResponse { Id = x.Id }).ToList()
 			};
         }
     }
