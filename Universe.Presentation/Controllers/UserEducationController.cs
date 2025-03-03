@@ -56,5 +56,16 @@
 				ResponseCollection = Response.ResponseCollection
 			};
 		}
+
+		[HttpGet]
+		[Route("api/usereducationsingle")]
+		public async Task<Response<UserEducationResponse>> GetSingle([FromQuery] UserEducationSelectDto Model)
+		{
+			Response<UserEducationResponse> Response = await Service.SelectSingleAsync(Model);
+			return new Response<UserEducationResponse>
+			{
+				ResponseCollection = Response.ResponseCollection
+			};
+		}
 	}
 }

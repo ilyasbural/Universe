@@ -56,5 +56,16 @@
 				ResponseCollection = Response.ResponseCollection
 			};
 		}
+
+		[HttpGet]
+		[Route("api/messageboxsingle")]
+		public async Task<Response<MessageBoxResponse>> GetSingle([FromQuery] MessageBoxSelectDto Model)
+		{
+			Response<MessageBoxResponse> Response = await Service.SelectSingleAsync(Model);
+			return new Response<MessageBoxResponse>
+			{
+				ResponseCollection = Response.ResponseCollection
+			};
+		}
 	}
 }

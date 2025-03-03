@@ -56,5 +56,16 @@
 				ResponseCollection = Response.ResponseCollection
 			};
 		}
+
+		[HttpGet]
+		[Route("api/emojisingle")]
+		public async Task<Response<EmojiResponse>> GetSingle([FromQuery] EmojiSelectDto Model)
+		{
+			Response<EmojiResponse> Response = await Service.SelectSingleAsync(Model);
+			return new Response<EmojiResponse>
+			{
+				ResponseCollection = Response.ResponseCollection
+			};
+		}
 	}
 }

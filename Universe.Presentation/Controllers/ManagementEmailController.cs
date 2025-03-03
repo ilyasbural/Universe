@@ -56,5 +56,16 @@
 				ResponseCollection = Response.ResponseCollection
 			};
 		}
+
+		[HttpGet]
+		[Route("api/managementemailsingle")]
+		public async Task<Response<ManagementEmailResponse>> GetSingle([FromQuery] ManagementEmailSelectDto Model)
+		{
+			Response<ManagementEmailResponse> Response = await Service.SelectSingleAsync(Model);
+			return new Response<ManagementEmailResponse>
+			{
+				ResponseCollection = Response.ResponseCollection
+			};
+		}
 	}
 }

@@ -56,5 +56,16 @@
 				ResponseCollection = Response.ResponseCollection
 			};
 		}
+
+		[HttpGet]
+		[Route("api/usercountrysingle")]
+		public async Task<Response<UserCountryResponse>> GetSingle([FromQuery] UserCountrySelectDto Model)
+		{
+			Response<UserCountryResponse> Response = await Service.SelectSingleAsync(Model);
+			return new Response<UserCountryResponse>
+			{
+				ResponseCollection = Response.ResponseCollection
+			};
+		}
 	}
 }
