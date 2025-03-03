@@ -9,7 +9,7 @@
 }
 else
 {
-    @* <table class="table">
+    <table class="table">
         <thead>
             <tr>
                 <th>ID</th>
@@ -23,21 +23,21 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var Administrator in Response.List)
+            @foreach (var Administrator in Response.ResponseCollection)
             {
                 <tr>
-                    <td>@Administrator.ID</td>
-                    <td>@Administrator.EMAIL</td>
-                    <td>@Administrator.PASSWORD</td>
-                    <td>@Administrator.REGISTERDATE</td>
-                    <td>@Administrator.UPDATEDATE</td>
-                    <td>@Administrator.ISACTIVE</td>
+                    <td>@Administrator.Id</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td><NavLink href="administrator/update">Düzenle</NavLink></td>
                     <td><NavLink href="administrator/delete">Sil</NavLink></td>
                 </tr>
             }
         </tbody>
-    </table> *@
+    </table>
 }
 
 @code
@@ -45,6 +45,6 @@ else
     private AnnounceResponse Response;
     protected override async Task OnInitializedAsync()
     {
-        Response = await Http.GetFromJsonAsync<AnnounceResponse>("http://192.168.1.100/api/administrator?id=2&option=5");
+        Response = await Http.GetFromJsonAsync<AnnounceResponse>("https://localhost:7255/api/announce");
     }
 }
