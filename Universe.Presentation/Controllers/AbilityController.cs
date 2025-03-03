@@ -20,7 +20,7 @@
 			Response<AbilityResponse> Response = await Service.InsertAsync(Model);
 			return new Response<AbilityResponse>
 			{
-				Data = Response.Data
+				ResponseData = Response.ResponseData
 			};
 		}
 
@@ -31,8 +31,8 @@
 			Response<AbilityResponse> Response = await Service.UpdateAsync(Model);
 			return new Response<AbilityResponse>
 			{
-				Data = Response.Data
-			};
+                ResponseData = Response.ResponseData
+            };
 		}
 
 		[HttpDelete]
@@ -42,7 +42,7 @@
 			Response<AbilityResponse> Response = await Service.DeleteAsync(Model);
 			return new Response<AbilityResponse>
 			{
-				Data = Response.Data
+				ResponseData = Response.ResponseData
 			};
 		}
 

@@ -20,8 +20,8 @@
 			Response<AnnounceDetailResponse> Response = await Service.InsertAsync(Model);
 			return new Response<AnnounceDetailResponse>
 			{
-				Data = Response.Data
-			};
+                ResponseData = Response.ResponseData
+            };
 		}
 
 		[HttpPut]
@@ -31,8 +31,8 @@
 			Response<AnnounceDetailResponse> Response = await Service.UpdateAsync(Model);
 			return new Response<AnnounceDetailResponse>
 			{
-				Data = Response.Data
-			};
+                ResponseData = Response.ResponseData
+            };
 		}
 
 		[HttpDelete]
@@ -42,8 +42,8 @@
 			Response<AnnounceDetailResponse> Response = await Service.DeleteAsync(Model);
 			return new Response<AnnounceDetailResponse>
 			{
-				Data = Response.Data
-			};
+                ResponseData = Response.ResponseData
+            };
 		}
 
 		[HttpGet]

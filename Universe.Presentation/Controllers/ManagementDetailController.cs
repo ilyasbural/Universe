@@ -31,8 +31,8 @@
 			Response<ManagementDetailResponse> Response = await Service.UpdateAsync(Model);
 			return new Response<ManagementDetailResponse>
 			{
-				Data = Response.Data
-			};
+                ResponseData = Response.ResponseData
+            };
 		}
 
 		[HttpDelete]
@@ -42,7 +42,7 @@
 			Response<ManagementDetailResponse> Response = await Service.DeleteAsync(Model);
 			return new Response<ManagementDetailResponse>
 			{
-				Data = Response.Data
+				ResponseData = Response.ResponseData
 			};
 		}
 

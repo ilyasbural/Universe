@@ -40,19 +40,19 @@
         public async Task<Response<AbilityResponse>> UpdateAsync(AbilityUpdateDto Model)
         {
             Collection = await UnitOfWork.Ability.SelectAsync(x => x.Id == Model.Id);
-            Data = Mapper.Map<Ability>(Collection[0]);
+            Data = Collection.FirstOrDefault()!;
             Data.Name = Model.Name;
             Data.UpdateDate = DateTime.Now;
             Validator.ValidateAndThrow(Data);
 
             await UnitOfWork.Ability.UpdateAsync(Data);
-            int status = await UnitOfWork.SaveChangesAsync();
+            int Saved = await UnitOfWork.SaveChangesAsync();
 
             return new Response<AbilityResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
+                ResponseData = Mapper.Map<AbilityResponse>(Data),
+                IsValidationError = false,
+                Success = Saved,
             };
         }
 

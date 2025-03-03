@@ -5,8 +5,9 @@ WebApplicationBuilder Builder = WebApplication.CreateBuilder(args);
 Builder.Services.AddControllers();
 Builder.Services.LoadServices();
 Builder.Services.AddSwaggerGen();
+Builder.Services.AddCors(options => options.AddDefaultPolicy(builder => { builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod(); }));
 Builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-Builder.Services.AddOpenApi();
+//Builder.Services.AddOpenApi();
 
 var app = Builder.Build();
 
