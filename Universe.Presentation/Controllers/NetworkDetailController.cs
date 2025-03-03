@@ -53,7 +53,7 @@
 			Response<NetworkDetailResponse> Response = await Service.SelectAsync(Model);
 			return new Response<NetworkDetailResponse>
 			{
-				Collection = Response.Collection
+				ResponseCollection = Response.ResponseCollection
 			};
 		}
 
@@ -64,7 +64,7 @@
 			Response<NetworkDetailResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<NetworkDetailResponse>
 			{
-				Collection = Response.Collection
+				ResponseCollection = Response.ResponseCollection
 			};
 		}
 	}

@@ -81,10 +81,8 @@
             Collection = await UnitOfWork.UserType.SelectAsync(x => x.IsActive == true, x => x.User);
             return new Response<UserTypeResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new UserTypeResponse { Id = x.Id }).ToList()
+			};
         }
 
         public async Task<Response<UserTypeResponse>> SelectSingleAsync(UserTypeSelectDto Model)
@@ -92,10 +90,8 @@
             Collection = await UnitOfWork.UserType.SelectAsync(x => x.Id == Model.Id && x.IsActive == true, x => x.User);
             return new Response<UserTypeResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new UserTypeResponse { Id = x.Id }).ToList()
+			};
         }
     }
 }

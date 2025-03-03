@@ -77,10 +77,8 @@
             Collection = await UnitOfWork.Certificate.SelectAsync(x => x.IsActive == true);
             return new Response<CertificateResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new CertificateResponse { Id = x.Id }).ToList()
+			};
         }
 
         public async Task<Response<CertificateResponse>> SelectSingleAsync(CertificateSelectDto Model)
@@ -88,10 +86,8 @@
             Collection = await UnitOfWork.Certificate.SelectAsync(x => x.Id == Model.Id && x.IsActive == true);
             return new Response<CertificateResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new CertificateResponse { Id = x.Id }).ToList()
+			};
         }
     }
 }

@@ -85,10 +85,8 @@
             Collection = await UnitOfWork.UserCertificate.SelectAsync(x => x.IsActive == true, x => x.User, x => x.Certificate);
             return new Response<UserCertificateResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+			};
         }
 
         public async Task<Response<UserCertificateResponse>> SelectSingleAsync(UserCertificateSelectDto Model)
@@ -96,10 +94,8 @@
             Collection = await UnitOfWork.UserCertificate.SelectAsync(x => x.Id == Model.Id && x.IsActive == true, x => x.User, x => x.Certificate);
             return new Response<UserCertificateResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+			};
         }
     }
 }

@@ -76,10 +76,8 @@
             Collection = await UnitOfWork.SurveyDetail.SelectAsync(x => x.IsActive == true);
             return new Response<SurveyDetailResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+			};
         }
 
         public async Task<Response<SurveyDetailResponse>> SelectSingleAsync(SurveyDetailSelectDto Model)
@@ -87,10 +85,8 @@
             Collection = await UnitOfWork.SurveyDetail.SelectAsync(x => x.Id == Model.Id && x.IsActive == true);
             return new Response<SurveyDetailResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+			};
         }
     }
 }

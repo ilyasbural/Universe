@@ -2,5 +2,6 @@
 {
 	public class UserFollowerResponse : Response<UserFollowerResponse>
 	{
+		public Guid Id { get; set; }
 	}
 }

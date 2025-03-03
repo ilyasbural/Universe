@@ -53,7 +53,7 @@
 			Response<LanguageResponse> Response = await Service.SelectAsync(Model);
 			return new Response<LanguageResponse>
 			{
-				Collection = Response.Collection
+				ResponseCollection = Response.ResponseCollection
 			};
 		}
 
@@ -64,7 +64,7 @@
 			Response<LanguageResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<LanguageResponse>
 			{
-				Collection = Response.Collection
+				ResponseCollection = Response.ResponseCollection
 			};
 		}
 	}

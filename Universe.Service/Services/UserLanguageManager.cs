@@ -85,10 +85,8 @@
             Collection = await UnitOfWork.UserLanguage.SelectAsync(x => x.IsActive == true, x => x.User, x => x.Language);
             return new Response<UserLanguageResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+			};
         }
 
         public async Task<Response<UserLanguageResponse>> SelectSingleAsync(UserLanguageSelectDto Model)
@@ -96,10 +94,8 @@
             Collection = await UnitOfWork.UserLanguage.SelectAsync(x => x.Id == Model.Id && x.IsActive == true, x => x.User, x => x.Language);
             return new Response<UserLanguageResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+			};
         }
     }
 }

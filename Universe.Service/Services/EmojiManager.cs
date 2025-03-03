@@ -77,10 +77,8 @@
             Collection = await UnitOfWork.Emoji.SelectAsync(x => x.IsActive == true);
             return new Response<EmojiResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new EmojiResponse { Id = x.Id }).ToList()
+			};
         }
 
         public async Task<Response<EmojiResponse>> SelectSingleAsync(EmojiSelectDto Model)
@@ -88,10 +86,8 @@
             Collection = await UnitOfWork.Emoji.SelectAsync(x => x.Id == Model.Id && x.IsActive == true);
             return new Response<EmojiResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new EmojiResponse { Id = x.Id }).ToList()
+			};
         }
     }
 }

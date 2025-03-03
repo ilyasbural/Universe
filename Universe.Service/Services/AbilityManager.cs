@@ -77,19 +77,17 @@
             Collection = await UnitOfWork.Ability.SelectAsync(x => x.IsActive == true);
             return new Response<AbilityResponse>
             {
-                ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList(),
+                ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
             };
         }
 
         public async Task<Response<AbilityResponse>> SelectSingleAsync(AbilitySelectDto Model)
         {
             Collection = await UnitOfWork.Ability.SelectAsync(x => x.Id == Model.Id && x.IsActive == true);
-            return new Response<AbilityResponse>
-            {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
-        }
+			return new Response<AbilityResponse>
+			{
+				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+			};
+		}
     }
 }

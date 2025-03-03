@@ -2,5 +2,6 @@
 {
 	public class NetworkCommentResponse : Response<NetworkCommentResponse>
 	{
+		public Guid Id { get; set; }
 	}
 }

@@ -2,5 +2,6 @@
 {
 	public class UserAboutResponse : Response<UserAboutResponse>
 	{
+		public Guid Id { get; set; }
 	}
 }

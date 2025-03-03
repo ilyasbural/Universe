@@ -53,7 +53,7 @@
 			Response<UserCountryResponse> Response = await Service.SelectAsync(Model);
 			return new Response<UserCountryResponse>
 			{
-				Collection = Response.Collection
+				ResponseCollection = Response.ResponseCollection
 			};
 		}
 	}

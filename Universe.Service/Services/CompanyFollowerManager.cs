@@ -76,10 +76,8 @@
             Collection = await UnitOfWork.CompanyFollower.SelectAsync(x => x.IsActive == true);
             return new Response<CompanyFollowerResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new CompanyFollowerResponse { Id = x.Id }).ToList()
+			};
         }
 
         public async Task<Response<CompanyFollowerResponse>> SelectSingleAsync(CompanyFollowerSelectDto Model)
@@ -87,10 +85,8 @@
             Collection = await UnitOfWork.CompanyFollower.SelectAsync(x => x.Id == Model.Id && x.IsActive == true);
             return new Response<CompanyFollowerResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new CompanyFollowerResponse { Id = x.Id }).ToList()
+			};
         }
     }
 }

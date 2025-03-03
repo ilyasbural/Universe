@@ -53,7 +53,7 @@
 			Response<UserVideoResponse> Response = await Service.SelectAsync(Model);
 			return new Response<UserVideoResponse>
 			{
-				Collection = Response.Collection
+				ResponseCollection = Response.ResponseCollection
 			};
 		}
 
@@ -64,7 +64,7 @@
 			Response<UserVideoResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<UserVideoResponse>
 			{
-				Collection = Response.Collection
+				ResponseCollection = Response.ResponseCollection
 			};
 		}
 	}

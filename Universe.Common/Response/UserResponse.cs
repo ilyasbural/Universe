@@ -5,11 +5,6 @@
 		public UserResponse()
 		{
 
-
-
-
-
-
 		}
 
 		public string Email { get; set; } = String.Empty;

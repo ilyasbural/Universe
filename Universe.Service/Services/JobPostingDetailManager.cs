@@ -81,10 +81,8 @@
             Collection = await UnitOfWork.JobPostingDetail.SelectAsync(x => x.IsActive == true, x => x.JobPosting);
             return new Response<JobPostingDetailResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new JobPostingDetailResponse { Id = x.Id }).ToList()
+			};
         }
 
         public async Task<Response<JobPostingDetailResponse>> SelectSingleAsync(JobPostingDetailSelectDto Model)
@@ -92,10 +90,8 @@
             Collection = await UnitOfWork.JobPostingDetail.SelectAsync(x => x.Id == Model.Id && x.IsActive == true, x => x.JobPosting);
             return new Response<JobPostingDetailResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new JobPostingDetailResponse { Id = x.Id }).ToList()
+			};
         }
     }
 }

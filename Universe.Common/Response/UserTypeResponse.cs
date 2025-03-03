@@ -2,5 +2,6 @@
 {
 	public class UserTypeResponse : Response<UserTypeResponse>
 	{
+		public Guid Id { get; set; }
 	}
 }

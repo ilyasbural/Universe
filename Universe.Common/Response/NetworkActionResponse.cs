@@ -2,5 +2,6 @@
 {
 	public class NetworkActionResponse : Response<NetworkActionResponse>
 	{
+		public Guid Id { get; set; }
 	}
 }

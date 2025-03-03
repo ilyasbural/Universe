@@ -76,10 +76,8 @@
             Collection = await UnitOfWork.ManagementEmail.SelectAsync(x => x.IsActive == true);
             return new Response<ManagementEmailResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+			};
         }
 
         public async Task<Response<ManagementEmailResponse>> SelectSingleAsync(ManagementEmailSelectDto Model)
@@ -87,10 +85,8 @@
             Collection = await UnitOfWork.ManagementEmail.SelectAsync(x => x.Id == Model.Id && x.IsActive == true);
             return new Response<ManagementEmailResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+			};
         }
     }
 }

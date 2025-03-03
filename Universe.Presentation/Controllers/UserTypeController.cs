@@ -53,7 +53,7 @@
 			Response<UserTypeResponse> Response = await Service.SelectAsync(Model);
 			return new Response<UserTypeResponse>
 			{
-				Collection = Response.Collection
+				ResponseCollection = Response.ResponseCollection
 			};
 		}
 
@@ -64,7 +64,7 @@
 			Response<UserTypeResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<UserTypeResponse>
 			{
-				Collection = Response.Collection
+				ResponseCollection = Response.ResponseCollection
 			};
 		}
 	}

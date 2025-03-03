@@ -77,10 +77,8 @@
             Collection = await UnitOfWork.MessageBox.SelectAsync(x => x.IsActive == true);
             return new Response<MessageBoxResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+			};
         }
 
         public async Task<Response<MessageBoxResponse>> SelectSingleAsync(MessageBoxSelectDto Model)
@@ -88,10 +86,8 @@
             Collection = await UnitOfWork.MessageBox.SelectAsync(x => x.Id == Model.Id && x.IsActive == true);
             return new Response<MessageBoxResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+			};
         }
     }
 }

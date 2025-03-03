@@ -53,7 +53,7 @@
 			Response<CertificateResponse> Response = await Service.SelectAsync(Model);
 			return new Response<CertificateResponse>
 			{
-				Collection = Response.Collection
+				ResponseCollection = Response.ResponseCollection
 			};
 		}
 
@@ -64,7 +64,7 @@
 			Response<CertificateResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<CertificateResponse>
 			{
-				Collection = Response.Collection
+				ResponseCollection = Response.ResponseCollection
 			};
 		}
 	}

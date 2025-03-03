@@ -53,7 +53,7 @@
 			Response<UserEducationResponse> Response = await Service.SelectAsync(Model);
 			return new Response<UserEducationResponse>
 			{
-				Collection = Response.Collection
+				ResponseCollection = Response.ResponseCollection
 			};
 		}
 	}

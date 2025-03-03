@@ -53,7 +53,7 @@
 			Response<MessageBoxResponse> Response = await Service.SelectAsync(Model);
 			return new Response<MessageBoxResponse>
 			{
-				Collection = Response.Collection
+				ResponseCollection = Response.ResponseCollection
 			};
 		}
 	}

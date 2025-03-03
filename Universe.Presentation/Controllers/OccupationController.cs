@@ -53,7 +53,7 @@
 			Response<OccupationResponse> Response = await Service.SelectAsync(Model);
 			return new Response<OccupationResponse>
 			{
-				Collection = Response.Collection
+				ResponseCollection = Response.ResponseCollection
 			};
 		}
 
@@ -64,7 +64,7 @@
 			Response<OccupationResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<OccupationResponse>
 			{
-				Collection = Response.Collection
+				ResponseCollection = Response.ResponseCollection
 			};
 		}
 	}

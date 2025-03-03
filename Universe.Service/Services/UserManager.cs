@@ -78,36 +78,19 @@
         public async Task<Response<UserResponse>> SelectAsync(UserSelectDto Model)
         {
             Collection = await UnitOfWork.User.SelectAsync(x => x.IsActive == true);
-            foreach (User user in Collection)
-            {
-                
-            }
-
 			return new Response<UserResponse>
-            {
-
-
-    //            Data = new UserResponse
-    //            {
-
-
-
-    //            },
-				//Message = "Success",
-				//Success = 1,
-				//IsValidationError = false
-            };
-        }
+			{
+				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+			};
+		}
 
         public async Task<Response<UserResponse>> SelectSingleAsync(UserSelectDto Model)
         {
             Collection = await UnitOfWork.User.SelectAsync(x => x.Id == Model.Id && x.IsActive == true);
             return new Response<UserResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+			};
         }
     }
 }

@@ -2,5 +2,6 @@
 {
 	public class AnnounceResponse : Response<AnnounceResponse>
 	{
+		public Guid Id { get; set; }
 	}
 }

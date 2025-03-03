@@ -53,7 +53,7 @@
 			Response<ManagementEmailResponse> Response = await Service.SelectAsync(Model);
 			return new Response<ManagementEmailResponse>
 			{
-				Collection = Response.Collection
+				ResponseCollection = Response.ResponseCollection
 			};
 		}
 	}

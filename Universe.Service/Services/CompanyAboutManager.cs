@@ -77,10 +77,8 @@
             Collection = await UnitOfWork.CompanyAbout.SelectAsync(x => x.IsActive == true);
             return new Response<CompanyAboutResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new CompanyAboutResponse { Id = x.Id }).ToList()
+			};
         }
 
         public async Task<Response<CompanyAboutResponse>> SelectSingleAsync(CompanyAboutSelectDto Model)
@@ -88,10 +86,8 @@
             Collection = await UnitOfWork.CompanyAbout.SelectAsync(x => x.Id == Model.Id && x.IsActive == true);
             return new Response<CompanyAboutResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new CompanyAboutResponse { Id = x.Id }).ToList()
+			};
         }
     }
 }

@@ -53,7 +53,7 @@
 			Response<EmojiResponse> Response = await Service.SelectAsync(Model);
 			return new Response<EmojiResponse>
 			{
-				Collection = Response.Collection
+				ResponseCollection = Response.ResponseCollection
 			};
 		}
 	}

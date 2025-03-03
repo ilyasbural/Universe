@@ -75,23 +75,19 @@
         public async Task<Response<AnnounceLogResponse>> SelectAsync(AnnounceLogSelectDto Model)
         {
             Collection = await UnitOfWork.AnnounceLog.SelectAsync(x => x.IsActive == true);
-            return new Response<AnnounceLogResponse>
-            {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
-        }
+			return new Response<AnnounceLogResponse>
+			{
+				ResponseCollection = Collection.Select(x => new AnnounceLogResponse { Id = x.Id }).ToList()
+			};
+		}
 
         public async Task<Response<AnnounceLogResponse>> SelectSingleAsync(AnnounceLogSelectDto Model)
         {
             Collection = await UnitOfWork.AnnounceLog.SelectAsync(x => x.Id == Model.Id && x.IsActive == true);
-            return new Response<AnnounceLogResponse>
-            {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
-        }
+			return new Response<AnnounceLogResponse>
+			{
+				ResponseCollection = Collection.Select(x => new AnnounceLogResponse { Id = x.Id }).ToList()
+			};
+		}
     }
 }

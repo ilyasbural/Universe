@@ -85,10 +85,8 @@
             Collection = await UnitOfWork.UserCountry.SelectAsync(x => x.IsActive == true, x => x.User, x => x.Country);
             return new Response<UserCountryResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+			};
         }
 
         public async Task<Response<UserCountryResponse>> SelectSingleAsync(UserCountrySelectDto Model)
@@ -96,10 +94,8 @@
             Collection = await UnitOfWork.UserCountry.SelectAsync(x => x.Id == Model.Id && x.IsActive == true, x => x.User, x => x.Country);
             return new Response<UserCountryResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new AbilityResponse { Id = x.Id }).ToList()
+			};
         }
     }
 }

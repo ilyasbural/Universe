@@ -77,10 +77,8 @@
             Collection = await UnitOfWork.College.SelectAsync(x => x.IsActive == true);
             return new Response<CollegeResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new CollegeResponse { Id = x.Id }).ToList()
+			};
         }
 
         public async Task<Response<CollegeResponse>> SelectSingleAsync(CollegeSelectDto Model)
@@ -88,10 +86,8 @@
             Collection = await UnitOfWork.College.SelectAsync(x => x.Id == Model.Id && x.IsActive == true);
             return new Response<CollegeResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
-            };
+				ResponseCollection = Collection.Select(x => new CollegeResponse { Id = x.Id }).ToList()
+			};
         }
     }
 }
