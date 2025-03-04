@@ -23,19 +23,19 @@ else
             </tr>
         </thead>
         <tbody>
-            @* @foreach (var Administrator in Response.List)
+            @foreach (var Administrator in Response.ResponseCollection)
             {
                 <tr>
-                    <td>@Administrator.ID</td>
-                    <td>@Administrator.EMAIL</td>
-                    <td>@Administrator.PASSWORD</td>
-                    <td>@Administrator.REGISTERDATE</td>
-                    <td>@Administrator.UPDATEDATE</td>
-                    <td>@Administrator.ISACTIVE</td>
+                    <td>@Administrator.Email</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td><NavLink href="administrator/update">Düzenle</NavLink></td>
                     <td><NavLink href="administrator/delete">Sil</NavLink></td>
                 </tr>
-            } *@
+            }
         </tbody>
     </table>
 }
