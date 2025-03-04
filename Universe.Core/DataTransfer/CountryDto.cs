@@ -2,8 +2,8 @@
 {
     public class CountryRegisterDto
     {
-
-    }
+		public string Name { get; set; } = string.Empty;
+	}
 
     public class CountryUpdateDto
     {
