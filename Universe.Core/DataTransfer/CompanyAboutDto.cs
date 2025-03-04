@@ -2,8 +2,8 @@
 {
     public class CompanyAboutRegisterDto
     {
-
-    }
+		public string Description { get; set; } = String.Empty;
+	}
 
     public class CompanyAboutUpdateDto
     {

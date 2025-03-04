@@ -2,8 +2,8 @@
 {
     public class CertificateRegisterDto
     {
-
-    }
+		public string Name { get; set; } = String.Empty;
+	}
 
     public class CertificateUpdateDto
     {

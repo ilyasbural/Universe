@@ -2,8 +2,8 @@
 {
     public class CollegeRegisterDto
     {
-
-    }
+		public string Name { get; set; } = String.Empty;
+	}
 
     public class CollegeUpdateDto
     {

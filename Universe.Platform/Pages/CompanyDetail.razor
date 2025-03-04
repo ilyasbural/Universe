@@ -1,7 +1,9 @@
-﻿@page "/companyabout"
+﻿@page "/companydetail"
 @inject HttpClient Http
 
-<h3>CompanyAbout</h3>
+<NavLink href="administrator/create">Ekle</NavLink>
+
+<h3>CompanyDetail</h3>
 
 @if (Response == null)
 {
@@ -42,9 +44,9 @@ else
 
 @code
 {
-    private CompanyAboutResponse Response;
+    private CompanyDetailResponse Response;
     protected override async Task OnInitializedAsync()
     {
-        Response = await Http.GetFromJsonAsync<CompanyAboutResponse>("https://localhost:7255/api/companyabout");
+        Response = await Http.GetFromJsonAsync<CompanyDetailResponse>("https://localhost:7255/api/companydetail");
     }
 }

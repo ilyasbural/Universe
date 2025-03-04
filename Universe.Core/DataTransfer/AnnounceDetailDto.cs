@@ -1,11 +1,9 @@
-﻿using System.Reflection.Emit;
-
-namespace Universe.Core
+﻿namespace Universe.Core
 {
     public class AnnounceDetailRegisterDto
     {
-
-    }
+		public string Name { get; set; } = String.Empty;
+	}
 
     public class AnnounceDetailUpdateDto
     {

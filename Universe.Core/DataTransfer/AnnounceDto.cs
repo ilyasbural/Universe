@@ -2,8 +2,8 @@
 {
     public class AnnounceRegisterDto
     {
-
-    }
+		public string Name { get; set; } = String.Empty;
+	}
 
     public class AnnounceUpdateDto
     {
