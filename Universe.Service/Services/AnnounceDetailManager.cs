@@ -77,7 +77,14 @@
             Collection = await UnitOfWork.AnnounceDetail.SelectAsync(x => x.IsActive == true);
 			return new Response<AnnounceDetailResponse>
 			{
-				ResponseCollection = Collection.Select(x => new AnnounceDetailResponse { Id = x.Id }).ToList()
+				ResponseCollection = Collection.Select(x => new AnnounceDetailResponse
+                {
+                    Id = x.Id,
+                    Description = x.Description,
+                    RegisterDate = x.RegisterDate,
+                    UpdateDate = x.UpdateDate,
+                    IsActive = x.IsActive
+                }).ToList()
 			};
 		}
 
@@ -86,8 +93,15 @@
             Collection = await UnitOfWork.AnnounceDetail.SelectAsync(x => x.Id == Model.Id && x.IsActive == true);
 			return new Response<AnnounceDetailResponse>
 			{
-				ResponseCollection = Collection.Select(x => new AnnounceDetailResponse { Id = x.Id }).ToList()
-			};
+                ResponseCollection = Collection.Select(x => new AnnounceDetailResponse
+                {
+                    Id = x.Id,
+                    Description = x.Description,
+                    RegisterDate = x.RegisterDate,
+                    UpdateDate = x.UpdateDate,
+                    IsActive = x.IsActive
+                }).ToList()
+            };
 		}
     }
 }
