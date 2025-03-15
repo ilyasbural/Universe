@@ -3,6 +3,8 @@
 
 <h3>Ability</h3>
 
+<NavLink href="ability/create">Ekle</NavLink>
+
 @if (Response == null)
 {
     <p><em>Loading...</em></p>
@@ -13,8 +15,7 @@ else
         <thead>
             <tr>
                 <th>ID</th>
-                <th>EMAIL</th>
-                <th>PASSWORD</th>
+                <th>NAME</th>
                 <th>REGISTER DATE</th>
                 <th>UPDATE DATE</th>
                 <th>IS ACTIVE</th>
@@ -23,17 +24,16 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var Administrator in Response.ResponseCollection)
+            @foreach (var Ability in Response.ResponseCollection)
             {
                 <tr>
-                    <td>@Administrator.Id</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><NavLink href="administrator/update">Düzenle</NavLink></td>
-                    <td><NavLink href="administrator/delete">Sil</NavLink></td>
+                    <td>@Ability.Id</td>
+                    <td>@Ability.Name</td>
+                    <td>@Ability.RegisterDate</td>
+                    <td>@Ability.UpdateDate</td>
+                    <td>@Ability.IsActive</td>
+                    <td><NavLink href="ability/update">Düzenle</NavLink></td>
+                    <td><NavLink href="ability/delete">Sil</NavLink></td>
                 </tr>
             }
         </tbody>
