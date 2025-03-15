@@ -1,7 +1,7 @@
 ﻿@page "/announce"
 @inject HttpClient Http
 
-<NavLink href="administrator/create">Ekle</NavLink>
+<NavLink href="announce/create">Ekle</NavLink>
 
 @if (Response == null)
 {
@@ -13,8 +13,7 @@ else
         <thead>
             <tr>
                 <th>ID</th>
-                <th>EMAIL</th>
-                <th>PASSWORD</th>
+                <th>NAME</th>
                 <th>REGISTER DATE</th>
                 <th>UPDATE DATE</th>
                 <th>IS ACTIVE</th>
@@ -23,17 +22,16 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var Administrator in Response.ResponseCollection)
+            @foreach (var Announce in Response.ResponseCollection)
             {
                 <tr>
-                    <td>@Administrator.Id</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><NavLink href="administrator/update">Düzenle</NavLink></td>
-                    <td><NavLink href="administrator/delete">Sil</NavLink></td>
+                    <td>@Announce.Id</td>
+                    <td>@Announce.Name</td>
+                    <td>@Announce.RegisterDate</td>
+                    <td>@Announce.UpdateDate</td>
+                    <td>@Announce.IsActive</td>
+                    <td><NavLink href="announce/update">Düzenle</NavLink></td>
+                    <td><NavLink href="announce/delete">Sil</NavLink></td>
                 </tr>
             }
         </tbody>
