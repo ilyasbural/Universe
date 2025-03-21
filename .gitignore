@@ -11,3 +11,5 @@
 /Universe.Infrastructure/obj
 /Universe.Application/bin/Debug/net9.0
 /Universe.Application/obj
+/Universe.Persistance/bin/Debug/net9.0
+/Universe.Persistance/obj
