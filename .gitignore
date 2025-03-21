@@ -9,3 +9,5 @@
 /Universe.Domain/bin/Debug/net9.0
 /Universe.Infrastructure/bin/Debug/net9.0
 /Universe.Infrastructure/obj
+/Universe.Application/bin/Debug/net9.0
+/Universe.Application/obj
