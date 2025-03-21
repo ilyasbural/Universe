@@ -15,3 +15,7 @@
 /Universe.Persistance/obj
 /Universe.Presentation/bin/Debug/net9.0
 /Universe.Presentation/obj
+/.vs/Universe/config
+/Universe.Platform/bin/Debug/net9.0
+/Universe.Platform/obj
+/Universe.slnLaunch.user
