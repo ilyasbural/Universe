@@ -19,3 +19,6 @@
 /Universe.Platform/bin/Debug/net9.0
 /Universe.Platform/obj
 /Universe.slnLaunch.user
+/.vs/Universe/DesignTimeBuild
+/Universe.Api/bin/Debug/net9.0
+/Universe.Api/obj
