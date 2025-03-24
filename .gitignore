@@ -14,3 +14,6 @@
 /Universe.Service/obj
 /Universe.Presentation/bin/Debug/net9.0
 /Universe.Presentation/obj
+/Universe.WebApi/bin/Debug/net9.0
+/Universe.WebApi/obj
+/Universe.WebApi/Universe.WebApi.csproj.user
