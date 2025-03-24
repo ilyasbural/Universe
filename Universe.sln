@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Universe.Core", "Universe.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Universe.DataAccess", "Universe.DataAccess\Universe.DataAccess.csproj", "{02B8CF5B-92FF-9D91-01C1-DEDB0598005E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Universe.Service", "Universe.Service\Universe.Service.csproj", "{9131F9C3-2C17-3FFC-02AF-3AE798AE8BD6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{02B8CF5B-92FF-9D91-01C1-DEDB0598005E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02B8CF5B-92FF-9D91-01C1-DEDB0598005E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02B8CF5B-92FF-9D91-01C1-DEDB0598005E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9131F9C3-2C17-3FFC-02AF-3AE798AE8BD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9131F9C3-2C17-3FFC-02AF-3AE798AE8BD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9131F9C3-2C17-3FFC-02AF-3AE798AE8BD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9131F9C3-2C17-3FFC-02AF-3AE798AE8BD6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
