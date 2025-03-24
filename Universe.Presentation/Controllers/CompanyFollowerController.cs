@@ -3,6 +3,8 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
+	using Microsoft.AspNetCore.Http;
+	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
 	public class CompanyFollowerController : ControllerBase
@@ -13,8 +15,12 @@
 			Service = service;
 		}
 
-		[HttpPost]
+		[HttpPost("create")]
 		[Route("api/companyfollower")]
+		[EndpointName("create")]
+		[Produces(typeof(Response<CompanyFollowerResponse>))]
+		[EndpointSummary("this is summary of create a new companyfollower")]
+		[EndpointDescription("this is description of create a new companyfollower")]
 		public async Task<Response<CompanyFollowerResponse>> Create([FromBody] CompanyFollowerRegisterDto Model)
 		{
 			Response<CompanyFollowerResponse> Response = await Service.InsertAsync(Model);

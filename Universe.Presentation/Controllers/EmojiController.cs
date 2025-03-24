@@ -3,6 +3,8 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
+	using Microsoft.AspNetCore.Http;
+	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
 	public class EmojiController : ControllerBase
@@ -13,8 +15,12 @@
 			Service = service;
 		}
 
-		[HttpPost]
+		[HttpPost("create")]
 		[Route("api/emoji")]
+		[EndpointName("create")]
+		[Produces(typeof(Response<EmojiResponse>))]
+		[EndpointSummary("this is summary of create a new emoji")]
+		[EndpointDescription("this is description of create a new emoji")]
 		public async Task<Response<EmojiResponse>> Create([FromBody] EmojiRegisterDto Model)
 		{
 			Response<EmojiResponse> Response = await Service.InsertAsync(Model);

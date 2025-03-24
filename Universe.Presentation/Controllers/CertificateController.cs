@@ -3,6 +3,8 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
+	using Microsoft.AspNetCore.Http;
+	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
 	public class CertificateController : ControllerBase
@@ -13,8 +15,12 @@
 			Service = service;
 		}
 
-		[HttpPost]
+		[HttpPost("create")]
 		[Route("api/certificate")]
+		[EndpointName("create")]
+		[Produces(typeof(Response<CertificateResponse>))]
+		[EndpointSummary("this is summary of create a new certificate")]
+		[EndpointDescription("this is description of create a new certificate")]
 		public async Task<Response<CertificateResponse>> Create([FromBody] CertificateRegisterDto Model)
 		{
 			Response<CertificateResponse> Response = await Service.InsertAsync(Model);

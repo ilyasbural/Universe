@@ -3,6 +3,8 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
+	using Microsoft.AspNetCore.Http;
+	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
 	public class AnnounceLogController : ControllerBase
@@ -13,8 +15,12 @@
 			Service = service;
 		}
 
-		[HttpPost]
+		[HttpPost("create")]
 		[Route("api/announcelog")]
+		[EndpointName("create")]
+		[Produces(typeof(Response<AnnounceLogResponse>))]
+		[EndpointSummary("this is summary of create a new announcelog")]
+		[EndpointDescription("this is description of create a new announcelog")]
 		public async Task<Response<AnnounceLogResponse>> Create([FromBody] AnnounceLogRegisterDto Model)
 		{
 			Response<AnnounceLogResponse> Response = await Service.InsertAsync(Model);
