@@ -17,3 +17,7 @@
 /Universe.WebApi/bin/Debug/net9.0
 /Universe.WebApi/obj
 /Universe.WebApi/Universe.WebApi.csproj.user
+/Universe.UI/bin/Debug/net9.0
+/Universe.UI/obj
+/Universe.slnLaunch.user
+/Universe.UI/Universe.UI.csproj.user
