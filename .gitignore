@@ -7,3 +7,5 @@
 /Universe.Common/obj
 /Universe.Core/bin/Debug/net9.0
 /Universe.Core/obj
+/Universe.DataAccess/bin/Debug/net9.0
+/Universe.DataAccess/obj
