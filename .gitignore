@@ -12,3 +12,5 @@
 /.vs/ProjectEvaluation
 /Universe.Service/bin/Debug/net9.0
 /Universe.Service/obj
+/Universe.Presentation/bin/Debug/net9.0
+/Universe.Presentation/obj
