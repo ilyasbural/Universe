@@ -1,0 +1,50 @@
+﻿@page "/managementemail"
+@inject HttpClient Http
+
+<h3>ManagementEmail</h3>
+
+@if (Response == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>EMAIL</th>
+                <th>PASSWORD</th>
+                <th>REGISTER DATE</th>
+                <th>UPDATE DATE</th>
+                <th>IS ACTIVE</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Administrator in Response.ResponseCollection)
+            {
+                <tr>
+                    <td>@Administrator.Id</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><NavLink href="administrator/update">Düzenle</NavLink></td>
+                    <td><NavLink href="administrator/delete">Sil</NavLink></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code
+{
+    private ManagementEmailResponse Response;
+    protected override async Task OnInitializedAsync()
+    {
+        Response = await Http.GetFromJsonAsync<ManagementEmailResponse>("https://localhost:7255/api/managementemail");
+    }
+}

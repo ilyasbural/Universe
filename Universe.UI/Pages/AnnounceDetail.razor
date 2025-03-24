@@ -1,0 +1,50 @@
+﻿@page "/announcedetail"
+@inject HttpClient Http
+
+<h3>AnnounceDetail</h3>
+
+<NavLink href="announcedetail/create">Ekle</NavLink>
+
+@if (Response == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>DESCRIPTION</th>
+                <th>REGISTER DATE</th>
+                <th>UPDATE DATE</th>
+                <th>IS ACTIVE</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var AnnounceDetail in Response.ResponseCollection)
+            {
+                <tr>
+                    <td>@AnnounceDetail.Id</td>
+                    <td>@AnnounceDetail.Description</td>
+                    <td>@AnnounceDetail.RegisterDate</td>
+                    <td>@AnnounceDetail.UpdateDate</td>
+                    <td>@AnnounceDetail.IsActive</td>
+                    <td><NavLink href="announcedetail/update">Düzenle</NavLink></td>
+                    <td><NavLink href="announcedetail/delete">Sil</NavLink></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code
+{
+    private AnnounceDetailResponse Response;
+    protected override async Task OnInitializedAsync()
+    {
+        Response = await Http.GetFromJsonAsync<AnnounceDetailResponse>("https://localhost:7255/api/announcedetail");
+    }
+}

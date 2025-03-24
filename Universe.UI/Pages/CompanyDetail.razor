@@ -1,0 +1,49 @@
+﻿@page "/companydetail"
+@inject HttpClient Http
+
+<h3>CompanyDetail</h3>
+<NavLink href="companydetail/create">Ekle</NavLink>
+
+@if (Response == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>DESCRIPTION</th>
+                <th>REGISTER DATE</th>
+                <th>UPDATE DATE</th>
+                <th>IS ACTIVE</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var CompanyDetail in Response.ResponseCollection)
+            {
+                <tr>
+                    <td>@CompanyDetail.Id</td>
+                    <td>@CompanyDetail.Description</td>
+                    <td>@CompanyDetail.RegisterDate</td>
+                    <td>@CompanyDetail.UpdateDate</td>
+                    <td>@CompanyDetail.IsActive</td>
+                    <td><NavLink href="companydetail/update">Düzenle</NavLink></td>
+                    <td><NavLink href="companydetail/delete">Sil</NavLink></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code
+{
+    private CompanyDetailResponse Response;
+    protected override async Task OnInitializedAsync()
+    {
+        Response = await Http.GetFromJsonAsync<CompanyDetailResponse>("https://localhost:7255/api/companydetail");
+    }
+}
