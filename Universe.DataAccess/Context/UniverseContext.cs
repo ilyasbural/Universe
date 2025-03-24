@@ -3,7 +3,7 @@
     using Core;
     using Microsoft.EntityFrameworkCore;
 
-    public partial class UniverseContext : DbContext
+    public class UniverseContext : DbContext
     {
         public virtual DbSet<Ability> Abilities { get; set; }
         public virtual DbSet<Announce> Announces { get; set; }
