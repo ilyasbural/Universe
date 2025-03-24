@@ -3,6 +3,8 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
+	using Microsoft.AspNetCore.Http;
+	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
 	public class AbilityController : ControllerBase
@@ -13,8 +15,12 @@
 			Service = service;
 		}
 
-		[HttpPost]
+		[HttpPost("create")]
 		[Route("api/ability")]
+		[EndpointName("create")]
+		[Produces(typeof(Response<AbilityResponse>))]
+		[EndpointSummary("this is summary of create a new ability")]
+		[EndpointDescription("this is description of create a new ability")]
 		public async Task<Response<AbilityResponse>> Create([FromBody] AbilityRegisterDto Model)
 		{
 			Response<AbilityResponse> Response = await Service.InsertAsync(Model);
@@ -31,8 +37,8 @@
 			Response<AbilityResponse> Response = await Service.UpdateAsync(Model);
 			return new Response<AbilityResponse>
 			{
-                ResponseData = Response.ResponseData
-            };
+				ResponseData = Response.ResponseData
+			};
 		}
 
 		[HttpDelete]
