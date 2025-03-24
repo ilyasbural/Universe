@@ -5,3 +5,5 @@
 /.vs/Universe
 /Universe.Common/bin/Debug/net9.0
 /Universe.Common/obj
+/Universe.Core/bin/Debug/net9.0
+/Universe.Core/obj
