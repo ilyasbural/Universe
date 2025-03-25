@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
-		[HttpPost("create")]
 		[Route("api/emoji")]
-		[EndpointName("create")]
+		[HttpPost("create")]
 		[Produces(typeof(Response<EmojiResponse>))]
+		[EndpointName("create")]
 		[EndpointSummary("this is summary of create a new emoji")]
 		[EndpointDescription("this is description of create a new emoji")]
 		public async Task<Response<EmojiResponse>> Create([FromBody] EmojiRegisterDto Model)

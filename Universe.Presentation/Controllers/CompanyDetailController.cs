@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
-		[HttpPost("create")]
 		[Route("api/companydetail")]
-		[EndpointName("create")]
+		[HttpPost("create")]
 		[Produces(typeof(Response<CompanyDetailResponse>))]
+		[EndpointName("create")]
 		[EndpointSummary("this is summary of create a new companydetail")]
 		[EndpointDescription("this is description of create a new companydetail")]
 		public async Task<Response<CompanyDetailResponse>> Create([FromBody] CompanyDetailRegisterDto Model)

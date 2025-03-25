@@ -3,6 +3,8 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
+	using Microsoft.AspNetCore.Http;
+	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
 	public class UserTypeController : ControllerBase
@@ -13,8 +15,12 @@
 			Service = service;
 		}
 
-		[HttpPost]
+		[HttpPost("create")]
 		[Route("api/usertype")]
+		[Produces(typeof(Response<UserTypeResponse>))]
+		[EndpointName("create")]
+		[EndpointSummary("this is summary of create a new usertype")]
+		[EndpointDescription("this is description of create a new usertype")]
 		public async Task<Response<UserTypeResponse>> Create([FromBody] UserTypeRegisterDto Model)
 		{
 			Response<UserTypeResponse> Response = await Service.InsertAsync(Model);

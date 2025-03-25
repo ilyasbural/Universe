@@ -3,6 +3,8 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
+	using Microsoft.AspNetCore.Http;
+	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
 	public class UserCountryController : ControllerBase
@@ -13,8 +15,12 @@
 			Service = service;
 		}
 
-		[HttpPost]
 		[Route("api/usercountry")]
+		[HttpPost("create")]
+		[Produces(typeof(Response<UserCountryResponse>))]
+		[EndpointName("create")]
+		[EndpointSummary("this is summary of create a new usercountry")]
+		[EndpointDescription("this is description of create a new usercountry")]
 		public async Task<Response<UserCountryResponse>> Create([FromBody] UserCountryRegisterDto Model)
 		{
 			Response<UserCountryResponse> Response = await Service.InsertAsync(Model);

@@ -3,6 +3,8 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
+	using Microsoft.AspNetCore.Http;
+	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
 	public class RegionController : ControllerBase
@@ -13,8 +15,12 @@
 			Service = service;
 		}
 
-		[HttpPost]
 		[Route("api/region")]
+		[HttpPost("create")]
+		[Produces(typeof(Response<RegionResponse>))]
+		[EndpointName("create")]
+		[EndpointSummary("this is summary of create a new region")]
+		[EndpointDescription("this is description of create a new region")]
 		public async Task<Response<RegionResponse>> Create([FromBody] RegionRegisterDto Model)
 		{
 			Response<RegionResponse> Response = await Service.InsertAsync(Model);

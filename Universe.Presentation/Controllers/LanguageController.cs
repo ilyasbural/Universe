@@ -3,6 +3,8 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
+	using Microsoft.AspNetCore.Http;
+	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
 	public class LanguageController : ControllerBase
@@ -13,8 +15,12 @@
 			Service = service;
 		}
 
-		[HttpPost]
 		[Route("api/language")]
+		[HttpPost("create")]
+		[Produces(typeof(Response<LanguageResponse>))]
+		[EndpointName("create")]
+		[EndpointSummary("this is summary of create a new language")]
+		[EndpointDescription("this is description of create a new language")]
 		public async Task<Response<LanguageResponse>> Create([FromBody] LanguageRegisterDto Model)
 		{
 			Response<LanguageResponse> Response = await Service.InsertAsync(Model);

@@ -3,6 +3,8 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
+	using Microsoft.AspNetCore.Http;
+	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
 	public class NetworkCommentController : ControllerBase
@@ -13,8 +15,12 @@
 			Service = service;
 		}
 
-		[HttpPost]
 		[Route("api/networkcomment")]
+		[HttpPost]
+		[Produces(typeof(Response<NetworkCommentResponse>))]
+		[EndpointName("create")]
+		[EndpointSummary("this is summary of create a new networkcomment")]
+		[EndpointDescription("this is description of create a new networkcomment")]
 		public async Task<Response<NetworkCommentResponse>> Create([FromBody] NetworkCommentRegisterDto Model)
 		{
 			Response<NetworkCommentResponse> Response = await Service.InsertAsync(Model);

@@ -3,6 +3,8 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
+	using Microsoft.AspNetCore.Http;
+	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
 	public class ManagementEmailController : ControllerBase
@@ -13,8 +15,12 @@
 			Service = service;
 		}
 
-		[HttpPost]
 		[Route("api/managementemail")]
+		[HttpPost("create")]
+		[Produces(typeof(Response<ManagementEmailResponse>))]
+		[EndpointName("create")]
+		[EndpointSummary("this is summary of create a new managementemail")]
+		[EndpointDescription("this is description of create a new managementemail")]
 		public async Task<Response<ManagementEmailResponse>> Create([FromBody] ManagementEmailRegisterDto Model)
 		{
 			Response<ManagementEmailResponse> Response = await Service.InsertAsync(Model);

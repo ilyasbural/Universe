@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
-		[HttpPost("create")]
 		[Route("api/college")]
-		[EndpointName("create")]
+		[HttpPost("create")]
 		[Produces(typeof(Response<CollegeResponse>))]
+		[EndpointName("create")]
 		[EndpointSummary("this is summary of create a new college")]
 		[EndpointDescription("this is description of create a new college")]
 		public async Task<Response<CollegeResponse>> Create([FromBody] CollegeRegisterDto Model)

@@ -3,6 +3,8 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
+	using Microsoft.AspNetCore.Http;
+	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
 	public class UserSettingsController : ControllerBase
@@ -13,8 +15,12 @@
 			Service = service;
 		}
 
-		[HttpPost]
+		[HttpPost("create")]
 		[Route("api/usersettings")]
+		[Produces(typeof(Response<UserSettingsResponse>))]
+		[EndpointName("create")]
+		[EndpointSummary("this is summary of create a new usersettings")]
+		[EndpointDescription("this is description of create a new usersettings")]
 		public async Task<Response<UserSettingsResponse>> Create([FromBody] UserSettingsRegisterDto Model)
 		{
 			Response<UserSettingsResponse> Response = await Service.InsertAsync(Model);

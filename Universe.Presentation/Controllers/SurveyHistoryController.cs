@@ -3,6 +3,8 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
+	using Microsoft.AspNetCore.Http;
+	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
 	public class SurveyHistoryController : ControllerBase
@@ -13,8 +15,12 @@
 			Service = service;
 		}
 
-		[HttpPost]
 		[Route("api/surveyhistory")]
+		[HttpPost("create")]
+		[Produces(typeof(Response<SurveyHistoryResponse>))]
+		[EndpointName("create")]
+		[EndpointSummary("this is summary of create a new surveyhistory")]
+		[EndpointDescription("this is description of create a new surveyhistory")]
 		public async Task<Response<SurveyHistoryResponse>> Create([FromBody] SurveyHistoryRegisterDto Model)
 		{
 			Response<SurveyHistoryResponse> Response = await Service.InsertAsync(Model);

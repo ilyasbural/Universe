@@ -3,6 +3,8 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
+	using Microsoft.AspNetCore.Http;
+	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
 	public class UserEducationController : ControllerBase
@@ -13,8 +15,12 @@
 			Service = service;
 		}
 
-		[HttpPost]
 		[Route("api/usereducation")]
+		[HttpPost("create")]
+		[Produces(typeof(Response<UserEducationResponse>))]
+		[EndpointName("create")]
+		[EndpointSummary("this is summary of create a new usereducation")]
+		[EndpointDescription("this is description of create a new usereducation")]
 		public async Task<Response<UserEducationResponse>> Create([FromBody] UserEducationRegisterDto Model)
 		{
 			Response<UserEducationResponse> Response = await Service.InsertAsync(Model);

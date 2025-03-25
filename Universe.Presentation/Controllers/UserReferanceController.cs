@@ -3,6 +3,8 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
+	using Microsoft.AspNetCore.Http;
+	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
 	public class UserReferanceController : ControllerBase
@@ -13,8 +15,12 @@
 			Service = service;
 		}
 
-		[HttpPost]
+		[HttpPost("create")]
 		[Route("api/userreferance")]
+		[EndpointName("create")]
+		[Produces(typeof(Response<UserReferanceResponse>))]
+		[EndpointSummary("this is summary of create a new userreferance")]
+		[EndpointDescription("this is description of create a new userreferance")]
 		public async Task<Response<UserReferanceResponse>> Create([FromBody] UserReferanceRegisterDto Model)
 		{
 			Response<UserReferanceResponse> Response = await Service.InsertAsync(Model);

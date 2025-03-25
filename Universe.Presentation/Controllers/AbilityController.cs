@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
-		[HttpPost("create")]
 		[Route("api/ability")]
-		[EndpointName("create")]
+		[HttpPost("create")]
 		[Produces(typeof(Response<AbilityResponse>))]
+		[EndpointName("create")]
 		[EndpointSummary("this is summary of create a new ability")]
 		[EndpointDescription("this is description of create a new ability")]
 		public async Task<Response<AbilityResponse>> Create([FromBody] AbilityRegisterDto Model)

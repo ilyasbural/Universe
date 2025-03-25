@@ -3,6 +3,8 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
+	using Microsoft.AspNetCore.Http;
+	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
 	public class OccupationController : ControllerBase
@@ -13,8 +15,12 @@
 			Service = service;
 		}
 
-		[HttpPost]
 		[Route("api/occupation")]
+		[HttpPost("create")]
+		[Produces(typeof(Response<OccupationResponse>))]
+		[EndpointName("create")]
+		[EndpointSummary("this is summary of create a new occupation")]
+		[EndpointDescription("this is description of create a new occupation")]
 		public async Task<Response<OccupationResponse>> Create([FromBody] OccupationRegisterDto Model)
 		{
 			Response<OccupationResponse> Response = await Service.InsertAsync(Model);

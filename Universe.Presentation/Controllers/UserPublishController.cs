@@ -3,6 +3,8 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
+	using Microsoft.AspNetCore.Http;
+	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
 	public class UserPublishController : ControllerBase
@@ -13,8 +15,12 @@
 			Service = service;
 		}
 
-		[HttpPost]
 		[Route("api/userpublish")]
+		[HttpPost("create")]
+		[Produces(typeof(Response<UserPublishResponse>))]
+		[EndpointName("create")]
+		[EndpointSummary("this is summary of create a new userpublish")]
+		[EndpointDescription("this is description of create a new userpublish")]
 		public async Task<Response<UserPublishResponse>> Create([FromBody] UserPublishRegisterDto Model)
 		{
 			Response<UserPublishResponse> Response = await Service.InsertAsync(Model);

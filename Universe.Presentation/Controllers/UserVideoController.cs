@@ -3,6 +3,8 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
+	using Microsoft.AspNetCore.Http;
+	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
 	public class UserVideoController : ControllerBase
@@ -13,8 +15,12 @@
 			Service = service;
 		}
 
-		[HttpPost]
 		[Route("api/uservideo")]
+		[HttpPost("create")]
+		[Produces(typeof(Response<UserVideoResponse>))]
+		[EndpointName("create")]
+		[EndpointSummary("this is summary of create a new uservideo")]
+		[EndpointDescription("this is description of create a new uservideo")]
 		public async Task<Response<UserVideoResponse>> Create([FromBody] UserVideoRegisterDto Model)
 		{
 			Response<UserVideoResponse> Response = await Service.InsertAsync(Model);

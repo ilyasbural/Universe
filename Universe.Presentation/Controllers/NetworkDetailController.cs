@@ -3,6 +3,8 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
+	using Microsoft.AspNetCore.Http;
+	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
 	public class NetworkDetailController : ControllerBase
@@ -13,8 +15,12 @@
 			Service = service;
 		}
 
-		[HttpPost]
 		[Route("api/networkdetail")]
+		[HttpPost("create")]
+		[Produces(typeof(Response<NetworkDetailResponse>))]
+		[EndpointName("create")]
+		[EndpointSummary("this is summary of create a new networkdetail")]
+		[EndpointDescription("this is description of create a new networkdetail")]
 		public async Task<Response<NetworkDetailResponse>> Create([FromBody] NetworkDetailRegisterDto Model)
 		{
 			Response<NetworkDetailResponse> Response = await Service.InsertAsync(Model);
