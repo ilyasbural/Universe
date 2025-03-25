@@ -15,8 +15,8 @@
 			Service = service;
 		}
 
-		[HttpPost("create")]
-		[Route("api/usersettings")]
+        [Route("api/usersettings")]
+        [HttpPost("create")]
 		[Produces(typeof(Response<UserSettingsResponse>))]
 		[EndpointName("create")]
 		[EndpointSummary("this is summary of create a new usersettings")]

@@ -17,8 +17,8 @@
 
 		[Route("api/managementcontact")]
 		[HttpPost("create")]
-		[EndpointName("create")]
-		[Produces(typeof(Response<ManagementContactResponse>))]
+        [Produces(typeof(Response<ManagementContactResponse>))]
+        [EndpointName("create")]
 		[EndpointSummary("this is summary of create a new managementcontact")]
 		[EndpointDescription("this is description of create a new managementcontact")]
 		public async Task<Response<ManagementContactResponse>> Create([FromBody] ManagementContactRegisterDto Model)

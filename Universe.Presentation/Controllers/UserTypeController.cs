@@ -15,8 +15,8 @@
 			Service = service;
 		}
 
-		[HttpPost("create")]
-		[Route("api/usertype")]
+        [Route("api/usertype")]
+        [HttpPost("create")]
 		[Produces(typeof(Response<UserTypeResponse>))]
 		[EndpointName("create")]
 		[EndpointSummary("this is summary of create a new usertype")]

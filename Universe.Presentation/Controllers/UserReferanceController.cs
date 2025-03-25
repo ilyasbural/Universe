@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
-		[HttpPost("create")]
-		[Route("api/userreferance")]
-		[EndpointName("create")]
-		[Produces(typeof(Response<UserReferanceResponse>))]
+        [Route("api/userreferance")]
+        [HttpPost("create")]
+        [Produces(typeof(Response<UserReferanceResponse>))]
+        [EndpointName("create")]
 		[EndpointSummary("this is summary of create a new userreferance")]
 		[EndpointDescription("this is description of create a new userreferance")]
 		public async Task<Response<UserReferanceResponse>> Create([FromBody] UserReferanceRegisterDto Model)
