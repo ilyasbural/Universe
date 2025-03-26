@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
-		[Route("api/userfollower")]
-		[HttpPost("create")]
-		[Produces(typeof(Response<UserFollowerResponse>))]
-		[EndpointName("create")]
+		[HttpPost]
+        [Route("api/userfollower")]
+        [Produces(typeof(Response<UserFollowerResponse>))]
+		[EndpointName("userfollower")]
 		[EndpointSummary("this is summary of create a new userfollower")]
 		[EndpointDescription("this is description of create a new userfollower")]
 		public async Task<Response<UserFollowerResponse>> Create([FromBody] UserFollowerRegisterDto Model)

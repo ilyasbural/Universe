@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
-		[Route("api/announcelog")]
-		[HttpPost("create")]
+        [HttpPost]
+        [Route("api/announcelog")]
 		[Produces(typeof(Response<AnnounceLogResponse>))]
-		[EndpointName("create")]
+		[EndpointName("announcelog")]
 		[EndpointSummary("this is summary of create a new announcelog")]
 		[EndpointDescription("this is description of create a new announcelog")]
 		public async Task<Response<AnnounceLogResponse>> Create([FromBody] AnnounceLogRegisterDto Model)

@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
-		[Route("api/networkcomment")]
 		[HttpPost]
-		[Produces(typeof(Response<NetworkCommentResponse>))]
-		[EndpointName("create")]
+        [Route("api/networkcomment")]
+        [Produces(typeof(Response<NetworkCommentResponse>))]
+		[EndpointName("networkcomment")]
 		[EndpointSummary("this is summary of create a new networkcomment")]
 		[EndpointDescription("this is description of create a new networkcomment")]
 		public async Task<Response<NetworkCommentResponse>> Create([FromBody] NetworkCommentRegisterDto Model)

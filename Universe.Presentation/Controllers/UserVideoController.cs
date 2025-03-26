@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
-		[Route("api/uservideo")]
-		[HttpPost("create")]
-		[Produces(typeof(Response<UserVideoResponse>))]
-		[EndpointName("create")]
+		[HttpPost]
+        [Route("api/uservideo")]
+        [Produces(typeof(Response<UserVideoResponse>))]
+		[EndpointName("uservideo")]
 		[EndpointSummary("this is summary of create a new uservideo")]
 		[EndpointDescription("this is description of create a new uservideo")]
 		public async Task<Response<UserVideoResponse>> Create([FromBody] UserVideoRegisterDto Model)

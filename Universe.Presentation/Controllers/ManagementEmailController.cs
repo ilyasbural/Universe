@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
-		[Route("api/managementemail")]
-		[HttpPost("create")]
-		[Produces(typeof(Response<ManagementEmailResponse>))]
-		[EndpointName("create")]
+		[HttpPost]
+        [Route("api/managementemail")]
+        [Produces(typeof(Response<ManagementEmailResponse>))]
+		[EndpointName("managementemail")]
 		[EndpointSummary("this is summary of create a new managementemail")]
 		[EndpointDescription("this is description of create a new managementemail")]
 		public async Task<Response<ManagementEmailResponse>> Create([FromBody] ManagementEmailRegisterDto Model)

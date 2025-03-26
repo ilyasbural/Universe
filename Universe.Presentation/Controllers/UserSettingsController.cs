@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
+        [HttpPost]
         [Route("api/usersettings")]
-        [HttpPost("create")]
-		[Produces(typeof(Response<UserSettingsResponse>))]
-		[EndpointName("create")]
+        [Produces(typeof(Response<UserSettingsResponse>))]
+		[EndpointName("usersettings")]
 		[EndpointSummary("this is summary of create a new usersettings")]
 		[EndpointDescription("this is description of create a new usersettings")]
 		public async Task<Response<UserSettingsResponse>> Create([FromBody] UserSettingsRegisterDto Model)

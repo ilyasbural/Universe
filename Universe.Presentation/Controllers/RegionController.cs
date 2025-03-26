@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
-		[Route("api/region")]
-		[HttpPost("create")]
-		[Produces(typeof(Response<RegionResponse>))]
-		[EndpointName("create")]
+        [HttpPost]
+        [Route("api/region")]
+        [Produces(typeof(Response<RegionResponse>))]
+		[EndpointName("region")]
 		[EndpointSummary("this is summary of create a new region")]
 		[EndpointDescription("this is description of create a new region")]
 		public async Task<Response<RegionResponse>> Create([FromBody] RegionRegisterDto Model)

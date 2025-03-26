@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
-		[Route("api/userlanguage")]
-		[HttpPost("create")]
-		[Produces(typeof(Response<UserLanguageResponse>))]
-		[EndpointName("create")]
+		[HttpPost]
+        [Route("api/userlanguage")]
+        [Produces(typeof(Response<UserLanguageResponse>))]
+		[EndpointName("userlanguage")]
 		[EndpointSummary("this is summary of create a new userlanguage")]
 		[EndpointDescription("this is description of create a new userlanguage")]
 		public async Task<Response<UserLanguageResponse>> Create([FromBody] UserLanguageRegisterDto Model)

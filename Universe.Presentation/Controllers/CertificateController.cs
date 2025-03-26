@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
-		[Route("api/certificate")]
-		[HttpPost("create")]
+        [HttpPost]
+        [Route("api/certificate")]
 		[Produces(typeof(Response<CertificateResponse>))]
-		[EndpointName("create")]
+		[EndpointName("certificate")]
 		[EndpointSummary("this is summary of create a new certificate")]
 		[EndpointDescription("this is description of create a new certificate")]
 		public async Task<Response<CertificateResponse>> Create([FromBody] CertificateRegisterDto Model)

@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
-		[Route("api/userpublish")]
-		[HttpPost("create")]
-		[Produces(typeof(Response<UserPublishResponse>))]
-		[EndpointName("create")]
+        [HttpPost]
+        [Route("api/userpublish")]
+        [Produces(typeof(Response<UserPublishResponse>))]
+		[EndpointName("userpublish")]
 		[EndpointSummary("this is summary of create a new userpublish")]
 		[EndpointDescription("this is description of create a new userpublish")]
 		public async Task<Response<UserPublishResponse>> Create([FromBody] UserPublishRegisterDto Model)

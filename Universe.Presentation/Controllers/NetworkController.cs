@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
-		[Route("api/network")]
 		[HttpPost]
-		[Produces(typeof(Response<NetworkResponse>))]
-		[EndpointName("create")]
+        [Route("api/network")]
+        [Produces(typeof(Response<NetworkResponse>))]
+		[EndpointName("network")]
 		[EndpointSummary("this is summary of create a new network")]
 		[EndpointDescription("this is description of create a new network")]
 		public async Task<Response<NetworkResponse>> Create([FromBody] NetworkRegisterDto Model)

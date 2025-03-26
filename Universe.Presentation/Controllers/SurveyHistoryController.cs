@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
-		[Route("api/surveyhistory")]
-		[HttpPost("create")]
-		[Produces(typeof(Response<SurveyHistoryResponse>))]
-		[EndpointName("create")]
+        [HttpPost]
+        [Route("api/surveyhistory")]
+        [Produces(typeof(Response<SurveyHistoryResponse>))]
+		[EndpointName("surveyhistory")]
 		[EndpointSummary("this is summary of create a new surveyhistory")]
 		[EndpointDescription("this is description of create a new surveyhistory")]
 		public async Task<Response<SurveyHistoryResponse>> Create([FromBody] SurveyHistoryRegisterDto Model)

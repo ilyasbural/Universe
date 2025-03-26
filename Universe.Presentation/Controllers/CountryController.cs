@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
-		[Route("api/country")]
-		[HttpPost("create")]
+        [HttpPost]
+        [Route("api/country")]
 		[Produces(typeof(Response<CountryResponse>))]
-		[EndpointName("create")]
+		[EndpointName("country")]
 		[EndpointSummary("this is summary of create a new country")]
 		[EndpointDescription("this is description of create a new country")]
 		public async Task<Response<CountryResponse>> Create([FromBody] CountryRegisterDto Model)

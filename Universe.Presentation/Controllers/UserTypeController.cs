@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
+        [HttpPost]
         [Route("api/usertype")]
-        [HttpPost("create")]
-		[Produces(typeof(Response<UserTypeResponse>))]
-		[EndpointName("create")]
+        [Produces(typeof(Response<UserTypeResponse>))]
+		[EndpointName("usertype")]
 		[EndpointSummary("this is summary of create a new usertype")]
 		[EndpointDescription("this is description of create a new usertype")]
 		public async Task<Response<UserTypeResponse>> Create([FromBody] UserTypeRegisterDto Model)

@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
-		[Route("api/userability")]
-		[HttpPost("create")]
-		[Produces(typeof(Response<UserAbilityResponse>))]
-		[EndpointName("create")]
+        [HttpPost]
+        [Route("api/userability")]
+        [Produces(typeof(Response<UserAbilityResponse>))]
+		[EndpointName("userability")]
 		[EndpointSummary("this is summary of create a new userability")]
 		[EndpointDescription("this is description of create a new userability")]
 		public async Task<Response<UserAbilityResponse>> Create([FromBody] UserAbilityRegisterDto Model)

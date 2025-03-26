@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
-		[Route("api/announcedetail")]
-		[HttpPost("create")]
+        [HttpPost]
+        [Route("api/announcedetail")]
 		[Produces(typeof(Response<AnnounceDetailResponse>))]
-		[EndpointName("create")]
+		[EndpointName("announcedetail")]
 		[EndpointSummary("this is summary of create a new announcedetail")]
 		[EndpointDescription("this is description of create a new announcedetail")]
 		public async Task<Response<AnnounceDetailResponse>> Create([FromBody] AnnounceDetailRegisterDto Model)

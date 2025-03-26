@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
-		[Route("api/jobpostingapply")]
-		[HttpPost("create")]
-		[Produces(typeof(Response<JobPostingApplyResponse>))]
-		[EndpointName("create")]
+		[HttpPost]
+        [Route("api/jobpostingapply")]
+        [Produces(typeof(Response<JobPostingApplyResponse>))]
+		[EndpointName("jobpostingapply")]
 		[EndpointSummary("this is summary of create a new jobpostingapply")]
 		[EndpointDescription("this is description of create a new jobpostingapply")]
 		public async Task<Response<JobPostingApplyResponse>> Create([FromBody] JobPostingApplyRegisterDto Model)

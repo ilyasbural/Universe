@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
-		[Route("api/messagebox")]
-		[HttpPost("create")]
-		[Produces(typeof(Response<MessageBoxResponse>))]
-		[EndpointName("create")]
+		[HttpPost]
+        [Route("api/messagebox")]
+        [Produces(typeof(Response<MessageBoxResponse>))]
+		[EndpointName("messagebox")]
 		[EndpointSummary("this is summary of create a new messagebox")]
 		[EndpointDescription("this is description of create a new messagebox")]
 		public async Task<Response<MessageBoxResponse>> Create([FromBody] MessageBoxRegisterDto Model)

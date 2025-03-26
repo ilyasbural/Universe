@@ -15,10 +15,10 @@
 			Service = service;
 		}
 
-		[Route("api/management")]
-		[HttpPost("create")]
-		[Produces(typeof(Response<ManagementResponse>))]
-		[EndpointName("create")]
+		[HttpPost]
+        [Route("api/management")]
+        [Produces(typeof(Response<ManagementResponse>))]
+		[EndpointName("management")]
 		[EndpointSummary("this is summary of create a new management")]
 		[EndpointDescription("this is description of create a new management")]
 		public async Task<Response<ManagementResponse>> Create([FromBody] ManagementRegisterDto Model)
