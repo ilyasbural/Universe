@@ -18,7 +18,7 @@
         [HttpPost]
         [Route("api/companysettings")]
 		[Produces(typeof(Response<CompanySettingsResponse>))]
-		[EndpointName("companysettings")]
+		[EndpointName("createcompanysettings")]
 		[EndpointSummary("this is summary of create a new companysettings")]
 		[EndpointDescription("this is description of create a new companysettings")]
 		public async Task<Response<CompanySettingsResponse>> Create([FromBody] CompanySettingsRegisterDto Model)
@@ -55,7 +55,7 @@
 		[HttpGet]
 		[Route("api/companysettings")]
         [Produces(typeof(Response<CompanySettingsResponse>))]
-        [EndpointName("getcompanysettings")]
+        //[EndpointName("getcompanysettings")]
         [EndpointSummary("you can use get data from companysettings API")]
         [EndpointDescription("you can use get data from companysettings API")]
         public async Task<Response<CompanySettingsResponse>> Get([FromQuery] CompanySettingsSelectDto Model)

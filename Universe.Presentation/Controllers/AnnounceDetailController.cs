@@ -18,7 +18,7 @@
         [HttpPost]
         [Route("api/announcedetail")]
 		[Produces(typeof(Response<AnnounceDetailResponse>))]
-		[EndpointName("announcedetail")]
+		[EndpointName("createannouncedetail")]
 		[EndpointSummary("this is summary of create a new announcedetail")]
 		[EndpointDescription("this is description of create a new announcedetail")]
 		public async Task<Response<AnnounceDetailResponse>> Create([FromBody] AnnounceDetailRegisterDto Model)
@@ -55,7 +55,7 @@
 		[HttpGet]
 		[Route("api/announcedetail")]
         [Produces(typeof(Response<AnnounceDetailResponse>))]
-        [EndpointName("getannouncedetail")]
+        //[EndpointName("getannouncedetail")]
         [EndpointSummary("you can use get data from announcedetail API")]
         [EndpointDescription("you can use get data from announcedetail API")]
         public async Task<Response<AnnounceDetailResponse>> Get([FromQuery] AnnounceDetailSelectDto Model)

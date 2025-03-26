@@ -18,7 +18,7 @@
         [HttpPost]
         [Route("api/announcelog")]
 		[Produces(typeof(Response<AnnounceLogResponse>))]
-		[EndpointName("announcelog")]
+		[EndpointName("createannouncelog")]
 		[EndpointSummary("this is summary of create a new announcelog")]
 		[EndpointDescription("this is description of create a new announcelog")]
 		public async Task<Response<AnnounceLogResponse>> Create([FromBody] AnnounceLogRegisterDto Model)
@@ -55,7 +55,7 @@
 		[HttpGet]
 		[Route("api/announcelog")]
         [Produces(typeof(Response<AnnounceLogResponse>))]
-        [EndpointName("getannouncelog")]
+        //[EndpointName("getannouncelog")]
         [EndpointSummary("you can use get data from announcelog API")]
         [EndpointDescription("you can use get data from announcelog API")]
         public async Task<Response<AnnounceLogResponse>> Get([FromQuery] AnnounceLogSelectDto Model)

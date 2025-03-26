@@ -19,7 +19,7 @@
 		[HttpPost]
         [Route("api/college")]
         [Produces(typeof(Response<CollegeResponse>))]
-		[EndpointName("college")]
+		[EndpointName("createcollege")]
 		[EndpointSummary("this is summary of create a new college")]
 		[EndpointDescription("this is description of create a new college")]
 		public async Task<Response<CollegeResponse>> Create([FromBody] CollegeRegisterDto Model)
@@ -56,7 +56,7 @@
 		[HttpGet]
 		[Route("api/college")]
         [Produces(typeof(Response<CollegeResponse>))]
-        [EndpointName("getcollege")]
+        //[EndpointName("getcollege")]
         [EndpointSummary("you can use get data from college API")]
         [EndpointDescription("you can use get data from college API")]
         public async Task<Response<CollegeResponse>> Get([FromQuery] CollegeSelectDto Model)

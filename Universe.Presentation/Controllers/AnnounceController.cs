@@ -48,7 +48,7 @@
 		[HttpDelete]
 		[Route("api/announce")]
         [Produces(typeof(Response<AnnounceResponse>))]
-        [EndpointName("deleteannounce")]
+        //[EndpointName("deleteannounce")]
         [EndpointSummary("this is summary of create a new announce")]
         [EndpointDescription("this is description of create a new announce")]
         public async Task<Response<AnnounceResponse>> Delete([FromBody] AnnounceDeleteDto Model)
@@ -63,7 +63,7 @@
 		[HttpGet]
 		[Route("api/announce")]
         [Produces(typeof(Response<AnnounceResponse>))]
-        [EndpointName("getannounce")]
+        //[EndpointName("getannounce")]
         [EndpointSummary("you can use get data from announce API")]
         [EndpointDescription("you can use get data from announce API")]
         public async Task<Response<AnnounceResponse>> Get([FromQuery] AnnounceSelectDto Model)
@@ -78,7 +78,7 @@
 		[HttpGet]
 		[Route("api/announcesingle")]
         [Produces(typeof(Response<AnnounceResponse>))]
-        [EndpointName("getannouncesingle")]
+        //[EndpointName("getannouncesingle")]
         [EndpointSummary("you can use get single data from announce API")]
         [EndpointDescription("you can use get single data from announce API")]
         public async Task<Response<AnnounceResponse>> GetSingle([FromQuery] AnnounceSelectDto Model)

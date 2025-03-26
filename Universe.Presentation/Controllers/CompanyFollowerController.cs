@@ -18,7 +18,7 @@
         [HttpPost]
         [Route("api/companyfollower")]
 		[Produces(typeof(Response<CompanyFollowerResponse>))]
-		[EndpointName("companyfollower")]
+		[EndpointName("createcompanyfollower")]
 		[EndpointSummary("this is summary of create a new companyfollower")]
 		[EndpointDescription("this is description of create a new companyfollower")]
 		public async Task<Response<CompanyFollowerResponse>> Create([FromBody] CompanyFollowerRegisterDto Model)
@@ -55,7 +55,7 @@
 		[HttpGet]
 		[Route("api/companyfollower")]
         [Produces(typeof(Response<CompanyFollowerResponse>))]
-        [EndpointName("getcompanyfollower")]
+        //[EndpointName("getcompanyfollower")]
         [EndpointSummary("you can use get data from companyfollower API")]
         [EndpointDescription("you can use get data from companyfollower API")]
         public async Task<Response<CompanyFollowerResponse>> Get([FromQuery] CompanyFollowerSelectDto Model)

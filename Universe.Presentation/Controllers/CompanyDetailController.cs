@@ -18,7 +18,7 @@
         [HttpPost]
         [Route("api/companydetail")]
 		[Produces(typeof(Response<CompanyDetailResponse>))]
-		[EndpointName("companydetail")]
+		[EndpointName("createcompanydetail")]
 		[EndpointSummary("this is summary of create a new companydetail")]
 		[EndpointDescription("this is description of create a new companydetail")]
 		public async Task<Response<CompanyDetailResponse>> Create([FromBody] CompanyDetailRegisterDto Model)
@@ -55,7 +55,7 @@
 		[HttpGet]
 		[Route("api/companydetail")]
         [Produces(typeof(Response<CompanyDetailResponse>))]
-        [EndpointName("getcompanydetail")]
+        //[EndpointName("getcompanydetail")]
         [EndpointSummary("you can use get data from companydetail API")]
         [EndpointDescription("you can use get data from companydetail API")]
         public async Task<Response<CompanyDetailResponse>> Get([FromQuery] CompanyDetailSelectDto Model)

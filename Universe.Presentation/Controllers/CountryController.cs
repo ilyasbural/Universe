@@ -18,7 +18,7 @@
         [HttpPost]
         [Route("api/country")]
 		[Produces(typeof(Response<CountryResponse>))]
-		[EndpointName("country")]
+		[EndpointName("createcountry")]
 		[EndpointSummary("this is summary of create a new country")]
 		[EndpointDescription("this is description of create a new country")]
 		public async Task<Response<CountryResponse>> Create([FromBody] CountryRegisterDto Model)
@@ -55,7 +55,7 @@
 		[HttpGet]
 		[Route("api/country")]
         [Produces(typeof(Response<CountryResponse>))]
-        [EndpointName("getcountry")]
+        //[EndpointName("getcountry")]
         [EndpointSummary("you can use get data from country API")]
         [EndpointDescription("you can use get data from country API")]
         public async Task<Response<CountryResponse>> Get([FromQuery] CountrySelectDto Model)

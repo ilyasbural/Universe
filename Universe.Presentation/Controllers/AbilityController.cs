@@ -18,7 +18,7 @@
         [HttpPost]
         [Route("api/ability")]
 		[Produces(typeof(Response<AbilityResponse>))]
-		[EndpointName("ability")]
+		[EndpointName("createability")]
 		[EndpointSummary("you can create ability using this API")]
 		[EndpointDescription("you can create ability using this API")]
 		public async Task<Response<AbilityResponse>> Create([FromBody] AbilityRegisterDto Model)
@@ -48,9 +48,9 @@
 		[HttpDelete]
 		[Route("api/ability")]
         [Produces(typeof(Response<AbilityResponse>))]
-        [EndpointName("ability")]
-        [EndpointSummary("you can create new ability using this API")]
-        [EndpointDescription("this is description of create a new ability")]
+        //[EndpointName("deleteability")]
+        [EndpointSummary("you can delete using ability API")]
+        [EndpointDescription("you can delete using ability API")]
         public async Task<Response<AbilityResponse>> Delete([FromBody] AbilityDeleteDto Model)
 		{
 			Response<AbilityResponse> Response = await Service.DeleteAsync(Model);
@@ -63,7 +63,7 @@
 		[HttpGet]
 		[Route("api/ability")]
         [Produces(typeof(Response<AbilityResponse>))]
-        [EndpointName("ability")]
+        //[EndpointName("getability")]
         [EndpointSummary("you can use get data from ability API")]
         [EndpointDescription("you can use get data from ability API")]
         public async Task<Response<AbilityResponse>> Get([FromQuery] AbilitySelectDto Model)
@@ -78,7 +78,7 @@
 		[HttpGet]
 		[Route("api/abilitysingle")]
         [Produces(typeof(Response<AbilityResponse>))]
-        [EndpointName("getabilitysingle")]
+        //[EndpointName("getabilitysingle")]
         [EndpointSummary("use this for get single data using this API")]
         [EndpointDescription("this is description of create a new ability")]
         public async Task<Response<AbilityResponse>> GetSingle([FromQuery] AbilitySelectDto Model)
