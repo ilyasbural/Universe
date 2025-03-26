@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/messagebox")]
-		public async Task<Response<MessageBoxResponse>> Get([FromQuery] MessageBoxSelectDto Model)
+        [Produces(typeof(Response<MessageBoxResponse>))]
+        [EndpointName("getmessagebox")]
+        [EndpointSummary("you can use get data from messagebox API")]
+        [EndpointDescription("you can use get data from messagebox API")]
+        public async Task<Response<MessageBoxResponse>> Get([FromQuery] MessageBoxSelectDto Model)
 		{
 			Response<MessageBoxResponse> Response = await Service.SelectAsync(Model);
 			return new Response<MessageBoxResponse>

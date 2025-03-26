@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/managementcontact")]
-		public async Task<Response<ManagementContactResponse>> Get([FromQuery] ManagementContactSelectDto Model)
+        [Produces(typeof(Response<ManagementContactResponse>))]
+        [EndpointName("getmanagementcontact")]
+        [EndpointSummary("you can use get data from managementcontact API")]
+        [EndpointDescription("you can use get data from managementcontact API")]
+        public async Task<Response<ManagementContactResponse>> Get([FromQuery] ManagementContactSelectDto Model)
 		{
 			Response<ManagementContactResponse> Response = await Service.SelectAsync(Model);
 			return new Response<ManagementContactResponse>

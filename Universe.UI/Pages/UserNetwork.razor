@@ -42,7 +42,7 @@ else
 
 @code
 {
-    private UserNetworkResponse Response;
+    private UserNetworkResponse? Response;
     protected override async Task OnInitializedAsync()
     {
         Response = await Http.GetFromJsonAsync<UserNetworkResponse>("https://localhost:7255/api/usernetwork");

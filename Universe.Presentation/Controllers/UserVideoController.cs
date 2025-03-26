@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/uservideo")]
-		public async Task<Response<UserVideoResponse>> Get([FromQuery] UserVideoSelectDto Model)
+        [Produces(typeof(Response<UserVideoResponse>))]
+        [EndpointName("getuservideo")]
+        [EndpointSummary("you can use get data from uservideo API")]
+        [EndpointDescription("you can use get data from uservideo API")]
+        public async Task<Response<UserVideoResponse>> Get([FromQuery] UserVideoSelectDto Model)
 		{
 			Response<UserVideoResponse> Response = await Service.SelectAsync(Model);
 			return new Response<UserVideoResponse>

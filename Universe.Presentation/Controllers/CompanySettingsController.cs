@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/companysettings")]
-		public async Task<Response<CompanySettingsResponse>> Get([FromQuery] CompanySettingsSelectDto Model)
+        [Produces(typeof(Response<CompanySettingsResponse>))]
+        [EndpointName("getcompanysettings")]
+        [EndpointSummary("you can use get data from companysettings API")]
+        [EndpointDescription("you can use get data from companysettings API")]
+        public async Task<Response<CompanySettingsResponse>> Get([FromQuery] CompanySettingsSelectDto Model)
 		{
 			Response<CompanySettingsResponse> Response = await Service.SelectAsync(Model);
 			return new Response<CompanySettingsResponse>

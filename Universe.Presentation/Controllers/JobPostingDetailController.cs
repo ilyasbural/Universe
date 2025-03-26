@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/jobpostingdetail")]
-		public async Task<Response<JobPostingDetailResponse>> Get([FromQuery] JobPostingDetailSelectDto Model)
+        [Produces(typeof(Response<JobPostingDetailResponse>))]
+        [EndpointName("getjobpostingdetail")]
+        [EndpointSummary("you can use get data from jobpostingdetail API")]
+        [EndpointDescription("you can use get data from jobpostingdetail API")]
+        public async Task<Response<JobPostingDetailResponse>> Get([FromQuery] JobPostingDetailSelectDto Model)
 		{
 			Response<JobPostingDetailResponse> Response = await Service.SelectAsync(Model);
 			return new Response<JobPostingDetailResponse>

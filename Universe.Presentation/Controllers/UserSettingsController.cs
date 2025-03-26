@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/usersettings")]
-		public async Task<Response<UserSettingsResponse>> Get([FromQuery] UserSettingsSelectDto Model)
+        [Produces(typeof(Response<UserSettingsResponse>))]
+        [EndpointName("getusersettings")]
+        [EndpointSummary("you can use get data from usersettings API")]
+        [EndpointDescription("you can use get data from usersettings API")]
+        public async Task<Response<UserSettingsResponse>> Get([FromQuery] UserSettingsSelectDto Model)
 		{
 			Response<UserSettingsResponse> Response = await Service.SelectAsync(Model);
 			return new Response<UserSettingsResponse>

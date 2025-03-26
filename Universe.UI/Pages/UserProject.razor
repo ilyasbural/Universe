@@ -42,7 +42,7 @@ else
 
 @code
 {
-    private UserProjectResponse Response;
+    private UserProjectResponse? Response;
     protected override async Task OnInitializedAsync()
     {
         Response = await Http.GetFromJsonAsync<UserProjectResponse>("https://localhost:7255/api/userproject");

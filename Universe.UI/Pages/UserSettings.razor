@@ -42,7 +42,7 @@ else
 
 @code
 {
-    private UserSettingsResponse Response;
+    private UserSettingsResponse? Response;
     protected override async Task OnInitializedAsync()
     {
         Response = await Http.GetFromJsonAsync<UserSettingsResponse>("https://localhost:7255/api/usersettings");

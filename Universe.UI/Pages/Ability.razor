@@ -42,7 +42,7 @@ else
 
 @code
 {
-    private AbilityResponse Response;
+    private AbilityResponse? Response;
     protected override async Task OnInitializedAsync()
     {
         Response = await Http.GetFromJsonAsync<AbilityResponse>("https://localhost:7255/api/ability");

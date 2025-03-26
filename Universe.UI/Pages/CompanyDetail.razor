@@ -41,7 +41,7 @@ else
 
 @code
 {
-    private CompanyDetailResponse Response;
+    private CompanyDetailResponse? Response;
     protected override async Task OnInitializedAsync()
     {
         Response = await Http.GetFromJsonAsync<CompanyDetailResponse>("https://localhost:7255/api/companydetail");

@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/announcelog")]
-		public async Task<Response<AnnounceLogResponse>> Get([FromQuery] AnnounceLogSelectDto Model)
+        [Produces(typeof(Response<AnnounceLogResponse>))]
+        [EndpointName("getannouncelog")]
+        [EndpointSummary("you can use get data from announcelog API")]
+        [EndpointDescription("you can use get data from announcelog API")]
+        public async Task<Response<AnnounceLogResponse>> Get([FromQuery] AnnounceLogSelectDto Model)
 		{
 			Response<AnnounceLogResponse> Response = await Service.SelectAsync(Model);
 			return new Response<AnnounceLogResponse>

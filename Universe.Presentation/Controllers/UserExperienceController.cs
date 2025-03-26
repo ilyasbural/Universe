@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/userexperience")]
-		public async Task<Response<UserExperienceResponse>> Get([FromQuery] UserExperienceSelectDto Model)
+        [Produces(typeof(Response<UserExperienceResponse>))]
+        [EndpointName("getuserexperience")]
+        [EndpointSummary("you can use get data from userexperience API")]
+        [EndpointDescription("you can use get data from userexperience API")]
+        public async Task<Response<UserExperienceResponse>> Get([FromQuery] UserExperienceSelectDto Model)
 		{
 			Response<UserExperienceResponse> Response = await Service.SelectAsync(Model);
 			return new Response<UserExperienceResponse>

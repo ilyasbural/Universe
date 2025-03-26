@@ -42,7 +42,7 @@ else
 
 @code
 {
-    private AnnounceDetailResponse Response;
+    private AnnounceDetailResponse? Response;
     protected override async Task OnInitializedAsync()
     {
         Response = await Http.GetFromJsonAsync<AnnounceDetailResponse>("https://localhost:7255/api/announcedetail");

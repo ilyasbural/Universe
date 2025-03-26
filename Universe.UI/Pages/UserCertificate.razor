@@ -42,7 +42,7 @@ else
 
 @code
 {
-    private UserCertificateResponse Response;
+    private UserCertificateResponse? Response;
     protected override async Task OnInitializedAsync()
     {
         Response = await Http.GetFromJsonAsync<UserCertificateResponse>("https://localhost:7255/api/usercertificate");

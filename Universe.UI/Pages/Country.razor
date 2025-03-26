@@ -42,7 +42,7 @@ else
 
 @code
 {
-    private CountryResponse Response;
+    private CountryResponse? Response;
     protected override async Task OnInitializedAsync()
     {
         Response = await Http.GetFromJsonAsync<CountryResponse>("https://localhost:7255/api/country");

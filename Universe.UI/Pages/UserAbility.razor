@@ -42,7 +42,7 @@ else
 
 @code
 {
-    private UserAbilityResponse Response;
+    private UserAbilityResponse? Response;
     protected override async Task OnInitializedAsync()
     {
         Response = await Http.GetFromJsonAsync<UserAbilityResponse>("https://localhost:7255/api/userability");

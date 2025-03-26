@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/usernetwork")]
-		public async Task<Response<UserNetworkResponse>> Get([FromQuery] UserNetworkSelectDto Model)
+        [Produces(typeof(Response<UserNetworkResponse>))]
+        [EndpointName("getusernetwork")]
+        [EndpointSummary("you can use get data from usernetwork API")]
+        [EndpointDescription("you can use get data from usernetwork API")]
+        public async Task<Response<UserNetworkResponse>> Get([FromQuery] UserNetworkSelectDto Model)
 		{
 			Response<UserNetworkResponse> Response = await Service.SelectAsync(Model);
 			return new Response<UserNetworkResponse>

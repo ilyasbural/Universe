@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/networkaction")]
-		public async Task<Response<NetworkActionResponse>> Get([FromQuery] NetworkActionSelectDto Model)
+        [Produces(typeof(Response<NetworkActionResponse>))]
+        [EndpointName("getnetworkaction")]
+        [EndpointSummary("you can use get data from networkaction API")]
+        [EndpointDescription("you can use get data from networkaction API")]
+        public async Task<Response<NetworkActionResponse>> Get([FromQuery] NetworkActionSelectDto Model)
 		{
 			Response<NetworkActionResponse> Response = await Service.SelectAsync(Model);
 			return new Response<NetworkActionResponse>

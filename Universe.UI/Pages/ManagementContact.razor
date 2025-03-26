@@ -42,7 +42,7 @@ else
 
 @code
 {
-    private ManagementContactResponse Response;
+    private ManagementContactResponse? Response;
     protected override async Task OnInitializedAsync()
     {
         Response = await Http.GetFromJsonAsync<ManagementContactResponse>("https://localhost:7255/api/managementcontact");

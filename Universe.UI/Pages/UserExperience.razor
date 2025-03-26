@@ -42,7 +42,7 @@ else
 
 @code
 {
-    private UserExperienceResponse Response;
+    private UserExperienceResponse? Response;
     protected override async Task OnInitializedAsync()
     {
         Response = await Http.GetFromJsonAsync<UserExperienceResponse>("https://localhost:7255/api/userexperience");

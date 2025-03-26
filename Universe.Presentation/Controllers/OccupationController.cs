@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/occupation")]
-		public async Task<Response<OccupationResponse>> Get([FromQuery] OccupationSelectDto Model)
+        [Produces(typeof(Response<OccupationResponse>))]
+        [EndpointName("getoccupation")]
+        [EndpointSummary("you can use get data from occupation API")]
+        [EndpointDescription("you can use get data from occupation API")]
+        public async Task<Response<OccupationResponse>> Get([FromQuery] OccupationSelectDto Model)
 		{
 			Response<OccupationResponse> Response = await Service.SelectAsync(Model);
 			return new Response<OccupationResponse>

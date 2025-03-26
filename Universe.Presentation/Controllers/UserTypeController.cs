@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/usertype")]
-		public async Task<Response<UserTypeResponse>> Get([FromQuery] UserTypeSelectDto Model)
+        [Produces(typeof(Response<UserTypeResponse>))]
+        [EndpointName("getusertype")]
+        [EndpointSummary("you can use get data from usertype API")]
+        [EndpointDescription("you can use get data from usertype API")]
+        public async Task<Response<UserTypeResponse>> Get([FromQuery] UserTypeSelectDto Model)
 		{
 			Response<UserTypeResponse> Response = await Service.SelectAsync(Model);
 			return new Response<UserTypeResponse>

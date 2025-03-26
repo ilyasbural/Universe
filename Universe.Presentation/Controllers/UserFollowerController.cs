@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/userfollower")]
-		public async Task<Response<UserFollowerResponse>> Get([FromQuery] UserFollowerSelectDto Model)
+        [Produces(typeof(Response<UserFollowerResponse>))]
+        [EndpointName("getuserfollower")]
+        [EndpointSummary("you can use get data from userfollower API")]
+        [EndpointDescription("you can use get data from userfollower API")]
+        public async Task<Response<UserFollowerResponse>> Get([FromQuery] UserFollowerSelectDto Model)
 		{
 			Response<UserFollowerResponse> Response = await Service.SelectAsync(Model);
 			return new Response<UserFollowerResponse>

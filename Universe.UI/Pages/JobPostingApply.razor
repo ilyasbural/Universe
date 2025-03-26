@@ -42,7 +42,7 @@ else
 
 @code
 {
-    private JobPostingApplyResponse Response;
+    private JobPostingApplyResponse? Response;
     protected override async Task OnInitializedAsync()
     {
         Response = await Http.GetFromJsonAsync<JobPostingApplyResponse>("https://localhost:7255/api/jobpostingapply");

@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/userlanguage")]
-		public async Task<Response<UserLanguageResponse>> Get([FromQuery] UserLanguageSelectDto Model)
+        [Produces(typeof(Response<UserLanguageResponse>))]
+        [EndpointName("getuserlanguage")]
+        [EndpointSummary("you can use get data from userlanguage API")]
+        [EndpointDescription("you can use get data from userlanguage API")]
+        public async Task<Response<UserLanguageResponse>> Get([FromQuery] UserLanguageSelectDto Model)
 		{
 			Response<UserLanguageResponse> Response = await Service.SelectAsync(Model);
 			return new Response<UserLanguageResponse>

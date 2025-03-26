@@ -42,7 +42,7 @@ else
 
 @code
 {
-    private SurveyHistoryResponse Response;
+    private SurveyHistoryResponse? Response;
     protected override async Task OnInitializedAsync()
     {
         Response = await Http.GetFromJsonAsync<SurveyHistoryResponse>("https://localhost:7255/api/surveyhistory");

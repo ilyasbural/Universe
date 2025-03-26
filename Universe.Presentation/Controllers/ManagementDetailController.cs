@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/managementdetail")]
-		public async Task<Response<ManagementDetailResponse>> Get([FromQuery] ManagementDetailSelectDto Model)
+        [Produces(typeof(Response<ManagementDetailResponse>))]
+        [EndpointName("getmanagementdetail")]
+        [EndpointSummary("you can use get data from managementdetail API")]
+        [EndpointDescription("you can use get data from managementdetail API")]
+        public async Task<Response<ManagementDetailResponse>> Get([FromQuery] ManagementDetailSelectDto Model)
 		{
 			Response<ManagementDetailResponse> Response = await Service.SelectAsync(Model);
 			return new Response<ManagementDetailResponse>

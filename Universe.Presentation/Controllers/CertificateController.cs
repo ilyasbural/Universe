@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/certificate")]
-		public async Task<Response<CertificateResponse>> Get([FromQuery] CertificateSelectDto Model)
+        [Produces(typeof(Response<CertificateResponse>))]
+        [EndpointName("getcertificate")]
+        [EndpointSummary("you can use get data from certificate API")]
+        [EndpointDescription("you can use get data from certificate API")]
+        public async Task<Response<CertificateResponse>> Get([FromQuery] CertificateSelectDto Model)
 		{
 			Response<CertificateResponse> Response = await Service.SelectAsync(Model);
 			return new Response<CertificateResponse>

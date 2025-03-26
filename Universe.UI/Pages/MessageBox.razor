@@ -42,7 +42,7 @@ else
 
 @code
 {
-    private MessageBoxResponse Response;
+    private MessageBoxResponse? Response;
     protected override async Task OnInitializedAsync()
     {
         Response = await Http.GetFromJsonAsync<MessageBoxResponse>("https://localhost:7255/api/messagebox");

@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/userability")]
-		public async Task<Response<UserAbilityResponse>> Get([FromQuery] UserAbilitySelectDto Model)
+        [Produces(typeof(Response<UserAbilityResponse>))]
+        [EndpointName("getuserability")]
+        [EndpointSummary("you can use get data from userability API")]
+        [EndpointDescription("you can use get data from userability API")]
+        public async Task<Response<UserAbilityResponse>> Get([FromQuery] UserAbilitySelectDto Model)
 		{
 			Response<UserAbilityResponse> Response = await Service.SelectAsync(Model);
 			return new Response<UserAbilityResponse>

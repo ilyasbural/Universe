@@ -42,7 +42,7 @@ else
 
 @code
 {
-    private PositionResponse Response;
+    private PositionResponse? Response;
     protected override async Task OnInitializedAsync()
     {
         Response = await Http.GetFromJsonAsync<PositionResponse>("https://localhost:7255/api/position");

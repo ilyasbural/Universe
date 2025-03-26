@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/announcedetail")]
-		public async Task<Response<AnnounceDetailResponse>> Get([FromQuery] AnnounceDetailSelectDto Model)
+        [Produces(typeof(Response<AnnounceDetailResponse>))]
+        [EndpointName("getannouncedetail")]
+        [EndpointSummary("you can use get data from announcedetail API")]
+        [EndpointDescription("you can use get data from announcedetail API")]
+        public async Task<Response<AnnounceDetailResponse>> Get([FromQuery] AnnounceDetailSelectDto Model)
 		{
 			Response<AnnounceDetailResponse> Response = await Service.SelectAsync(Model);
 			return new Response<AnnounceDetailResponse>

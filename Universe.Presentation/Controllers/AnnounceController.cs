@@ -18,9 +18,9 @@
         [HttpPost]
         [Route("api/announce")]
 		[Produces(typeof(Response<AnnounceResponse>))]
-		[EndpointName("announce")]
-		[EndpointSummary("this is summary of create a new announce")]
-		[EndpointDescription("this is description of create a new announce")]
+		[EndpointName("createannounce")]
+		[EndpointSummary("you can create announce using this API")]
+		[EndpointDescription("you can create announce using this API")]
 		public async Task<Response<AnnounceResponse>> Create([FromBody] AnnounceRegisterDto Model)
 		{
 			Response<AnnounceResponse> Response = await Service.InsertAsync(Model);
@@ -32,7 +32,11 @@
 
 		[HttpPut]
 		[Route("api/announce")]
-		public async Task<Response<AnnounceResponse>> Update([FromBody] AnnounceUpdateDto Model)
+        [Produces(typeof(Response<AnnounceResponse>))]
+        [EndpointName("updateannounce")]
+        [EndpointSummary("this is summary of update announce")]
+        [EndpointDescription("this is description of update a new announce")]
+        public async Task<Response<AnnounceResponse>> Update([FromBody] AnnounceUpdateDto Model)
 		{
 			Response<AnnounceResponse> Response = await Service.UpdateAsync(Model);
 			return new Response<AnnounceResponse>
@@ -43,7 +47,11 @@
 
 		[HttpDelete]
 		[Route("api/announce")]
-		public async Task<Response<AnnounceResponse>> Delete([FromBody] AnnounceDeleteDto Model)
+        [Produces(typeof(Response<AnnounceResponse>))]
+        [EndpointName("deleteannounce")]
+        [EndpointSummary("this is summary of create a new announce")]
+        [EndpointDescription("this is description of create a new announce")]
+        public async Task<Response<AnnounceResponse>> Delete([FromBody] AnnounceDeleteDto Model)
 		{
 			Response<AnnounceResponse> Response = await Service.DeleteAsync(Model);
 			return new Response<AnnounceResponse>
@@ -54,7 +62,11 @@
 
 		[HttpGet]
 		[Route("api/announce")]
-		public async Task<Response<AnnounceResponse>> Get([FromQuery] AnnounceSelectDto Model)
+        [Produces(typeof(Response<AnnounceResponse>))]
+        [EndpointName("getannounce")]
+        [EndpointSummary("you can use get data from announce API")]
+        [EndpointDescription("you can use get data from announce API")]
+        public async Task<Response<AnnounceResponse>> Get([FromQuery] AnnounceSelectDto Model)
 		{
 			Response<AnnounceResponse> Response = await Service.SelectAsync(Model);
 			return new Response<AnnounceResponse>
@@ -65,7 +77,11 @@
 
 		[HttpGet]
 		[Route("api/announcesingle")]
-		public async Task<Response<AnnounceResponse>> GetSingle([FromQuery] AnnounceSelectDto Model)
+        [Produces(typeof(Response<AnnounceResponse>))]
+        [EndpointName("getannouncesingle")]
+        [EndpointSummary("you can use get single data from announce API")]
+        [EndpointDescription("you can use get single data from announce API")]
+        public async Task<Response<AnnounceResponse>> GetSingle([FromQuery] AnnounceSelectDto Model)
 		{
 			Response<AnnounceResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<AnnounceResponse>

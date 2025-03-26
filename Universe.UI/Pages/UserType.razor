@@ -42,7 +42,7 @@ else
 
 @code
 {
-    private UserTypeResponse Response;
+    private UserTypeResponse? Response;
     protected override async Task OnInitializedAsync()
     {
         Response = await Http.GetFromJsonAsync<UserTypeResponse>("https://localhost:7255/api/usertype");

@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/managementemail")]
-		public async Task<Response<ManagementEmailResponse>> Get([FromQuery] ManagementEmailSelectDto Model)
+        [Produces(typeof(Response<ManagementEmailResponse>))]
+        [EndpointName("getmanagementemail")]
+        [EndpointSummary("you can use get data from managementemail API")]
+        [EndpointDescription("you can use get data from managementemail API")]
+        public async Task<Response<ManagementEmailResponse>> Get([FromQuery] ManagementEmailSelectDto Model)
 		{
 			Response<ManagementEmailResponse> Response = await Service.SelectAsync(Model);
 			return new Response<ManagementEmailResponse>

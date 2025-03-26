@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/country")]
-		public async Task<Response<CountryResponse>> Get([FromQuery] CountrySelectDto Model)
+        [Produces(typeof(Response<CountryResponse>))]
+        [EndpointName("getcountry")]
+        [EndpointSummary("you can use get data from country API")]
+        [EndpointDescription("you can use get data from country API")]
+        public async Task<Response<CountryResponse>> Get([FromQuery] CountrySelectDto Model)
 		{
 			Response<CountryResponse> Response = await Service.SelectAsync(Model);
 			return new Response<CountryResponse>

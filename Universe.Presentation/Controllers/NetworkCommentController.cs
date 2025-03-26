@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/networkcomment")]
-		public async Task<Response<NetworkCommentResponse>> Get([FromQuery] NetworkCommentSelectDto Model)
+        [Produces(typeof(Response<NetworkCommentResponse>))]
+        [EndpointName("getemoji")]
+        [EndpointSummary("you can use get data from networkcomment API")]
+        [EndpointDescription("you can use get data from networkcomment API")]
+        public async Task<Response<NetworkCommentResponse>> Get([FromQuery] NetworkCommentSelectDto Model)
 		{
 			Response<NetworkCommentResponse> Response = await Service.SelectAsync(Model);
 			return new Response<NetworkCommentResponse>

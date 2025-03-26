@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/emoji")]
-		public async Task<Response<EmojiResponse>> Get([FromQuery] EmojiSelectDto Model)
+        [Produces(typeof(Response<EmojiResponse>))]
+        [EndpointName("getemoji")]
+        [EndpointSummary("you can use get data from emoji API")]
+        [EndpointDescription("you can use get data from emoji API")]
+        public async Task<Response<EmojiResponse>> Get([FromQuery] EmojiSelectDto Model)
 		{
 			Response<EmojiResponse> Response = await Service.SelectAsync(Model);
 			return new Response<EmojiResponse>

@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/position")]
-		public async Task<Response<PositionResponse>> Get([FromQuery] PositionSelectDto Model)
+        [Produces(typeof(Response<PositionResponse>))]
+        [EndpointName("getposition")]
+        [EndpointSummary("you can use get data from position API")]
+        [EndpointDescription("you can use get data from position API")]
+        public async Task<Response<PositionResponse>> Get([FromQuery] PositionSelectDto Model)
 		{
 			Response<PositionResponse> Response = await Service.SelectAsync(Model);
 			return new Response<PositionResponse>

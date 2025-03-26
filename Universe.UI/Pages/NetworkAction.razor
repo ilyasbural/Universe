@@ -42,7 +42,7 @@ else
 
 @code
 {
-    private NetworkActionResponse Response;
+    private NetworkActionResponse? Response;
     protected override async Task OnInitializedAsync()
     {
         Response = await Http.GetFromJsonAsync<NetworkActionResponse>("https://localhost:7255/api/networkaction");

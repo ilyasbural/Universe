@@ -54,7 +54,11 @@
 
 		[HttpGet]
 		[Route("api/survey")]
-		public async Task<Response<SurveyResponse>> Get([FromQuery] SurveySelectDto Model)
+        [Produces(typeof(Response<SurveyResponse>))]
+        [EndpointName("getsurvey")]
+        [EndpointSummary("you can use get data from survey API")]
+        [EndpointDescription("you can use get data from survey API")]
+        public async Task<Response<SurveyResponse>> Get([FromQuery] SurveySelectDto Model)
 		{
 			Response<SurveyResponse> Response = await Service.SelectAsync(Model);
 			return new Response<SurveyResponse>
