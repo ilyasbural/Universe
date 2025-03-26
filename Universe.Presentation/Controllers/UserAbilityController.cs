@@ -32,6 +32,10 @@
 
 		[HttpPut]
 		[Route("api/userability")]
+		[Produces(typeof(Response<UserAbilityResponse>))]
+		[EndpointName("updateuserability")]
+		[EndpointSummary("you can use for update using userability API")]
+		[EndpointDescription("you can use for update using userability API")]
 		public async Task<Response<UserAbilityResponse>> Update([FromBody] UserAbilityUpdateDto Model)
 		{
 			Response<UserAbilityResponse> Response = await Service.UpdateAsync(Model);

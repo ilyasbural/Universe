@@ -32,6 +32,10 @@
 
 		[HttpPut]
 		[Route("api/announcedetail")]
+		[Produces(typeof(Response<AnnounceDetailResponse>))]
+		[EndpointName("updateannouncedetail")]
+		[EndpointSummary("you can use for update using announcedetail API")]
+		[EndpointDescription("you can use for update using announcedetail API")]
 		public async Task<Response<AnnounceDetailResponse>> Update([FromBody] AnnounceDetailUpdateDto Model)
 		{
 			Response<AnnounceDetailResponse> Response = await Service.UpdateAsync(Model);

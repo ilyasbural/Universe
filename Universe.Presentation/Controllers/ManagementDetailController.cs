@@ -32,6 +32,10 @@
 
 		[HttpPut]
 		[Route("api/managementdetail")]
+		[Produces(typeof(Response<ManagementDetailResponse>))]
+		[EndpointName("updatemanagementdetail")]
+		[EndpointSummary("you can use for update using managementdetail API")]
+		[EndpointDescription("you can use for update using managementdetail API")]
 		public async Task<Response<ManagementDetailResponse>> Update([FromBody] ManagementDetailUpdateDto Model)
 		{
 			Response<ManagementDetailResponse> Response = await Service.UpdateAsync(Model);

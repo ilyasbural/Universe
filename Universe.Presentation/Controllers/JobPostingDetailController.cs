@@ -32,6 +32,10 @@
 
 		[HttpPut]
 		[Route("api/jobpostingdetail")]
+		[Produces(typeof(Response<JobPostingDetailResponse>))]
+		[EndpointName("updatejobpostingdetail")]
+		[EndpointSummary("you can use for update using jobpostingdetail API")]
+		[EndpointDescription("you can use for update using jobpostingdetail API")]
 		public async Task<Response<JobPostingDetailResponse>> Update([FromBody] JobPostingDetailUpdateDto Model)
 		{
 			Response<JobPostingDetailResponse> Response = await Service.UpdateAsync(Model);

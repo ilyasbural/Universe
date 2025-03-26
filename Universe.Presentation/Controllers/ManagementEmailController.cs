@@ -32,6 +32,10 @@
 
 		[HttpPut]
 		[Route("api/managementemail")]
+		[Produces(typeof(Response<ManagementEmailResponse>))]
+		[EndpointName("updatemanagementemail")]
+		[EndpointSummary("you can use for update using managementemail API")]
+		[EndpointDescription("you can use for update using managementemail API")]
 		public async Task<Response<ManagementEmailResponse>> Update([FromBody] ManagementEmailUpdateDto Model)
 		{
 			Response<ManagementEmailResponse> Response = await Service.UpdateAsync(Model);

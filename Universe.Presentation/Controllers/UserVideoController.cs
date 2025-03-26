@@ -32,6 +32,10 @@
 
 		[HttpPut]
 		[Route("api/uservideo")]
+		[Produces(typeof(Response<UserVideoResponse>))]
+		[EndpointName("updateuservideo")]
+		[EndpointSummary("you can use for update using uservideo API")]
+		[EndpointDescription("you can use for update using uservideo API")]
 		public async Task<Response<UserVideoResponse>> Update([FromBody] UserVideoUpdateDto Model)
 		{
 			Response<UserVideoResponse> Response = await Service.UpdateAsync(Model);

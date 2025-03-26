@@ -32,6 +32,10 @@
 
 		[HttpPut]
 		[Route("api/messagebox")]
+		[Produces(typeof(Response<MessageBoxResponse>))]
+		[EndpointName("updatemessagebox")]
+		[EndpointSummary("you can use for update using messagebox API")]
+		[EndpointDescription("you can use for update using messagebox API")]
 		public async Task<Response<MessageBoxResponse>> Update([FromBody] MessageBoxUpdateDto Model)
 		{
 			Response<MessageBoxResponse> Response = await Service.UpdateAsync(Model);

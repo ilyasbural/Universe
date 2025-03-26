@@ -34,8 +34,8 @@
 		[Route("api/ability")]
         [Produces(typeof(Response<AbilityResponse>))]
         [EndpointName("updateability")]
-        [EndpointSummary("you can create new ability using this API")]
-        [EndpointDescription("this is description of create a new ability")]
+        [EndpointSummary("you can use for update using ability API")]
+        [EndpointDescription("you can use for update using ability API")]
         public async Task<Response<AbilityResponse>> Update([FromBody] AbilityUpdateDto Model)
 		{
 			Response<AbilityResponse> Response = await Service.UpdateAsync(Model);

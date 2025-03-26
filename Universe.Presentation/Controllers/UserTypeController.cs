@@ -32,6 +32,10 @@
 
 		[HttpPut]
 		[Route("api/usertype")]
+		[Produces(typeof(Response<UserTypeResponse>))]
+		[EndpointName("updateusertype")]
+		[EndpointSummary("you can use for update using usertype API")]
+		[EndpointDescription("you can use for update using usertype API")]
 		public async Task<Response<UserTypeResponse>> Update([FromBody] UserTypeUpdateDto Model)
 		{
 			Response<UserTypeResponse> Response = await Service.UpdateAsync(Model);

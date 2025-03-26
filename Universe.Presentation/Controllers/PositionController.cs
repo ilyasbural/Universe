@@ -32,6 +32,10 @@
 
 		[HttpPut]
 		[Route("api/position")]
+		[Produces(typeof(Response<PositionResponse>))]
+		[EndpointName("updateposition")]
+		[EndpointSummary("you can use for update using position API")]
+		[EndpointDescription("you can use for update using position API")]
 		public async Task<Response<PositionResponse>> Update([FromBody] PositionUpdateDto Model)
 		{
 			Response<PositionResponse> Response = await Service.UpdateAsync(Model);

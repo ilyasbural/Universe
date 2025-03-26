@@ -32,6 +32,10 @@
 
 		[HttpPut]
 		[Route("api/userexperience")]
+		[Produces(typeof(Response<UserExperienceResponse>))]
+		[EndpointName("updateuserexperience")]
+		[EndpointSummary("you can use for update userexperience ability API")]
+		[EndpointDescription("you can use for update userexperience ability API")]
 		public async Task<Response<UserExperienceResponse>> Update([FromBody] UserExperienceUpdateDto Model)
 		{
 			Response<UserExperienceResponse> Response = await Service.UpdateAsync(Model);

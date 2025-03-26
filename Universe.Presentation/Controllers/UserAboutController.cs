@@ -32,6 +32,10 @@
 
 		[HttpPut]
 		[Route("api/userabout")]
+		[Produces(typeof(Response<UserAboutResponse>))]
+		[EndpointName("updateuserabout")]
+		[EndpointSummary("you can use for update using userabout API")]
+		[EndpointDescription("you can use for update using userabout API")]
 		public async Task<Response<UserAboutResponse>> Update([FromBody] UserAboutUpdateDto Model)
 		{
 			Response<UserAboutResponse> Response = await Service.UpdateAsync(Model);

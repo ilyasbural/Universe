@@ -32,6 +32,10 @@
 
 		[HttpPut]
 		[Route("api/announcelog")]
+		[Produces(typeof(Response<AnnounceLogResponse>))]
+		[EndpointName("updateannouncelog")]
+		[EndpointSummary("you can use for update using announcelog API")]
+		[EndpointDescription("you can use for update using announcelog API")]
 		public async Task<Response<AnnounceLogResponse>> Update([FromBody] AnnounceLogUpdateDto Model)
 		{
 			Response<AnnounceLogResponse> Response = await Service.UpdateAsync(Model);

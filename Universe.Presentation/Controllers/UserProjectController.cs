@@ -32,6 +32,10 @@
 
 		[HttpPut]
 		[Route("api/userproject")]
+		[Produces(typeof(Response<UserProjectResponse>))]
+		[EndpointName("updateuserproject")]
+		[EndpointSummary("you can use for update using userproject API")]
+		[EndpointDescription("you can use for update using userproject API")]
 		public async Task<Response<UserProjectResponse>> Update([FromBody] UserProjectUpdateDto Model)
 		{
 			Response<UserProjectResponse> Response = await Service.UpdateAsync(Model);

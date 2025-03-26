@@ -32,6 +32,10 @@
 
 		[HttpPut]
 		[Route("api/usercountry")]
+		[Produces(typeof(Response<UserCountryResponse>))]
+		[EndpointName("updateusercountry")]
+		[EndpointSummary("you can use for update using usercountry API")]
+		[EndpointDescription("you can use for update using usercountry API")]
 		public async Task<Response<UserCountryResponse>> Update([FromBody] UserCountryUpdateDto Model)
 		{
 			Response<UserCountryResponse> Response = await Service.UpdateAsync(Model);

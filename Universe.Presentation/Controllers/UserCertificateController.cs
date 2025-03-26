@@ -32,6 +32,10 @@
 
 		[HttpPut]
 		[Route("api/usercertificate")]
+		[Produces(typeof(Response<UserCertificateResponse>))]
+		[EndpointName("updateusercertificate")]
+		[EndpointSummary("you can use for update using usercertificate API")]
+		[EndpointDescription("you can use for update using usercertificate API")]
 		public async Task<Response<UserCertificateResponse>> Update([FromBody] UserCertificateUpdateDto Model)
 		{
 			Response<UserCertificateResponse> Response = await Service.UpdateAsync(Model);

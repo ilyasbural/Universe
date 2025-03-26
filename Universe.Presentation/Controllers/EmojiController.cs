@@ -32,6 +32,10 @@
 
 		[HttpPut]
 		[Route("api/emoji")]
+		[Produces(typeof(Response<EmojiResponse>))]
+		[EndpointName("updateemoji")]
+		[EndpointSummary("you can use for update using emoji API")]
+		[EndpointDescription("you can use for update using emoji API")]
 		public async Task<Response<EmojiResponse>> Update([FromBody] EmojiUpdateDto Model)
 		{
 			Response<EmojiResponse> Response = await Service.UpdateAsync(Model);

@@ -32,6 +32,10 @@
 
 		[HttpPut]
 		[Route("api/surveydetail")]
+		[Produces(typeof(Response<SurveyDetailResponse>))]
+		[EndpointName("updatesurveydetail")]
+		[EndpointSummary("you can use for update using surveydetail API")]
+		[EndpointDescription("you can use for update using surveydetail API")]
 		public async Task<Response<SurveyDetailResponse>> Update([FromBody] SurveyDetailUpdateDto Model)
 		{
 			Response<SurveyDetailResponse> Response = await Service.UpdateAsync(Model);

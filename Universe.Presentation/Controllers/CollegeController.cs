@@ -33,6 +33,10 @@
 
 		[HttpPut]
 		[Route("api/college")]
+		[Produces(typeof(Response<CollegeResponse>))]
+		[EndpointName("updatecollege")]
+		[EndpointSummary("you can use for update using college API")]
+		[EndpointDescription("you can use for update using college API")]
 		public async Task<Response<CollegeResponse>> Update([FromBody] CollegeUpdateDto Model)
 		{
 			Response<CollegeResponse> Response = await Service.UpdateAsync(Model);

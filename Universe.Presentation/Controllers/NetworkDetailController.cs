@@ -32,6 +32,10 @@
 
 		[HttpPut]
 		[Route("api/networkdetail")]
+		[Produces(typeof(Response<NetworkDetailResponse>))]
+		[EndpointName("updatenetworkdetail")]
+		[EndpointSummary("you can use for update using networkdetail API")]
+		[EndpointDescription("you can use for update using networkdetail API")]
 		public async Task<Response<NetworkDetailResponse>> Update([FromBody] NetworkDetailUpdateDto Model)
 		{
 			Response<NetworkDetailResponse> Response = await Service.UpdateAsync(Model);

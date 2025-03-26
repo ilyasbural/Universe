@@ -32,6 +32,10 @@
 
 		[HttpPut]
 		[Route("api/userlanguage")]
+		[Produces(typeof(Response<UserLanguageResponse>))]
+		[EndpointName("updateuserlanguage")]
+		[EndpointSummary("you can use for update using userlanguage API")]
+		[EndpointDescription("you can use for update using userlanguage API")]
 		public async Task<Response<UserLanguageResponse>> Update([FromBody] UserLanguageUpdateDto Model)
 		{
 			Response<UserLanguageResponse> Response = await Service.UpdateAsync(Model);

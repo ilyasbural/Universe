@@ -32,6 +32,10 @@
 
 		[HttpPut]
 		[Route("api/networkcomment")]
+		[Produces(typeof(Response<NetworkCommentResponse>))]
+		[EndpointName("updatenetworkcomment")]
+		[EndpointSummary("you can use for update using networkcomment API")]
+		[EndpointDescription("you can use for update using networkcomment API")]
 		public async Task<Response<NetworkCommentResponse>> Update([FromBody] NetworkCommentUpdateDto Model)
 		{
 			Response<NetworkCommentResponse> Response = await Service.UpdateAsync(Model);

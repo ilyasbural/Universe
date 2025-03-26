@@ -32,6 +32,10 @@
 
 		[HttpPut]
 		[Route("api/region")]
+		[Produces(typeof(Response<RegionResponse>))]
+		[EndpointName("updateregion")]
+		[EndpointSummary("you can use for update using region API")]
+		[EndpointDescription("you can use for update using region API")]
 		public async Task<Response<RegionResponse>> Update([FromBody] RegionUpdateDto Model)
 		{
 			Response<RegionResponse> Response = await Service.UpdateAsync(Model);
