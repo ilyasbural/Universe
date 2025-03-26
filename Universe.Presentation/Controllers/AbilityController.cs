@@ -19,7 +19,7 @@
         [Route("api/ability")]
 		[Produces(typeof(Response<AbilityResponse>))]
 		[EndpointName("ability")]
-		[EndpointSummary("this is summary of create a new ability")]
+		[EndpointSummary("you can create new ability using this API")]
 		[EndpointDescription("this is description of create a new ability")]
 		public async Task<Response<AbilityResponse>> Create([FromBody] AbilityRegisterDto Model)
 		{

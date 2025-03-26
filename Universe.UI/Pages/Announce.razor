@@ -43,6 +43,6 @@ else
     private AnnounceResponse Response;
     protected override async Task OnInitializedAsync()
     {
-        Response = await Http.GetFromJsonAsync<AnnounceResponse>("https://localhost:7255/api/announce");
+        Response = await Http.GetFromJsonAsync<AnnounceResponse>("https://localhost:7046/api/announce");
     }
 }

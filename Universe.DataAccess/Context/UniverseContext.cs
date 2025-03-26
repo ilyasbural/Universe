@@ -3,7 +3,7 @@
     using Core;
     using Microsoft.EntityFrameworkCore;
 
-    public class UniverseContext : DbContext
+	public class UniverseContext : DbContext
     {
         public virtual DbSet<Ability> Abilities { get; set; }
         public virtual DbSet<Announce> Announces { get; set; }
@@ -55,5 +55,7 @@
 
 		public UniverseContext() { }
 		public UniverseContext(DbContextOptions<UniverseContext> options) : base(options) { }
+
+		protected override void OnModelCreating(ModelBuilder modelBuilder) => modelBuilder.ApplyConfigurationsFromAssembly(typeof(AssemblyReferance).Assembly);
 	}
 }
