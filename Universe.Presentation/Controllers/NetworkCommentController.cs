@@ -73,7 +73,11 @@
 
 		[HttpGet]
 		[Route("api/networkcommentsingle")]
-		public async Task<Response<NetworkCommentResponse>> GetSingle([FromQuery] NetworkCommentSelectDto Model)
+        [Produces(typeof(Response<NetworkCommentResponse>))]
+        [EndpointName("getnetworkcommentsingle")]
+        [EndpointSummary("you can use get single data from networkcomment API")]
+        [EndpointDescription("you can use get single data from networkcomment API")]
+        public async Task<Response<NetworkCommentResponse>> GetSingle([FromQuery] NetworkCommentSelectDto Model)
 		{
 			Response<NetworkCommentResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<NetworkCommentResponse>

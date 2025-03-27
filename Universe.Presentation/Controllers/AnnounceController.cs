@@ -78,7 +78,7 @@
 		[HttpGet]
 		[Route("api/announcesingle")]
         [Produces(typeof(Response<AnnounceResponse>))]
-        //[EndpointName("getannouncesingle")]
+        [EndpointName("getannouncesingle")]
         [EndpointSummary("you can use get single data from announce API")]
         [EndpointDescription("you can use get single data from announce API")]
         public async Task<Response<AnnounceResponse>> GetSingle([FromQuery] AnnounceSelectDto Model)

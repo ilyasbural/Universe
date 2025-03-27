@@ -73,7 +73,11 @@
 
 		[HttpGet]
 		[Route("api/messageboxsingle")]
-		public async Task<Response<MessageBoxResponse>> GetSingle([FromQuery] MessageBoxSelectDto Model)
+        [Produces(typeof(Response<MessageBoxResponse>))]
+        [EndpointName("getsinglemessagebox")]
+        [EndpointSummary("you can use get data from messagebox API")]
+        [EndpointDescription("you can use get data from messagebox API")]
+        public async Task<Response<MessageBoxResponse>> GetSingle([FromQuery] MessageBoxSelectDto Model)
 		{
 			Response<MessageBoxResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<MessageBoxResponse>

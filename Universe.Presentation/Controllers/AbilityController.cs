@@ -78,9 +78,9 @@
 		[HttpGet]
 		[Route("api/abilitysingle")]
         [Produces(typeof(Response<AbilityResponse>))]
-        //[EndpointName("getabilitysingle")]
+        [EndpointName("getabilitysingle")]
         [EndpointSummary("use this for get single data using this API")]
-        [EndpointDescription("this is description of create a new ability")]
+        [EndpointDescription("use this for get single data using this API")]
         public async Task<Response<AbilityResponse>> GetSingle([FromQuery] AbilitySelectDto Model)
 		{
 			Response<AbilityResponse> Response = await Service.SelectSingleAsync(Model);

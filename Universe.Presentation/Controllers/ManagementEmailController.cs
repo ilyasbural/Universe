@@ -73,7 +73,11 @@
 
 		[HttpGet]
 		[Route("api/managementemailsingle")]
-		public async Task<Response<ManagementEmailResponse>> GetSingle([FromQuery] ManagementEmailSelectDto Model)
+        [Produces(typeof(Response<ManagementEmailResponse>))]
+        [EndpointName("getmanagementemailsingle")]
+        [EndpointSummary("you can use get single data from managementemail API")]
+        [EndpointDescription("you can use get single data from managementemail API")]
+        public async Task<Response<ManagementEmailResponse>> GetSingle([FromQuery] ManagementEmailSelectDto Model)
 		{
 			Response<ManagementEmailResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<ManagementEmailResponse>

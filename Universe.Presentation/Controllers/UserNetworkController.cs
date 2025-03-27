@@ -73,7 +73,11 @@
 
 		[HttpGet]
 		[Route("api/usernetworksingle")]
-		public async Task<Response<UserNetworkResponse>> GetSingle([FromQuery] UserNetworkSelectDto Model)
+        [Produces(typeof(Response<UserNetworkResponse>))]
+        [EndpointName("getusernetworksingle")]
+        [EndpointSummary("you can use get single data from usernetworksingle API")]
+        [EndpointDescription("you can use get single data from usernetworksingle API")]
+        public async Task<Response<UserNetworkResponse>> GetSingle([FromQuery] UserNetworkSelectDto Model)
 		{
 			Response<UserNetworkResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<UserNetworkResponse>

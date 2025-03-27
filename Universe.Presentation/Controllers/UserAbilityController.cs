@@ -73,7 +73,11 @@
 
 		[HttpGet]
 		[Route("api/userabilitysingle")]
-		public async Task<Response<UserAbilityResponse>> GetSingle([FromQuery] UserAbilitySelectDto Model)
+        [Produces(typeof(Response<UserAbilityResponse>))]
+        [EndpointName("getsingleuserability")]
+        [EndpointSummary("you can use get single data from userability API")]
+        [EndpointDescription("you can use get single data from userability API")]
+        public async Task<Response<UserAbilityResponse>> GetSingle([FromQuery] UserAbilitySelectDto Model)
 		{
 			Response<UserAbilityResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<UserAbilityResponse>

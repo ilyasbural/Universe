@@ -73,7 +73,11 @@
 
 		[HttpGet]
 		[Route("api/positionsingle")]
-		public async Task<Response<PositionResponse>> GetSingle([FromQuery] PositionSelectDto Model)
+        [Produces(typeof(Response<PositionResponse>))]
+        [EndpointName("getpositionsingle")]
+        [EndpointSummary("you can use get single data from position API")]
+        [EndpointDescription("you can use get single data from position API")]
+        public async Task<Response<PositionResponse>> GetSingle([FromQuery] PositionSelectDto Model)
 		{
 			Response<PositionResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<PositionResponse>

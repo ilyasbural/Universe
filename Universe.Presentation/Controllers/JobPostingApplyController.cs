@@ -73,7 +73,11 @@
 
 		[HttpGet]
 		[Route("api/jobpostingapplysingle")]
-		public async Task<Response<JobPostingApplyResponse>> GetSingle([FromQuery] JobPostingApplySelectDto Model)
+        [Produces(typeof(Response<JobPostingApplyResponse>))]
+        [EndpointName("getjobpostingapplysingle")]
+        [EndpointSummary("you can use get single data from jobpostingapply API")]
+        [EndpointDescription("you can use get single data from jobpostingapply API")]
+        public async Task<Response<JobPostingApplyResponse>> GetSingle([FromQuery] JobPostingApplySelectDto Model)
 		{
 			Response<JobPostingApplyResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<JobPostingApplyResponse>

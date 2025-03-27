@@ -73,7 +73,11 @@
 
 		[HttpGet]
 		[Route("api/occupationsingle")]
-		public async Task<Response<OccupationResponse>> GetSingle([FromQuery] OccupationSelectDto Model)
+        [Produces(typeof(Response<OccupationResponse>))]
+        [EndpointName("getsingleoccupation")]
+        [EndpointSummary("you can use get data from occupation API")]
+        [EndpointDescription("you can use get data from occupation API")]
+        public async Task<Response<OccupationResponse>> GetSingle([FromQuery] OccupationSelectDto Model)
 		{
 			Response<OccupationResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<OccupationResponse>

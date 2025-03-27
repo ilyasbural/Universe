@@ -73,7 +73,11 @@
 
 		[HttpGet]
 		[Route("api/announcelogsingle")]
-		public async Task<Response<AnnounceLogResponse>> GetSingle([FromQuery] AnnounceLogSelectDto Model)
+        [Produces(typeof(Response<AnnounceResponse>))]
+        [EndpointName("getannouncelogsingle")]
+        [EndpointSummary("you can use get single data from announcelogsingle API")]
+        [EndpointDescription("you can use get single data from announcelogsingle API")]
+        public async Task<Response<AnnounceLogResponse>> GetSingle([FromQuery] AnnounceLogSelectDto Model)
 		{
 			Response<AnnounceLogResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<AnnounceLogResponse>

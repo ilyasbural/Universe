@@ -73,7 +73,11 @@
 
 		[HttpGet]
 		[Route("api/surveydetailsingle")]
-		public async Task<Response<SurveyDetailResponse>> GetSingle([FromQuery] SurveyDetailSelectDto Model)
+        [Produces(typeof(Response<SurveyDetailResponse>))]
+        [EndpointName("getsurveydetailsingle")]
+        [EndpointSummary("you can use get single data from surveydetailsingle API")]
+        [EndpointDescription("you can use get single data from surveydetailsingle API")]
+        public async Task<Response<SurveyDetailResponse>> GetSingle([FromQuery] SurveyDetailSelectDto Model)
 		{
 			Response<SurveyDetailResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<SurveyDetailResponse>

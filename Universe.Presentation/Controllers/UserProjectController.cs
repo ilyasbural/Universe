@@ -73,7 +73,11 @@
 
 		[HttpGet]
 		[Route("api/userprojectsingle")]
-		public async Task<Response<UserProjectResponse>> GetSingle([FromQuery] UserProjectSelectDto Model)
+        [Produces(typeof(Response<UserProjectResponse>))]
+        [EndpointName("getuserprojectsingle")]
+        [EndpointSummary("you can use get single data from userproject API")]
+        [EndpointDescription("you can use get single data from userproject API")]
+        public async Task<Response<UserProjectResponse>> GetSingle([FromQuery] UserProjectSelectDto Model)
 		{
 			Response<UserProjectResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<UserProjectResponse>

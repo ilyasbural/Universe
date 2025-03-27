@@ -73,7 +73,11 @@
 
 		[HttpGet]
 		[Route("api/regionsingle")]
-		public async Task<Response<RegionResponse>> GetSingle([FromQuery] RegionSelectDto Model)
+        [Produces(typeof(Response<RegionResponse>))]
+        [EndpointName("getregionsingle")]
+        [EndpointSummary("you can use get single data from region API")]
+        [EndpointDescription("you can use get single data from region API")]
+        public async Task<Response<RegionResponse>> GetSingle([FromQuery] RegionSelectDto Model)
 		{
 			Response<RegionResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<RegionResponse>

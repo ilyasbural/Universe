@@ -73,7 +73,11 @@
 
 		[HttpGet]
 		[Route("api/userfollowersingle")]
-		public async Task<Response<UserFollowerResponse>> GetSingle([FromQuery] UserFollowerSelectDto Model)
+        [Produces(typeof(Response<UserFollowerResponse>))]
+        [EndpointName("getuserfollowersingle")]
+        [EndpointSummary("you can use get single data from userfollowersingle API")]
+        [EndpointDescription("you can use get single data from userfollowersingle API")]
+        public async Task<Response<UserFollowerResponse>> GetSingle([FromQuery] UserFollowerSelectDto Model)
 		{
 			Response<UserFollowerResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<UserFollowerResponse>

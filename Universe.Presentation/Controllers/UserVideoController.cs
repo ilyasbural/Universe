@@ -73,7 +73,11 @@
 
 		[HttpGet]
 		[Route("api/uservideosingle")]
-		public async Task<Response<UserVideoResponse>> GetSingle([FromQuery] UserVideoSelectDto Model)
+        [Produces(typeof(Response<UserVideoResponse>))]
+        [EndpointName("getuservideosingle")]
+        [EndpointSummary("you can use get single data from uservideosingle API")]
+        [EndpointDescription("you can use get single data from uservideosingle API")]
+        public async Task<Response<UserVideoResponse>> GetSingle([FromQuery] UserVideoSelectDto Model)
 		{
 			Response<UserVideoResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<UserVideoResponse>

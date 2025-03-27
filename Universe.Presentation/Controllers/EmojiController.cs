@@ -73,7 +73,11 @@
 
 		[HttpGet]
 		[Route("api/emojisingle")]
-		public async Task<Response<EmojiResponse>> GetSingle([FromQuery] EmojiSelectDto Model)
+        [Produces(typeof(Response<EmojiResponse>))]
+        [EndpointName("getsingleemoji")]
+        [EndpointSummary("you can use get single data from emoji API")]
+        [EndpointDescription("you can use get single data from emoji API")]
+        public async Task<Response<EmojiResponse>> GetSingle([FromQuery] EmojiSelectDto Model)
 		{
 			Response<EmojiResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<EmojiResponse>

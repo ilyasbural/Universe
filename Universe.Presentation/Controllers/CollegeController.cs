@@ -74,7 +74,11 @@
 
 		[HttpGet]
 		[Route("api/collegesingle")]
-		public async Task<Response<CollegeResponse>> GetSingle([FromQuery] CollegeSelectDto Model)
+        [Produces(typeof(Response<CollegeResponse>))]
+        [EndpointName("getcollegesingle")]
+        [EndpointSummary("you can use get single data from collegesingle API")]
+        [EndpointDescription("you can use get single data from collegesingle API")]
+        public async Task<Response<CollegeResponse>> GetSingle([FromQuery] CollegeSelectDto Model)
 		{
 			Response<CollegeResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<CollegeResponse>

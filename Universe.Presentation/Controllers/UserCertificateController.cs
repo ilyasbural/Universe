@@ -73,7 +73,11 @@
 
 		[HttpGet]
 		[Route("api/usercertificatesingle")]
-		public async Task<Response<UserCertificateResponse>> GetSingle([FromQuery] UserCertificateSelectDto Model)
+        [Produces(typeof(Response<UserCertificateResponse>))]
+        [EndpointName("getusercertificatesingle")]
+        [EndpointSummary("you can use get single data from usercertificate API")]
+        [EndpointDescription("you can use get single data from usercertificate API")]
+        public async Task<Response<UserCertificateResponse>> GetSingle([FromQuery] UserCertificateSelectDto Model)
 		{
 			Response<UserCertificateResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<UserCertificateResponse>

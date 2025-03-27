@@ -73,6 +73,10 @@
 
 		[HttpGet]
 		[Route("api/companysingle")]
+		[Produces(typeof(Response<CompanyResponse>))]
+        [EndpointName("getcompanysingle")]
+        [EndpointSummary("you can use get single data from companysingle API")]
+        [EndpointDescription("you can use get single data from companysingle API")]
 		public async Task<Response<CompanyResponse>> GetSingle([FromQuery] CompanySelectDto Model)
 		{
 			Response<CompanyResponse> Response = await Service.SelectSingleAsync(Model);

@@ -73,7 +73,11 @@
 
 		[HttpGet]
 		[Route("api/managementcontactsingle")]
-		public async Task<Response<ManagementContactResponse>> GetSingle([FromQuery] ManagementContactSelectDto Model)
+        [Produces(typeof(Response<ManagementContactResponse>))]
+        [EndpointName("getmanagementcontactsingle")]
+        [EndpointSummary("you can use get single data from managementcontactsingle API")]
+        [EndpointDescription("you can use get single data from managementcontactsingle API")]
+        public async Task<Response<ManagementContactResponse>> GetSingle([FromQuery] ManagementContactSelectDto Model)
 		{
 			Response<ManagementContactResponse> Response = await Service.SelectSingleAsync(Model);
 			return new Response<ManagementContactResponse>
