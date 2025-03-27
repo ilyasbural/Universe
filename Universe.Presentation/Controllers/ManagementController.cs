@@ -47,7 +47,11 @@
 
 		[HttpDelete]
 		[Route("api/management")]
-		public async Task<Response<ManagementResponse>> Delete([FromBody] ManagementDeleteDto Model)
+        [Produces(typeof(Response<ManagementResponse>))]
+        [EndpointName("deletemanagement")]
+        [EndpointSummary("you can delete management using this API")]
+        [EndpointDescription("you can delete management using this API")]
+        public async Task<Response<ManagementResponse>> Delete([FromBody] ManagementDeleteDto Model)
 		{
 			Response<ManagementResponse> Response = await Service.DeleteAsync(Model);
 			return new Response<ManagementResponse>

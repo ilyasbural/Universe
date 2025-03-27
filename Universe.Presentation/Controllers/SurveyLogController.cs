@@ -47,7 +47,11 @@
 
 		[HttpDelete]
 		[Route("api/surveylog")]
-		public async Task<Response<SurveyLogResponse>> Delete([FromBody] SurveyLogDeleteDto Model)
+        [Produces(typeof(Response<SurveyLogResponse>))]
+        [EndpointName("deletesurveylog")]
+        [EndpointSummary("you can delete surveylog using this API")]
+        [EndpointDescription("you can delete surveylog using this API")]
+        public async Task<Response<SurveyLogResponse>> Delete([FromBody] SurveyLogDeleteDto Model)
 		{
 			Response<SurveyLogResponse> Response = await Service.DeleteAsync(Model);
 			return new Response<SurveyLogResponse>

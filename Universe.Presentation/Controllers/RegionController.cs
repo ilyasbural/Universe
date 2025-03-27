@@ -47,7 +47,11 @@
 
 		[HttpDelete]
 		[Route("api/region")]
-		public async Task<Response<RegionResponse>> Delete([FromBody] RegionDeleteDto Model)
+        [Produces(typeof(Response<RegionResponse>))]
+        [EndpointName("deleteregion")]
+        [EndpointSummary("you can delete region using this API")]
+        [EndpointDescription("you can delete region using this API")]
+        public async Task<Response<RegionResponse>> Delete([FromBody] RegionDeleteDto Model)
 		{
 			Response<RegionResponse> Response = await Service.DeleteAsync(Model);
 			return new Response<RegionResponse>

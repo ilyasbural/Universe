@@ -47,7 +47,11 @@
 
 		[HttpDelete]
 		[Route("api/userability")]
-		public async Task<Response<UserAbilityResponse>> Delete([FromBody] UserAbilityDeleteDto Model)
+        [Produces(typeof(Response<UserAbilityResponse>))]
+        [EndpointName("deleteuserability")]
+        [EndpointSummary("you can delete userability using this API")]
+        [EndpointDescription("you can delete userability using this API")]
+        public async Task<Response<UserAbilityResponse>> Delete([FromBody] UserAbilityDeleteDto Model)
 		{
 			Response<UserAbilityResponse> Response = await Service.DeleteAsync(Model);
 			return new Response<UserAbilityResponse>

@@ -47,7 +47,11 @@
 
 		[HttpDelete]
 		[Route("api/usercertificate")]
-		public async Task<Response<UserCertificateResponse>> Delete([FromBody] UserCertificateDeleteDto Model)
+        [Produces(typeof(Response<UserCertificateResponse>))]
+        [EndpointName("deleteusercertificate")]
+        [EndpointSummary("you can delete usercertificate using this API")]
+        [EndpointDescription("you can delete usercertificate using this API")]
+        public async Task<Response<UserCertificateResponse>> Delete([FromBody] UserCertificateDeleteDto Model)
 		{
 			Response<UserCertificateResponse> Response = await Service.DeleteAsync(Model);
 			return new Response<UserCertificateResponse>

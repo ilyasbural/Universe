@@ -48,9 +48,9 @@
 		[HttpDelete]
 		[Route("api/ability")]
         [Produces(typeof(Response<AbilityResponse>))]
-        //[EndpointName("deleteability")]
-        [EndpointSummary("you can delete using ability API")]
-        [EndpointDescription("you can delete using ability API")]
+        [EndpointName("deleteability")]
+        [EndpointSummary("you can delete ability using this API")]
+        [EndpointDescription("you can delete ability using this API")]
         public async Task<Response<AbilityResponse>> Delete([FromBody] AbilityDeleteDto Model)
 		{
 			Response<AbilityResponse> Response = await Service.DeleteAsync(Model);

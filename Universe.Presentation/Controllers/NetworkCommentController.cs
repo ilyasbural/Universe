@@ -47,7 +47,11 @@
 
 		[HttpDelete]
 		[Route("api/networkcomment")]
-		public async Task<Response<NetworkCommentResponse>> Delete([FromBody] NetworkCommentDeleteDto Model)
+        [Produces(typeof(Response<NetworkCommentResponse>))]
+        [EndpointName("deletenetworkcomment")]
+        [EndpointSummary("you can delete networkcomment using this API")]
+        [EndpointDescription("you can delete networkcomment using this API")]
+        public async Task<Response<NetworkCommentResponse>> Delete([FromBody] NetworkCommentDeleteDto Model)
 		{
 			Response<NetworkCommentResponse> Response = await Service.DeleteAsync(Model);
 			return new Response<NetworkCommentResponse>

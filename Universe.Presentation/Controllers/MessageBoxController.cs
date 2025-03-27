@@ -47,7 +47,11 @@
 
 		[HttpDelete]
 		[Route("api/messagebox")]
-		public async Task<Response<MessageBoxResponse>> Delete([FromBody] MessageBoxDeleteDto Model)
+        [Produces(typeof(Response<MessageBoxResponse>))]
+        [EndpointName("deletemessagebox")]
+        [EndpointSummary("you can delete messagebox using this API")]
+        [EndpointDescription("you can delete messagebox using this API")]
+        public async Task<Response<MessageBoxResponse>> Delete([FromBody] MessageBoxDeleteDto Model)
 		{
 			Response<MessageBoxResponse> Response = await Service.DeleteAsync(Model);
 			return new Response<MessageBoxResponse>

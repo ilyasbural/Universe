@@ -47,7 +47,11 @@
 
 		[HttpDelete]
 		[Route("api/user")]
-		public async Task<Response<UserResponse>> Delete([FromBody] UserDeleteDto Model)
+        [Produces(typeof(Response<UserResponse>))]
+        [EndpointName("deleteuser")]
+        [EndpointSummary("you can delete user using this API")]
+        [EndpointDescription("you can delete user using this API")]
+        public async Task<Response<UserResponse>> Delete([FromBody] UserDeleteDto Model)
 		{
 			Response<UserResponse> Response = await Service.DeleteAsync(Model);
 			return new Response<UserResponse>

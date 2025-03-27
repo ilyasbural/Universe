@@ -47,7 +47,11 @@
 
 		[HttpDelete]
 		[Route("api/userlanguage")]
-		public async Task<Response<UserLanguageResponse>> Delete([FromBody] UserLanguageDeleteDto Model)
+        [Produces(typeof(Response<UserLanguageResponse>))]
+        [EndpointName("deleteuserlanguage")]
+        [EndpointSummary("you can delete userlanguage using this API")]
+        [EndpointDescription("you can delete userlanguage using this API")]
+        public async Task<Response<UserLanguageResponse>> Delete([FromBody] UserLanguageDeleteDto Model)
 		{
 			Response<UserLanguageResponse> Response = await Service.DeleteAsync(Model);
 			return new Response<UserLanguageResponse>

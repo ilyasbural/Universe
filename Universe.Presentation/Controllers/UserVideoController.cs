@@ -47,7 +47,11 @@
 
 		[HttpDelete]
 		[Route("api/uservideo")]
-		public async Task<Response<UserVideoResponse>> Delete([FromBody] UserVideoDeleteDto Model)
+        [Produces(typeof(Response<UserVideoResponse>))]
+        [EndpointName("deleteuservideo")]
+        [EndpointSummary("you can delete uservideo using this API")]
+        [EndpointDescription("you can delete uservideo using this API")]
+        public async Task<Response<UserVideoResponse>> Delete([FromBody] UserVideoDeleteDto Model)
 		{
 			Response<UserVideoResponse> Response = await Service.DeleteAsync(Model);
 			return new Response<UserVideoResponse>

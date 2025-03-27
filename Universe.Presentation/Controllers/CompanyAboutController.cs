@@ -47,7 +47,11 @@
 
 		[HttpDelete]
 		[Route("api/companyabout")]
-		public async Task<Response<CompanyAboutResponse>> Delete([FromBody] CompanyAboutDeleteDto Model)
+        [Produces(typeof(Response<CompanyAboutResponse>))]
+        [EndpointName("deletecompanyabout")]
+        [EndpointSummary("you can delete companyabout using this API")]
+        [EndpointDescription("you can delete companyabout using this API")]
+        public async Task<Response<CompanyAboutResponse>> Delete([FromBody] CompanyAboutDeleteDto Model)
 		{
 			Response<CompanyAboutResponse> Response = await Service.DeleteAsync(Model);
 			return new Response<CompanyAboutResponse>

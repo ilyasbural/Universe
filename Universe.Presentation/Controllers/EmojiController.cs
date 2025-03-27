@@ -47,7 +47,11 @@
 
 		[HttpDelete]
 		[Route("api/emoji")]
-		public async Task<Response<EmojiResponse>> Delete([FromBody] EmojiDeleteDto Model)
+        [Produces(typeof(Response<EmojiResponse>))]
+        [EndpointName("deleteemoji")]
+        [EndpointSummary("you can delete emoji using this API")]
+        [EndpointDescription("you can delete emoji using this API")]
+        public async Task<Response<EmojiResponse>> Delete([FromBody] EmojiDeleteDto Model)
 		{
 			Response<EmojiResponse> Response = await Service.DeleteAsync(Model);
 			return new Response<EmojiResponse>
