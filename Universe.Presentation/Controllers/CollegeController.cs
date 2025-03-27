@@ -60,7 +60,7 @@
 		[HttpGet]
 		[Route("api/college")]
         [Produces(typeof(Response<CollegeResponse>))]
-        //[EndpointName("getcollege")]
+        [EndpointName("getcollege")]
         [EndpointSummary("you can use get data from college API")]
         [EndpointDescription("you can use get data from college API")]
         public async Task<Response<CollegeResponse>> Get([FromQuery] CollegeSelectDto Model)

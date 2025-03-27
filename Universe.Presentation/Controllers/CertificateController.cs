@@ -59,7 +59,7 @@
 		[HttpGet]
 		[Route("api/certificate")]
         [Produces(typeof(Response<CertificateResponse>))]
-        //[EndpointName("getcertificate")]
+        [EndpointName("getcertificate")]
         [EndpointSummary("you can use get data from certificate API")]
         [EndpointDescription("you can use get data from certificate API")]
         public async Task<Response<CertificateResponse>> Get([FromQuery] CertificateSelectDto Model)

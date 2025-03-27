@@ -63,7 +63,7 @@
 		[HttpGet]
 		[Route("api/ability")]
         [Produces(typeof(Response<AbilityResponse>))]
-        //[EndpointName("getability")]
+        [EndpointName("getability")]
         [EndpointSummary("you can use get data from ability API")]
         [EndpointDescription("you can use get data from ability API")]
         public async Task<Response<AbilityResponse>> Get([FromQuery] AbilitySelectDto Model)

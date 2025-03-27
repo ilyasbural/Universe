@@ -59,7 +59,7 @@
 		[HttpGet]
 		[Route("api/company")]
         [Produces(typeof(Response<CompanyResponse>))]
-        //[EndpointName("getcompany")]
+        [EndpointName("getcompany")]
         [EndpointSummary("you can use get data from company API")]
         [EndpointDescription("you can use get data from company API")]
         public async Task<Response<CompanyResponse>> Get([FromQuery] CompanySelectDto Model)

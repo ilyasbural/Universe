@@ -59,7 +59,7 @@
 		[HttpGet]
 		[Route("api/companyfollower")]
         [Produces(typeof(Response<CompanyFollowerResponse>))]
-        //[EndpointName("getcompanyfollower")]
+        [EndpointName("getcompanyfollower")]
         [EndpointSummary("you can use get data from companyfollower API")]
         [EndpointDescription("you can use get data from companyfollower API")]
         public async Task<Response<CompanyFollowerResponse>> Get([FromQuery] CompanyFollowerSelectDto Model)

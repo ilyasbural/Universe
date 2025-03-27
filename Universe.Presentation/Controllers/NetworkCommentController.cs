@@ -59,7 +59,7 @@
 		[HttpGet]
 		[Route("api/networkcomment")]
         [Produces(typeof(Response<NetworkCommentResponse>))]
-        [EndpointName("getemoji")]
+        [EndpointName("getnetworkcomment")]
         [EndpointSummary("you can use get data from networkcomment API")]
         [EndpointDescription("you can use get data from networkcomment API")]
         public async Task<Response<NetworkCommentResponse>> Get([FromQuery] NetworkCommentSelectDto Model)

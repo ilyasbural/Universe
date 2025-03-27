@@ -59,7 +59,7 @@
 		[HttpGet]
 		[Route("api/announcelog")]
         [Produces(typeof(Response<AnnounceLogResponse>))]
-        //[EndpointName("getannouncelog")]
+        [EndpointName("getannouncelog")]
         [EndpointSummary("you can use get data from announcelog API")]
         [EndpointDescription("you can use get data from announcelog API")]
         public async Task<Response<AnnounceLogResponse>> Get([FromQuery] AnnounceLogSelectDto Model)
