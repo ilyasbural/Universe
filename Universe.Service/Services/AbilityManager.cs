@@ -28,12 +28,11 @@
 
             Validator.ValidateAndThrow<Ability>(Data);
             await UnitOfWork.Ability.InsertAsync(Data);
-            await UnitOfWork.SaveChangesAsync();
+            Complete = await UnitOfWork.SaveChangesAsync();
 
             return new Response<AbilityResponse>
             {
-                Message = "Success",
-                IsValidationError = false
+                Success = Complete
             };
         }
 
@@ -46,13 +45,12 @@
             Validator.ValidateAndThrow(Data);
 
             await UnitOfWork.Ability.UpdateAsync(Data);
-            int Saved = await UnitOfWork.SaveChangesAsync();
+            Complete = await UnitOfWork.SaveChangesAsync();
 
             return new Response<AbilityResponse>
             {
                 ResponseData = Mapper.Map<AbilityResponse>(Data),
-                IsValidationError = false,
-                Success = Saved,
+                Success = Complete
             };
         }
 
@@ -62,13 +60,11 @@
             Data = Mapper.Map<Ability>(Collection[0]);
 
             await UnitOfWork.Ability.DeleteAsync(Data);
-            await UnitOfWork.SaveChangesAsync();
+            Complete = await UnitOfWork.SaveChangesAsync();
 
             return new Response<AbilityResponse>
             {
-                Message = "Success",
-                Success = 1,
-                IsValidationError = false
+                Success = Complete
             };
         }
 

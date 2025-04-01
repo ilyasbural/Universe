@@ -2,7 +2,7 @@
 {
     public class CompanyFollowerRegisterDto
     {
-
+        public Guid UserId { get; set; }
     }
 
     public class CompanyFollowerUpdateDto
