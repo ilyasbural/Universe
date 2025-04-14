@@ -1,6 +1,6 @@
-using Microsoft.EntityFrameworkCore;
-using Universe.DataAccess;
 using Universe.Service;
+using Universe.DataAccess;
+using Microsoft.EntityFrameworkCore;
 
 WebApplicationBuilder Builder = WebApplication.CreateBuilder(args);
 IConfiguration Configuration = Builder.Configuration;
