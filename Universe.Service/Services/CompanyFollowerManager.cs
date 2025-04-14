@@ -20,20 +20,21 @@
 
         public async Task<Response<CompanyFollowerResponse>> InsertAsync(CompanyFollowerRegisterDto Model)
         {
+            List<User> User = await UnitOfWork.User.SelectAsync(x => x.Id == Model.UserId);
             Data = Mapper.Map<CompanyFollower>(Model);
             Data.Id = Guid.NewGuid();
+            Data.User = User.FirstOrDefault()!;
             Data.RegisterDate = DateTime.Now;
             Data.UpdateDate = DateTime.Now;
             Data.IsActive = true;
 
             Validator.ValidateAndThrow<CompanyFollower>(Data);
             await UnitOfWork.CompanyFollower.InsertAsync(Data);
-            await UnitOfWork.SaveChangesAsync();
+            Complete = await UnitOfWork.SaveChangesAsync();
 
             return new Response<CompanyFollowerResponse>
             {
-                Message = "Success",
-                IsValidationError = false
+                Success = Complete
             };
         }
 
