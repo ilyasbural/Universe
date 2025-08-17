@@ -1,6 +1,7 @@
-using Universe.Service;
-using Universe.DataAccess;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Universe.DataAccess;
+using Universe.Service;
 
 WebApplicationBuilder Builder = WebApplication.CreateBuilder(args);
 IConfiguration Configuration = Builder.Configuration;
@@ -10,7 +11,7 @@ Builder.Services.AddEndpointsApiExplorer();
 Builder.Services.AddOpenApi();
 Builder.Services.AddSwaggerGen();
 Builder.Services.LoadServices();
-Builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+//Builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 Builder.Services.AddCors(options => options.AddDefaultPolicy(builder => { builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod(); }));
 Builder.Services.AddDbContext<UniverseContext>(x => x.UseSqlServer(Configuration.GetConnectionString("SqlServer")!));
 

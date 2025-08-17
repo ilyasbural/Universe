@@ -1,7 +1,7 @@
 ﻿namespace Universe.Presentation
 {
-    public static class AssemblyReferance
-    {
-        public static readonly System.Reflection.Assembly Assembly = typeof(AssemblyReferance).Assembly;
-    }
+	public static class AssemblyReferance
+	{
+		public static readonly System.Reflection.Assembly Assembly = typeof(AssemblyReferance).Assembly;
+	}
 }
