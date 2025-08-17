@@ -3,7 +3,6 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
-	using Microsoft.AspNetCore.Http;
 	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
@@ -18,9 +17,6 @@
         [HttpPost]
         [Route("api/usersettings")]
         [Produces(typeof(Response<UserSettingsResponse>))]
-		[EndpointName("usersettings")]
-		[EndpointSummary("this is summary of create a new usersettings")]
-		[EndpointDescription("this is description of create a new usersettings")]
 		public async Task<Response<UserSettingsResponse>> Create([FromBody] UserSettingsRegisterDto Model)
 		{
 			Response<UserSettingsResponse> Response = await Service.InsertAsync(Model);
@@ -33,9 +29,6 @@
 		[HttpPut]
 		[Route("api/usersettings")]
 		[Produces(typeof(Response<UserSettingsResponse>))]
-		[EndpointName("updateusersettings")]
-		[EndpointSummary("you can use for update using usersettings API")]
-		[EndpointDescription("you can use for update using usersettings API")]
 		public async Task<Response<UserSettingsResponse>> Update([FromBody] UserSettingsUpdateDto Model)
 		{
 			Response<UserSettingsResponse> Response = await Service.UpdateAsync(Model);
@@ -48,9 +41,6 @@
 		[HttpDelete]
 		[Route("api/usersettings")]
         [Produces(typeof(Response<UserSettingsResponse>))]
-        [EndpointName("deleteusersettings")]
-        [EndpointSummary("you can delete usersettings using this API")]
-        [EndpointDescription("you can delete usersettings using this API")]
         public async Task<Response<UserSettingsResponse>> Delete([FromBody] UserSettingsDeleteDto Model)
 		{
 			Response<UserSettingsResponse> Response = await Service.DeleteAsync(Model);
@@ -63,9 +53,6 @@
 		[HttpGet]
 		[Route("api/usersettings")]
         [Produces(typeof(Response<UserSettingsResponse>))]
-        [EndpointName("getusersettings")]
-        [EndpointSummary("you can use get data from usersettings API")]
-        [EndpointDescription("you can use get data from usersettings API")]
         public async Task<Response<UserSettingsResponse>> Get([FromQuery] UserSettingsSelectDto Model)
 		{
 			Response<UserSettingsResponse> Response = await Service.SelectAsync(Model);
@@ -78,9 +65,6 @@
 		[HttpGet]
 		[Route("api/usersettingssingle")]
         [Produces(typeof(Response<UserSettingsResponse>))]
-        [EndpointName("getusersettingssingle")]
-        [EndpointSummary("you can use get single data from usersettings API")]
-        [EndpointDescription("you can use get single data from usersettings API")]
         public async Task<Response<UserSettingsResponse>> GetSingle([FromQuery] UserSettingsSelectDto Model)
 		{
 			Response<UserSettingsResponse> Response = await Service.SelectSingleAsync(Model);

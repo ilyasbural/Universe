@@ -3,7 +3,6 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
-	using Microsoft.AspNetCore.Http;
 	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
@@ -18,9 +17,6 @@
         [HttpPost]
         [Route("api/companyfollower")]
 		[Produces(typeof(Response<CompanyFollowerResponse>))]
-		[EndpointName("createcompanyfollower")]
-		[EndpointSummary("this is summary of create a new companyfollower")]
-		[EndpointDescription("this is description of create a new companyfollower")]
 		public async Task<Response<CompanyFollowerResponse>> Create([FromBody] CompanyFollowerRegisterDto Model)
 		{
 			Response<CompanyFollowerResponse> Response = await Service.InsertAsync(Model);
@@ -33,9 +29,6 @@
 		[HttpPut]
 		[Route("api/companyfollower")]
 		[Produces(typeof(Response<CompanyFollowerResponse>))]
-		[EndpointName("updatecompanyfollower")]
-		[EndpointSummary("you can use for update using companyfollower API")]
-		[EndpointDescription("you can use for update using companyfollower API")]
 		public async Task<Response<CompanyFollowerResponse>> Update([FromBody] CompanyFollowerUpdateDto Model)
 		{
 			Response<CompanyFollowerResponse> Response = await Service.UpdateAsync(Model);
@@ -48,9 +41,6 @@
 		[HttpDelete]
 		[Route("api/companyfollower")]
         [Produces(typeof(Response<CompanyFollowerResponse>))]
-        [EndpointName("deletecompanyfollower")]
-        [EndpointSummary("you can delete companyfollower using this API")]
-        [EndpointDescription("you can delete companyfollower using this API")]
         public async Task<Response<CompanyFollowerResponse>> Delete([FromBody] CompanyFollowerDeleteDto Model)
 		{
 			Response<CompanyFollowerResponse> Response = await Service.DeleteAsync(Model);
@@ -63,9 +53,6 @@
 		[HttpGet]
 		[Route("api/companyfollower")]
         [Produces(typeof(Response<CompanyFollowerResponse>))]
-        [EndpointName("getcompanyfollower")]
-        [EndpointSummary("you can use get data from companyfollower API")]
-        [EndpointDescription("you can use get data from companyfollower API")]
         public async Task<Response<CompanyFollowerResponse>> Get([FromQuery] CompanyFollowerSelectDto Model)
 		{
 			Response<CompanyFollowerResponse> Response = await Service.SelectAsync(Model);
@@ -78,9 +65,6 @@
 		[HttpGet]
 		[Route("api/companyfollowersingle")]
         [Produces(typeof(Response<CompanyFollowerResponse>))]
-        [EndpointName("getcompanyfollowersingle")]
-        [EndpointSummary("you can use get single data from companyfollowersingle API")]
-        [EndpointDescription("you can use get single data from companyfollowersingle API")]
         public async Task<Response<CompanyFollowerResponse>> GetSingle([FromQuery] CompanyFollowerSelectDto Model)
 		{
 			Response<CompanyFollowerResponse> Response = await Service.SelectSingleAsync(Model);

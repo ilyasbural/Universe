@@ -3,7 +3,6 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
-	using Microsoft.AspNetCore.Http;
 	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
@@ -18,9 +17,6 @@
         [HttpPost]
         [Route("api/survey")]
         [Produces(typeof(Response<SurveyResponse>))]
-		[EndpointName("survey")]
-		[EndpointSummary("this is summary of create a new survey")]
-		[EndpointDescription("this is description of create a new survey")]
 		public async Task<Response<SurveyResponse>> Create([FromBody] SurveyRegisterDto Model)
 		{
 			Response<SurveyResponse> Response = await Service.InsertAsync(Model);
@@ -33,9 +29,6 @@
 		[HttpPut]
 		[Route("api/survey")]
 		[Produces(typeof(Response<SurveyResponse>))]
-		[EndpointName("updatesurvey")]
-		[EndpointSummary("you can use for update using survey API")]
-		[EndpointDescription("you can use for update using survey API")]
 		public async Task<Response<SurveyResponse>> Update([FromBody] SurveyUpdateDto Model)
 		{
 			Response<SurveyResponse> Response = await Service.UpdateAsync(Model);
@@ -48,9 +41,6 @@
 		[HttpDelete]
 		[Route("api/survey")]
         [Produces(typeof(Response<SurveyResponse>))]
-        [EndpointName("deletesurvey")]
-        [EndpointSummary("you can delete survey using this API")]
-        [EndpointDescription("you can delete survey using this API")]
         public async Task<Response<SurveyResponse>> Delete([FromBody] SurveyDeleteDto Model)
 		{
 			Response<SurveyResponse> Response = await Service.DeleteAsync(Model);
@@ -63,9 +53,6 @@
 		[HttpGet]
 		[Route("api/survey")]
         [Produces(typeof(Response<SurveyResponse>))]
-        [EndpointName("getsurvey")]
-        [EndpointSummary("you can use get data from survey API")]
-        [EndpointDescription("you can use get data from survey API")]
         public async Task<Response<SurveyResponse>> Get([FromQuery] SurveySelectDto Model)
 		{
 			Response<SurveyResponse> Response = await Service.SelectAsync(Model);
@@ -78,9 +65,6 @@
 		[HttpGet]
 		[Route("api/surveysingle")]
         [Produces(typeof(Response<SurveyResponse>))]
-        [EndpointName("getsinglesurvey")]
-        [EndpointSummary("you can use get data from survey API")]
-        [EndpointDescription("you can use get data from survey API")]
         public async Task<Response<SurveyResponse>> GetSingle([FromQuery] SurveySelectDto Model)
 		{
 			Response<SurveyResponse> Response = await Service.SelectSingleAsync(Model);

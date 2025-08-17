@@ -3,7 +3,6 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
-	using Microsoft.AspNetCore.Http;
 	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
@@ -18,9 +17,6 @@
 		[HttpPost]
         [Route("api/networkcomment")]
         [Produces(typeof(Response<NetworkCommentResponse>))]
-		[EndpointName("networkcomment")]
-		[EndpointSummary("this is summary of create a new networkcomment")]
-		[EndpointDescription("this is description of create a new networkcomment")]
 		public async Task<Response<NetworkCommentResponse>> Create([FromBody] NetworkCommentRegisterDto Model)
 		{
 			Response<NetworkCommentResponse> Response = await Service.InsertAsync(Model);
@@ -33,9 +29,6 @@
 		[HttpPut]
 		[Route("api/networkcomment")]
 		[Produces(typeof(Response<NetworkCommentResponse>))]
-		[EndpointName("updatenetworkcomment")]
-		[EndpointSummary("you can use for update using networkcomment API")]
-		[EndpointDescription("you can use for update using networkcomment API")]
 		public async Task<Response<NetworkCommentResponse>> Update([FromBody] NetworkCommentUpdateDto Model)
 		{
 			Response<NetworkCommentResponse> Response = await Service.UpdateAsync(Model);
@@ -48,9 +41,6 @@
 		[HttpDelete]
 		[Route("api/networkcomment")]
         [Produces(typeof(Response<NetworkCommentResponse>))]
-        [EndpointName("deletenetworkcomment")]
-        [EndpointSummary("you can delete networkcomment using this API")]
-        [EndpointDescription("you can delete networkcomment using this API")]
         public async Task<Response<NetworkCommentResponse>> Delete([FromBody] NetworkCommentDeleteDto Model)
 		{
 			Response<NetworkCommentResponse> Response = await Service.DeleteAsync(Model);
@@ -63,9 +53,6 @@
 		[HttpGet]
 		[Route("api/networkcomment")]
         [Produces(typeof(Response<NetworkCommentResponse>))]
-        [EndpointName("getnetworkcomment")]
-        [EndpointSummary("you can use get data from networkcomment API")]
-        [EndpointDescription("you can use get data from networkcomment API")]
         public async Task<Response<NetworkCommentResponse>> Get([FromQuery] NetworkCommentSelectDto Model)
 		{
 			Response<NetworkCommentResponse> Response = await Service.SelectAsync(Model);
@@ -78,9 +65,6 @@
 		[HttpGet]
 		[Route("api/networkcommentsingle")]
         [Produces(typeof(Response<NetworkCommentResponse>))]
-        [EndpointName("getnetworkcommentsingle")]
-        [EndpointSummary("you can use get single data from networkcomment API")]
-        [EndpointDescription("you can use get single data from networkcomment API")]
         public async Task<Response<NetworkCommentResponse>> GetSingle([FromQuery] NetworkCommentSelectDto Model)
 		{
 			Response<NetworkCommentResponse> Response = await Service.SelectSingleAsync(Model);

@@ -3,7 +3,6 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
-	using Microsoft.AspNetCore.Http;
 	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
@@ -18,9 +17,6 @@
 		[HttpPost]
         [Route("api/usernetwork")]
         [Produces(typeof(Response<UserNetworkResponse>))]
-		[EndpointName("usernetwork")]
-		[EndpointSummary("this is summary of create a new usernetwork")]
-		[EndpointDescription("this is description of create a new usernetwork")]
 		public async Task<Response<UserNetworkResponse>> Create([FromBody] UserNetworkRegisterDto Model)
 		{
 			Response<UserNetworkResponse> Response = await Service.InsertAsync(Model);
@@ -33,9 +29,6 @@
 		[HttpPut]
 		[Route("api/usernetwork")]
 		[Produces(typeof(Response<UserNetworkResponse>))]
-		[EndpointName("updateusernetwork")]
-		[EndpointSummary("you can use for update using usernetwork API")]
-		[EndpointDescription("you can use for update using usernetwork API")]
 		public async Task<Response<UserNetworkResponse>> Update([FromBody] UserNetworkUpdateDto Model)
 		{
 			Response<UserNetworkResponse> Response = await Service.UpdateAsync(Model);
@@ -48,9 +41,6 @@
 		[HttpDelete]
 		[Route("api/usernetwork")]
         [Produces(typeof(Response<UserNetworkResponse>))]
-        [EndpointName("deleteusernetwork")]
-        [EndpointSummary("you can delete usernetwork using this API")]
-        [EndpointDescription("you can delete usernetwork using this API")]
         public async Task<Response<UserNetworkResponse>> Delete([FromBody] UserNetworkDeleteDto Model)
 		{
 			Response<UserNetworkResponse> Response = await Service.DeleteAsync(Model);
@@ -63,9 +53,6 @@
 		[HttpGet]
 		[Route("api/usernetwork")]
         [Produces(typeof(Response<UserNetworkResponse>))]
-        [EndpointName("getusernetwork")]
-        [EndpointSummary("you can use get data from usernetwork API")]
-        [EndpointDescription("you can use get data from usernetwork API")]
         public async Task<Response<UserNetworkResponse>> Get([FromQuery] UserNetworkSelectDto Model)
 		{
 			Response<UserNetworkResponse> Response = await Service.SelectAsync(Model);
@@ -78,9 +65,6 @@
 		[HttpGet]
 		[Route("api/usernetworksingle")]
         [Produces(typeof(Response<UserNetworkResponse>))]
-        [EndpointName("getusernetworksingle")]
-        [EndpointSummary("you can use get single data from usernetworksingle API")]
-        [EndpointDescription("you can use get single data from usernetworksingle API")]
         public async Task<Response<UserNetworkResponse>> GetSingle([FromQuery] UserNetworkSelectDto Model)
 		{
 			Response<UserNetworkResponse> Response = await Service.SelectSingleAsync(Model);

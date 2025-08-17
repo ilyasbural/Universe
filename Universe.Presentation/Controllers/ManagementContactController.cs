@@ -3,7 +3,6 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
-	using Microsoft.AspNetCore.Http;
 	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
@@ -18,9 +17,6 @@
 		[HttpPost]
         [Route("api/managementcontact")]
         [Produces(typeof(Response<ManagementContactResponse>))]
-        [EndpointName("managementcontact")]
-		[EndpointSummary("this is summary of create a new managementcontact")]
-		[EndpointDescription("this is description of create a new managementcontact")]
 		public async Task<Response<ManagementContactResponse>> Create([FromBody] ManagementContactRegisterDto Model)
 		{
 			Response<ManagementContactResponse> Response = await Service.InsertAsync(Model);
@@ -33,9 +29,6 @@
 		[HttpPut]
 		[Route("api/managementcontact")]
 		[Produces(typeof(Response<ManagementContactResponse>))]
-		[EndpointName("updatemanagementcontact")]
-		[EndpointSummary("you can use for update using managementcontact API")]
-		[EndpointDescription("you can use for update using managementcontact API")]
 		public async Task<Response<ManagementContactResponse>> Update([FromBody] ManagementContactUpdateDto Model)
 		{
 			Response<ManagementContactResponse> Response = await Service.UpdateAsync(Model);
@@ -48,9 +41,6 @@
 		[HttpDelete]
 		[Route("api/managementcontact")]
         [Produces(typeof(Response<ManagementContactResponse>))]
-        [EndpointName("deletemanagementcontact")]
-        [EndpointSummary("you can delete managementcontact using this API")]
-        [EndpointDescription("you can delete managementcontact using this API")]
         public async Task<Response<ManagementContactResponse>> Delete([FromBody] ManagementContactDeleteDto Model)
 		{
 			Response<ManagementContactResponse> Response = await Service.DeleteAsync(Model);
@@ -63,9 +53,6 @@
 		[HttpGet]
 		[Route("api/managementcontact")]
         [Produces(typeof(Response<ManagementContactResponse>))]
-        [EndpointName("getmanagementcontact")]
-        [EndpointSummary("you can use get data from managementcontact API")]
-        [EndpointDescription("you can use get data from managementcontact API")]
         public async Task<Response<ManagementContactResponse>> Get([FromQuery] ManagementContactSelectDto Model)
 		{
 			Response<ManagementContactResponse> Response = await Service.SelectAsync(Model);
@@ -78,9 +65,6 @@
 		[HttpGet]
 		[Route("api/managementcontactsingle")]
         [Produces(typeof(Response<ManagementContactResponse>))]
-        [EndpointName("getmanagementcontactsingle")]
-        [EndpointSummary("you can use get single data from managementcontactsingle API")]
-        [EndpointDescription("you can use get single data from managementcontactsingle API")]
         public async Task<Response<ManagementContactResponse>> GetSingle([FromQuery] ManagementContactSelectDto Model)
 		{
 			Response<ManagementContactResponse> Response = await Service.SelectSingleAsync(Model);

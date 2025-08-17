@@ -3,7 +3,6 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
-	using Microsoft.AspNetCore.Http;
 	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
@@ -18,9 +17,6 @@
         [HttpPost]
         [Route("api/announcelog")]
 		[Produces(typeof(Response<AnnounceLogResponse>))]
-		[EndpointName("createannouncelog")]
-		[EndpointSummary("this is summary of create a new announcelog")]
-		[EndpointDescription("this is description of create a new announcelog")]
 		public async Task<Response<AnnounceLogResponse>> Create([FromBody] AnnounceLogRegisterDto Model)
 		{
 			Response<AnnounceLogResponse> Response = await Service.InsertAsync(Model);
@@ -33,9 +29,6 @@
 		[HttpPut]
 		[Route("api/announcelog")]
 		[Produces(typeof(Response<AnnounceLogResponse>))]
-		[EndpointName("updateannouncelog")]
-		[EndpointSummary("you can use for update using announcelog API")]
-		[EndpointDescription("you can use for update using announcelog API")]
 		public async Task<Response<AnnounceLogResponse>> Update([FromBody] AnnounceLogUpdateDto Model)
 		{
 			Response<AnnounceLogResponse> Response = await Service.UpdateAsync(Model);
@@ -48,9 +41,6 @@
 		[HttpDelete]
 		[Route("api/announcelog")]
         [Produces(typeof(Response<AnnounceLogResponse>))]
-        [EndpointName("deleteannouncelog")]
-        [EndpointSummary("you can delete announcelog using this API")]
-        [EndpointDescription("you can delete announcelog using this API")]
         public async Task<Response<AnnounceLogResponse>> Delete([FromBody] AnnounceLogDeleteDto Model)
 		{
 			Response<AnnounceLogResponse> Response = await Service.DeleteAsync(Model);
@@ -63,9 +53,6 @@
 		[HttpGet]
 		[Route("api/announcelog")]
         [Produces(typeof(Response<AnnounceLogResponse>))]
-        [EndpointName("getannouncelog")]
-        [EndpointSummary("you can use get data from announcelog API")]
-        [EndpointDescription("you can use get data from announcelog API")]
         public async Task<Response<AnnounceLogResponse>> Get([FromQuery] AnnounceLogSelectDto Model)
 		{
 			Response<AnnounceLogResponse> Response = await Service.SelectAsync(Model);
@@ -78,9 +65,6 @@
 		[HttpGet]
 		[Route("api/announcelogsingle")]
         [Produces(typeof(Response<AnnounceResponse>))]
-        [EndpointName("getannouncelogsingle")]
-        [EndpointSummary("you can use get single data from announcelogsingle API")]
-        [EndpointDescription("you can use get single data from announcelogsingle API")]
         public async Task<Response<AnnounceLogResponse>> GetSingle([FromQuery] AnnounceLogSelectDto Model)
 		{
 			Response<AnnounceLogResponse> Response = await Service.SelectSingleAsync(Model);

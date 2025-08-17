@@ -3,7 +3,6 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
-	using Microsoft.AspNetCore.Http;
 	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
@@ -18,9 +17,6 @@
         [HttpPost]
         [Route("api/userpublish")]
         [Produces(typeof(Response<UserPublishResponse>))]
-		[EndpointName("userpublish")]
-		[EndpointSummary("this is summary of create a new userpublish")]
-		[EndpointDescription("this is description of create a new userpublish")]
 		public async Task<Response<UserPublishResponse>> Create([FromBody] UserPublishRegisterDto Model)
 		{
 			Response<UserPublishResponse> Response = await Service.InsertAsync(Model);
@@ -33,9 +29,6 @@
 		[HttpPut]
 		[Route("api/userpublish")]
 		[Produces(typeof(Response<UserPublishResponse>))]
-		[EndpointName("updateuserpublish")]
-		[EndpointSummary("you can use for update using userpublish API")]
-		[EndpointDescription("you can use for update using userpublish API")]
 		public async Task<Response<UserPublishResponse>> Update([FromBody] UserPublishUpdateDto Model)
 		{
 			Response<UserPublishResponse> Response = await Service.UpdateAsync(Model);
@@ -48,9 +41,6 @@
 		[HttpDelete]
 		[Route("api/userpublish")]
         [Produces(typeof(Response<UserPublishResponse>))]
-        [EndpointName("deleteuserpublish")]
-        [EndpointSummary("you can delete userpublish using this API")]
-        [EndpointDescription("you can delete userpublish using this API")]
         public async Task<Response<UserPublishResponse>> Delete([FromBody] UserPublishDeleteDto Model)
 		{
 			Response<UserPublishResponse> Response = await Service.DeleteAsync(Model);
@@ -63,9 +53,6 @@
 		[HttpGet]
 		[Route("api/userpublish")]
         [Produces(typeof(Response<UserPublishResponse>))]
-        [EndpointName("getuserpublish")]
-        [EndpointSummary("you can use get data from userpublish API")]
-        [EndpointDescription("you can use get data from userpublish API")]
         public async Task<Response<UserPublishResponse>> Get([FromQuery] UserPublishSelectDto Model)
 		{
 			Response<UserPublishResponse> Response = await Service.SelectAsync(Model);
@@ -78,9 +65,6 @@
 		[HttpGet]
 		[Route("api/userpublishsingle")]
         [Produces(typeof(Response<UserPublishResponse>))]
-        [EndpointName("getuserpublishsingle")]
-        [EndpointSummary("you can use get single data from userpublish API")]
-        [EndpointDescription("you can use get single data from userpublish API")]
         public async Task<Response<UserPublishResponse>> GetSingle([FromQuery] UserPublishSelectDto Model)
 		{
 			Response<UserPublishResponse> Response = await Service.SelectSingleAsync(Model);

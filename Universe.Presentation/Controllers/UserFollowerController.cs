@@ -3,7 +3,6 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
-	using Microsoft.AspNetCore.Http;
 	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
@@ -18,9 +17,6 @@
 		[HttpPost]
         [Route("api/userfollower")]
         [Produces(typeof(Response<UserFollowerResponse>))]
-		[EndpointName("userfollower")]
-		[EndpointSummary("this is summary of create a new userfollower")]
-		[EndpointDescription("this is description of create a new userfollower")]
 		public async Task<Response<UserFollowerResponse>> Create([FromBody] UserFollowerRegisterDto Model)
 		{
 			Response<UserFollowerResponse> Response = await Service.InsertAsync(Model);
@@ -33,9 +29,6 @@
 		[HttpPut]
 		[Route("api/userfollower")]
 		[Produces(typeof(Response<UserFollowerResponse>))]
-		[EndpointName("updateuserfollower")]
-		[EndpointSummary("you can use for update using userfollower API")]
-		[EndpointDescription("you can use for update using userfollower API")]
 		public async Task<Response<UserFollowerResponse>> Update([FromBody] UserFollowerUpdateDto Model)
 		{
 			Response<UserFollowerResponse> Response = await Service.UpdateAsync(Model);
@@ -48,9 +41,6 @@
 		[HttpDelete]
 		[Route("api/userfollower")]
         [Produces(typeof(Response<UserFollowerResponse>))]
-        [EndpointName("deleteuserfollower")]
-        [EndpointSummary("you can delete userfollower using this API")]
-        [EndpointDescription("you can delete userfollower using this API")]
         public async Task<Response<UserFollowerResponse>> Delete([FromBody] UserFollowerDeleteDto Model)
 		{
 			Response<UserFollowerResponse> Response = await Service.DeleteAsync(Model);
@@ -63,9 +53,6 @@
 		[HttpGet]
 		[Route("api/userfollower")]
         [Produces(typeof(Response<UserFollowerResponse>))]
-        [EndpointName("getuserfollower")]
-        [EndpointSummary("you can use get data from userfollower API")]
-        [EndpointDescription("you can use get data from userfollower API")]
         public async Task<Response<UserFollowerResponse>> Get([FromQuery] UserFollowerSelectDto Model)
 		{
 			Response<UserFollowerResponse> Response = await Service.SelectAsync(Model);
@@ -78,9 +65,6 @@
 		[HttpGet]
 		[Route("api/userfollowersingle")]
         [Produces(typeof(Response<UserFollowerResponse>))]
-        [EndpointName("getuserfollowersingle")]
-        [EndpointSummary("you can use get single data from userfollowersingle API")]
-        [EndpointDescription("you can use get single data from userfollowersingle API")]
         public async Task<Response<UserFollowerResponse>> GetSingle([FromQuery] UserFollowerSelectDto Model)
 		{
 			Response<UserFollowerResponse> Response = await Service.SelectSingleAsync(Model);

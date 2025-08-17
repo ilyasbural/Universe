@@ -3,7 +3,6 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
-	using Microsoft.AspNetCore.Http;
 	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
@@ -18,9 +17,6 @@
         [HttpPost]
         [Route("api/certificate")]
 		[Produces(typeof(Response<CertificateResponse>))]
-		[EndpointName("createcertificate")]
-		[EndpointSummary("this is summary of create a new certificate")]
-		[EndpointDescription("this is description of create a new certificate")]
 		public async Task<Response<CertificateResponse>> Create([FromBody] CertificateRegisterDto Model)
 		{
 			Response<CertificateResponse> Response = await Service.InsertAsync(Model);
@@ -33,9 +29,6 @@
 		[HttpPut]
 		[Route("api/certificate")]
 		[Produces(typeof(Response<CertificateResponse>))]
-		[EndpointName("updatecertificate")]
-		[EndpointSummary("you can use for update using certificate API")]
-		[EndpointDescription("you can use for update using certificate API")]
 		public async Task<Response<CertificateResponse>> Update([FromBody] CertificateUpdateDto Model)
 		{
 			Response<CertificateResponse> Response = await Service.UpdateAsync(Model);
@@ -48,9 +41,6 @@
 		[HttpDelete]
 		[Route("api/certificate")]
         [Produces(typeof(Response<CertificateResponse>))]
-        [EndpointName("deletecertificate")]
-        [EndpointSummary("you can delete certificate using this API")]
-        [EndpointDescription("you can delete certificate using this API")]
         public async Task<Response<CertificateResponse>> Delete([FromBody] CertificateDeleteDto Model)
 		{
 			Response<CertificateResponse> Response = await Service.DeleteAsync(Model);
@@ -63,9 +53,6 @@
 		[HttpGet]
 		[Route("api/certificate")]
         [Produces(typeof(Response<CertificateResponse>))]
-        [EndpointName("getcertificate")]
-        [EndpointSummary("you can use get data from certificate API")]
-        [EndpointDescription("you can use get data from certificate API")]
         public async Task<Response<CertificateResponse>> Get([FromQuery] CertificateSelectDto Model)
 		{
 			Response<CertificateResponse> Response = await Service.SelectAsync(Model);
@@ -78,9 +65,6 @@
 		[HttpGet]
 		[Route("api/certificatesingle")]
         [Produces(typeof(Response<CertificateResponse>))]
-        [EndpointName("getcertificatesingle")]
-        [EndpointSummary("you can use get single data from certificatesingle API")]
-        [EndpointDescription("you can use get single data from certificatesingle API")]
         public async Task<Response<CertificateResponse>> GetSingle([FromQuery] CertificateSelectDto Model)
 		{
 			Response<CertificateResponse> Response = await Service.SelectSingleAsync(Model);

@@ -3,7 +3,6 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
-	using Microsoft.AspNetCore.Http;
 	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
@@ -18,9 +17,6 @@
 		[HttpPost]
         [Route("api/emoji")]
         [Produces(typeof(Response<EmojiResponse>))]
-		[EndpointName("createemoji")]
-		[EndpointSummary("this is summary of create a new emoji")]
-		[EndpointDescription("this is description of create a new emoji")]
 		public async Task<Response<EmojiResponse>> Create([FromBody] EmojiRegisterDto Model)
 		{
 			Response<EmojiResponse> Response = await Service.InsertAsync(Model);
@@ -33,9 +29,6 @@
 		[HttpPut]
 		[Route("api/emoji")]
 		[Produces(typeof(Response<EmojiResponse>))]
-		[EndpointName("updateemoji")]
-		[EndpointSummary("you can use for update using emoji API")]
-		[EndpointDescription("you can use for update using emoji API")]
 		public async Task<Response<EmojiResponse>> Update([FromBody] EmojiUpdateDto Model)
 		{
 			Response<EmojiResponse> Response = await Service.UpdateAsync(Model);
@@ -48,9 +41,6 @@
 		[HttpDelete]
 		[Route("api/emoji")]
         [Produces(typeof(Response<EmojiResponse>))]
-        [EndpointName("deleteemoji")]
-        [EndpointSummary("you can delete emoji using this API")]
-        [EndpointDescription("you can delete emoji using this API")]
         public async Task<Response<EmojiResponse>> Delete([FromBody] EmojiDeleteDto Model)
 		{
 			Response<EmojiResponse> Response = await Service.DeleteAsync(Model);
@@ -63,9 +53,6 @@
 		[HttpGet]
 		[Route("api/emoji")]
         [Produces(typeof(Response<EmojiResponse>))]
-        [EndpointName("getemoji")]
-        [EndpointSummary("you can use get data from emoji API")]
-        [EndpointDescription("you can use get data from emoji API")]
         public async Task<Response<EmojiResponse>> Get([FromQuery] EmojiSelectDto Model)
 		{
 			Response<EmojiResponse> Response = await Service.SelectAsync(Model);
@@ -78,9 +65,6 @@
 		[HttpGet]
 		[Route("api/emojisingle")]
         [Produces(typeof(Response<EmojiResponse>))]
-        [EndpointName("getsingleemoji")]
-        [EndpointSummary("you can use get single data from emoji API")]
-        [EndpointDescription("you can use get single data from emoji API")]
         public async Task<Response<EmojiResponse>> GetSingle([FromQuery] EmojiSelectDto Model)
 		{
 			Response<EmojiResponse> Response = await Service.SelectSingleAsync(Model);

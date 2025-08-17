@@ -3,7 +3,6 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
-	using Microsoft.AspNetCore.Http;
 	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
@@ -18,9 +17,6 @@
 		[HttpPost]
         [Route("api/networkaction")]
         [Produces(typeof(Response<NetworkActionResponse>))]
-		[EndpointName("networkaction")]
-		[EndpointSummary("this is summary of create a new networkaction")]
-		[EndpointDescription("this is description of create a new networkaction")]
 		public async Task<Response<NetworkActionResponse>> Create([FromBody] NetworkActionRegisterDto Model)
 		{
 			Response<NetworkActionResponse> Response = await Service.InsertAsync(Model);
@@ -33,9 +29,6 @@
 		[HttpPut]
 		[Route("api/networkaction")]
 		[Produces(typeof(Response<NetworkActionResponse>))]
-		[EndpointName("updatenetworkaction")]
-		[EndpointSummary("you can use for update using networkaction API")]
-		[EndpointDescription("you can use for update using networkaction API")]
 		public async Task<Response<NetworkActionResponse>> Update([FromBody] NetworkActionUpdateDto Model)
 		{
 			Response<NetworkActionResponse> Response = await Service.UpdateAsync(Model);
@@ -48,9 +41,6 @@
 		[HttpDelete]
 		[Route("api/networkaction")]
         [Produces(typeof(Response<NetworkActionResponse>))]
-        [EndpointName("deletenetworkaction")]
-        [EndpointSummary("you can delete networkaction using this API")]
-        [EndpointDescription("you can delete networkaction using this API")]
         public async Task<Response<NetworkActionResponse>> Delete([FromBody] NetworkActionDeleteDto Model)
 		{
 			Response<NetworkActionResponse> Response = await Service.DeleteAsync(Model);
@@ -63,9 +53,6 @@
 		[HttpGet]
 		[Route("api/networkaction")]
         [Produces(typeof(Response<NetworkActionResponse>))]
-        [EndpointName("getnetworkaction")]
-        [EndpointSummary("you can use get data from networkaction API")]
-        [EndpointDescription("you can use get data from networkaction API")]
         public async Task<Response<NetworkActionResponse>> Get([FromQuery] NetworkActionSelectDto Model)
 		{
 			Response<NetworkActionResponse> Response = await Service.SelectAsync(Model);
@@ -78,9 +65,6 @@
 		[HttpGet]
 		[Route("api/networkactionsingle")]
         [Produces(typeof(Response<NetworkActionResponse>))]
-        [EndpointName("getnetworkactionsingle")]
-        [EndpointSummary("you can use get single data from networkactionsingle API")]
-        [EndpointDescription("you can use get single data from networkactionsingle API")]
         public async Task<Response<NetworkActionResponse>> GetSingle([FromQuery] NetworkActionSelectDto Model)
 		{
 			Response<NetworkActionResponse> Response = await Service.SelectSingleAsync(Model);

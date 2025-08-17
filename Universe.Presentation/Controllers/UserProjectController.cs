@@ -3,7 +3,6 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
-	using Microsoft.AspNetCore.Http;
 	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
@@ -18,9 +17,6 @@
 		[HttpPost]
         [Route("api/userproject")]
         [Produces(typeof(Response<UserProjectResponse>))]
-		[EndpointName("userproject")]
-		[EndpointSummary("this is summary of create a new userproject")]
-		[EndpointDescription("this is description of create a new userproject")]
 		public async Task<Response<UserProjectResponse>> Create([FromBody] UserProjectRegisterDto Model)
 		{
 			Response<UserProjectResponse> Response = await Service.InsertAsync(Model);
@@ -33,9 +29,6 @@
 		[HttpPut]
 		[Route("api/userproject")]
 		[Produces(typeof(Response<UserProjectResponse>))]
-		[EndpointName("updateuserproject")]
-		[EndpointSummary("you can use for update using userproject API")]
-		[EndpointDescription("you can use for update using userproject API")]
 		public async Task<Response<UserProjectResponse>> Update([FromBody] UserProjectUpdateDto Model)
 		{
 			Response<UserProjectResponse> Response = await Service.UpdateAsync(Model);
@@ -48,9 +41,6 @@
 		[HttpDelete]
 		[Route("api/userproject")]
         [Produces(typeof(Response<UserProjectResponse>))]
-        [EndpointName("deleteuserproject")]
-        [EndpointSummary("you can delete userproject using this API")]
-        [EndpointDescription("you can delete userproject using this API")]
         public async Task<Response<UserProjectResponse>> Delete([FromBody] UserProjectDeleteDto Model)
 		{
 			Response<UserProjectResponse> Response = await Service.DeleteAsync(Model);
@@ -63,9 +53,6 @@
 		[HttpGet]
 		[Route("api/userproject")]
         [Produces(typeof(Response<UserProjectResponse>))]
-        [EndpointName("getuserproject")]
-        [EndpointSummary("you can use get data from userproject API")]
-        [EndpointDescription("you can use get data from userproject API")]
         public async Task<Response<UserProjectResponse>> Get([FromQuery] UserProjectSelectDto Model)
 		{
 			Response<UserProjectResponse> Response = await Service.SelectAsync(Model);
@@ -78,9 +65,6 @@
 		[HttpGet]
 		[Route("api/userprojectsingle")]
         [Produces(typeof(Response<UserProjectResponse>))]
-        [EndpointName("getuserprojectsingle")]
-        [EndpointSummary("you can use get single data from userproject API")]
-        [EndpointDescription("you can use get single data from userproject API")]
         public async Task<Response<UserProjectResponse>> GetSingle([FromQuery] UserProjectSelectDto Model)
 		{
 			Response<UserProjectResponse> Response = await Service.SelectSingleAsync(Model);

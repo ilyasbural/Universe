@@ -3,7 +3,6 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
-	using Microsoft.AspNetCore.Http;
 	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
@@ -18,9 +17,6 @@
 		[HttpPost]
         [Route("api/managementemail")]
         [Produces(typeof(Response<ManagementEmailResponse>))]
-		[EndpointName("managementemail")]
-		[EndpointSummary("this is summary of create a new managementemail")]
-		[EndpointDescription("this is description of create a new managementemail")]
 		public async Task<Response<ManagementEmailResponse>> Create([FromBody] ManagementEmailRegisterDto Model)
 		{
 			Response<ManagementEmailResponse> Response = await Service.InsertAsync(Model);
@@ -33,9 +29,6 @@
 		[HttpPut]
 		[Route("api/managementemail")]
 		[Produces(typeof(Response<ManagementEmailResponse>))]
-		[EndpointName("updatemanagementemail")]
-		[EndpointSummary("you can use for update using managementemail API")]
-		[EndpointDescription("you can use for update using managementemail API")]
 		public async Task<Response<ManagementEmailResponse>> Update([FromBody] ManagementEmailUpdateDto Model)
 		{
 			Response<ManagementEmailResponse> Response = await Service.UpdateAsync(Model);
@@ -48,9 +41,6 @@
 		[HttpDelete]
 		[Route("api/managementemail")]
         [Produces(typeof(Response<ManagementEmailResponse>))]
-        [EndpointName("deletemanagementemail")]
-        [EndpointSummary("you can delete managementemail using this API")]
-        [EndpointDescription("you can delete managementemail using this API")]
         public async Task<Response<ManagementEmailResponse>> Delete([FromBody] ManagementEmailDeleteDto Model)
 		{
 			Response<ManagementEmailResponse> Response = await Service.DeleteAsync(Model);
@@ -63,9 +53,6 @@
 		[HttpGet]
 		[Route("api/managementemail")]
         [Produces(typeof(Response<ManagementEmailResponse>))]
-        [EndpointName("getmanagementemail")]
-        [EndpointSummary("you can use get data from managementemail API")]
-        [EndpointDescription("you can use get data from managementemail API")]
         public async Task<Response<ManagementEmailResponse>> Get([FromQuery] ManagementEmailSelectDto Model)
 		{
 			Response<ManagementEmailResponse> Response = await Service.SelectAsync(Model);
@@ -78,9 +65,6 @@
 		[HttpGet]
 		[Route("api/managementemailsingle")]
         [Produces(typeof(Response<ManagementEmailResponse>))]
-        [EndpointName("getmanagementemailsingle")]
-        [EndpointSummary("you can use get single data from managementemail API")]
-        [EndpointDescription("you can use get single data from managementemail API")]
         public async Task<Response<ManagementEmailResponse>> GetSingle([FromQuery] ManagementEmailSelectDto Model)
 		{
 			Response<ManagementEmailResponse> Response = await Service.SelectSingleAsync(Model);

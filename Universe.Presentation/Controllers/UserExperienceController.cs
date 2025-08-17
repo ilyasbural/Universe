@@ -3,7 +3,6 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
-	using Microsoft.AspNetCore.Http;
 	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
@@ -18,9 +17,6 @@
         [HttpPost]
         [Route("api/userexperience")]
         [Produces(typeof(Response<UserExperienceResponse>))]
-		[EndpointName("userexperience")]
-		[EndpointSummary("this is summary of create a new userexperience")]
-		[EndpointDescription("this is description of create a new userexperience")]
 		public async Task<Response<UserExperienceResponse>> Create([FromBody] UserExperienceRegisterDto Model)
 		{
 			Response<UserExperienceResponse> Response = await Service.InsertAsync(Model);
@@ -33,9 +29,6 @@
 		[HttpPut]
 		[Route("api/userexperience")]
 		[Produces(typeof(Response<UserExperienceResponse>))]
-		[EndpointName("updateuserexperience")]
-		[EndpointSummary("you can use for update userexperience ability API")]
-		[EndpointDescription("you can use for update userexperience ability API")]
 		public async Task<Response<UserExperienceResponse>> Update([FromBody] UserExperienceUpdateDto Model)
 		{
 			Response<UserExperienceResponse> Response = await Service.UpdateAsync(Model);
@@ -48,9 +41,6 @@
 		[HttpDelete]
 		[Route("api/userexperience")]
         [Produces(typeof(Response<UserExperienceResponse>))]
-        [EndpointName("deleteuserexperience")]
-        [EndpointSummary("you can delete userexperience using this API")]
-        [EndpointDescription("you can delete userexperience using this API")]
         public async Task<Response<UserExperienceResponse>> Delete([FromBody] UserExperienceDeleteDto Model)
 		{
 			Response<UserExperienceResponse> Response = await Service.DeleteAsync(Model);
@@ -63,9 +53,6 @@
 		[HttpGet]
 		[Route("api/userexperience")]
         [Produces(typeof(Response<UserExperienceResponse>))]
-        [EndpointName("getuserexperience")]
-        [EndpointSummary("you can use get data from userexperience API")]
-        [EndpointDescription("you can use get data from userexperience API")]
         public async Task<Response<UserExperienceResponse>> Get([FromQuery] UserExperienceSelectDto Model)
 		{
 			Response<UserExperienceResponse> Response = await Service.SelectAsync(Model);
@@ -78,9 +65,6 @@
 		[HttpGet]
 		[Route("api/userexperiencesingle")]
         [Produces(typeof(Response<UserExperienceResponse>))]
-        [EndpointName("getuserexperiencesingle")]
-        [EndpointSummary("you can use get single data from userexperiencesingle API")]
-        [EndpointDescription("you can use get single data from userexperiencesingle API")]
         public async Task<Response<UserExperienceResponse>> GetSingle([FromQuery] UserExperienceSelectDto Model)
 		{
 			Response<UserExperienceResponse> Response = await Service.SelectSingleAsync(Model);

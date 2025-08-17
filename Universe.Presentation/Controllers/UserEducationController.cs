@@ -3,7 +3,6 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
-	using Microsoft.AspNetCore.Http;
 	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
@@ -18,9 +17,6 @@
         [HttpPost]
         [Route("api/usereducation")]
         [Produces(typeof(Response<UserEducationResponse>))]
-		[EndpointName("usereducation")]
-		[EndpointSummary("this is summary of create a new usereducation")]
-		[EndpointDescription("this is description of create a new usereducation")]
 		public async Task<Response<UserEducationResponse>> Create([FromBody] UserEducationRegisterDto Model)
 		{
 			Response<UserEducationResponse> Response = await Service.InsertAsync(Model);
@@ -33,9 +29,6 @@
 		[HttpPut]
 		[Route("api/usereducation")]
 		[Produces(typeof(Response<UserEducationResponse>))]
-		[EndpointName("updateusereducation")]
-		[EndpointSummary("you can use for update using usereducation API")]
-		[EndpointDescription("you can use for update using usereducation API")]
 		public async Task<Response<UserEducationResponse>> Update([FromBody] UserEducationUpdateDto Model)
 		{
 			Response<UserEducationResponse> Response = await Service.UpdateAsync(Model);
@@ -48,9 +41,6 @@
 		[HttpDelete]
 		[Route("api/usereducation")]
         [Produces(typeof(Response<UserEducationResponse>))]
-        [EndpointName("deleteusereducation")]
-        [EndpointSummary("you can delete usereducation using this API")]
-        [EndpointDescription("you can delete usereducation using this API")]
         public async Task<Response<UserEducationResponse>> Delete([FromBody] UserEducationDeleteDto Model)
 		{
 			Response<UserEducationResponse> Response = await Service.DeleteAsync(Model);
@@ -63,9 +53,6 @@
 		[HttpGet]
 		[Route("api/usereducation")]
         [Produces(typeof(Response<UserEducationResponse>))]
-        [EndpointName("getusereducation")]
-        [EndpointSummary("you can use get data from usereducation API")]
-        [EndpointDescription("you can use get data from usereducation API")]
         public async Task<Response<UserEducationResponse>> Get([FromQuery] UserEducationSelectDto Model)
 		{
 			Response<UserEducationResponse> Response = await Service.SelectAsync(Model);
@@ -78,9 +65,6 @@
 		[HttpGet]
 		[Route("api/usereducationsingle")]
         [Produces(typeof(Response<UserEducationResponse>))]
-        [EndpointName("getusereducationsingle")]
-        [EndpointSummary("you can use get single data from usereducationsingle API")]
-        [EndpointDescription("you can use get single data from usereducationsingle API")]
         public async Task<Response<UserEducationResponse>> GetSingle([FromQuery] UserEducationSelectDto Model)
 		{
 			Response<UserEducationResponse> Response = await Service.SelectSingleAsync(Model);
