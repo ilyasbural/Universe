@@ -3,7 +3,6 @@
 	using Core;
 	using Common;
 	using Microsoft.AspNetCore.Mvc;
-	using Microsoft.AspNetCore.Http;
 	using Microsoft.AspNetCore.Routing;
 
 	[ApiController]
@@ -18,9 +17,6 @@
         [HttpPost]
         [Route("api/announce")]
 		[Produces(typeof(Response<AnnounceResponse>))]
-		[EndpointName("createannounce")]
-		[EndpointSummary("you can create announce using this API")]
-		[EndpointDescription("you can create announce using this API")]
 		public async Task<Response<AnnounceResponse>> Create([FromBody] AnnounceRegisterDto Model)
 		{
 			Response<AnnounceResponse> Response = await Service.InsertAsync(Model);
@@ -33,9 +29,6 @@
 		[HttpPut]
 		[Route("api/announce")]
 		[Produces(typeof(Response<AbilityResponse>))]
-		[EndpointName("updateannounce")]
-		[EndpointSummary("you can use for update using announce API")]
-		[EndpointDescription("you can use for update using announce API")]
 		public async Task<Response<AnnounceResponse>> Update([FromBody] AnnounceUpdateDto Model)
 		{
 			Response<AnnounceResponse> Response = await Service.UpdateAsync(Model);
@@ -48,9 +41,6 @@
 		[HttpDelete]
 		[Route("api/announce")]
         [Produces(typeof(Response<AnnounceResponse>))]
-        [EndpointName("deleteannounce")]
-        [EndpointSummary("you can delete announce using this API")]
-        [EndpointDescription("you can delete announce using this API")]
         public async Task<Response<AnnounceResponse>> Delete([FromBody] AnnounceDeleteDto Model)
 		{
 			Response<AnnounceResponse> Response = await Service.DeleteAsync(Model);
@@ -63,9 +53,6 @@
 		[HttpGet]
 		[Route("api/announce")]
         [Produces(typeof(Response<AnnounceResponse>))]
-        [EndpointName("getannounce")]
-        [EndpointSummary("you can use get data from announce API")]
-        [EndpointDescription("you can use get data from announce API")]
         public async Task<Response<AnnounceResponse>> Get([FromQuery] AnnounceSelectDto Model)
 		{
 			Response<AnnounceResponse> Response = await Service.SelectAsync(Model);
@@ -78,9 +65,6 @@
 		[HttpGet]
 		[Route("api/announcesingle")]
         [Produces(typeof(Response<AnnounceResponse>))]
-        [EndpointName("getannouncesingle")]
-        [EndpointSummary("you can use get single data from announce API")]
-        [EndpointDescription("you can use get single data from announce API")]
         public async Task<Response<AnnounceResponse>> GetSingle([FromQuery] AnnounceSelectDto Model)
 		{
 			Response<AnnounceResponse> Response = await Service.SelectSingleAsync(Model);
