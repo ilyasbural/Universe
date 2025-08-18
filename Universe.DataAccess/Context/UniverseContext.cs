@@ -56,6 +56,18 @@
 		public UniverseContext() { }
 		public UniverseContext(DbContextOptions<UniverseContext> options) : base(options) { }
 
+		//protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		//{
+		//	IConfigurationRoot Configuration = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json").Build();
+		//	optionsBuilder.UseSqlServer(Configuration.GetConnectionString("SqlServer"), options =>
+		//	{
+		//		options.MigrationsAssembly("Universe.WebApi");
+		//		options.MigrationsHistoryTable("MigrationHistories");
+		//		options.CommandTimeout(5000);
+		//		options.EnableRetryOnFailure(maxRetryCount: 5);
+		//	});
+		//}
+
 		protected override void OnModelCreating(ModelBuilder modelBuilder) => modelBuilder.ApplyConfigurationsFromAssembly(typeof(AssemblyReferance).Assembly);
 	}
 }
