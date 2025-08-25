@@ -5,13 +5,13 @@
     using AutoMapper;
     using FluentValidation;
 
-    public class UserLanguageManager : BusinessObject<UserLanguage>, IUserLanguageService
+    public class UserLanguageService : BusinessObject<UserLanguage>, IUserLanguageService
     {
         readonly IMapper Mapper;
         readonly IUnitOfWork UnitOfWork;
         readonly IValidator<UserLanguage> Validator;
 
-        public UserLanguageManager(IMapper mapper, IUnitOfWork unitOfWork, IValidator<UserLanguage> validator)
+        public UserLanguageService(IMapper mapper, IUnitOfWork unitOfWork, IValidator<UserLanguage> validator)
         {
             Mapper = mapper;
             UnitOfWork = unitOfWork;

@@ -5,13 +5,13 @@
     using AutoMapper;
     using FluentValidation;
 
-    public class UserCertificateManager : BusinessObject<UserCertificate>, IUserCertificateService
+    public class UserCertificateService : BusinessObject<UserCertificate>, IUserCertificateService
     {
         readonly IMapper Mapper;
         readonly IUnitOfWork UnitOfWork;
         readonly IValidator<UserCertificate> Validator;
 
-        public UserCertificateManager(IMapper mapper, IUnitOfWork unitOfWork, IValidator<UserCertificate> validator)
+        public UserCertificateService(IMapper mapper, IUnitOfWork unitOfWork, IValidator<UserCertificate> validator)
         {
             Mapper = mapper;
             UnitOfWork = unitOfWork;
