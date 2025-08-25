@@ -5,13 +5,13 @@
     using AutoMapper;
     using FluentValidation;
 
-    public class UserVideoManager : BusinessObject<UserVideo>, IUserVideoService
+    public class UserVideoService : BusinessObject<UserVideo>, IUserVideoService
     {
         readonly IMapper Mapper;
         readonly IUnitOfWork UnitOfWork;
         readonly IValidator<UserVideo> Validator;
 
-        public UserVideoManager(IMapper mapper, IUnitOfWork unitOfWork, IValidator<UserVideo> validator)
+        public UserVideoService(IMapper mapper, IUnitOfWork unitOfWork, IValidator<UserVideo> validator)
         {
             Mapper = mapper;
             UnitOfWork = unitOfWork;

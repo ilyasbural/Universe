@@ -12,8 +12,8 @@ using Universe.DataAccess;
 namespace Universe.DataAccess.Migrations
 {
     [DbContext(typeof(UniverseContext))]
-    [Migration("20250817214545_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250825213235_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

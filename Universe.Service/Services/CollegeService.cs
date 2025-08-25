@@ -5,13 +5,13 @@
     using AutoMapper;
     using FluentValidation;
 
-    public class CollegeManager : BusinessObject<College>, ICollegeService
+    public class CollegeService : BusinessObject<College>, ICollegeService
     {
         readonly IMapper Mapper;
         readonly IUnitOfWork UnitOfWork;
         readonly IValidator<College> Validator;
 
-        public CollegeManager(IMapper mapper, IUnitOfWork unitOfWork, IValidator<College> validator)
+        public CollegeService(IMapper mapper, IUnitOfWork unitOfWork, IValidator<College> validator)
         {
             Mapper = mapper;
             UnitOfWork = unitOfWork;

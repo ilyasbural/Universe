@@ -8,10 +8,14 @@
 	{
 		public UniverseContext CreateDbContext(string[] args)
 		{
-			IConfigurationRoot Configuration = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json").Build();
-			var optionsBuilder = new DbContextOptionsBuilder<UniverseContext>();
-			optionsBuilder.UseSqlServer(Configuration.GetConnectionString("SqlServer"));
-			return new UniverseContext(optionsBuilder.Options);
+			var builder = new DbContextOptionsBuilder<UniverseContext>();
+			IConfigurationRoot configuration = new ConfigurationBuilder()
+				.SetBasePath(Directory.GetCurrentDirectory())
+				.AddJsonFile("appsettings.json")
+				.Build();
+			var connectionString = configuration.GetConnectionString("SqlServer");
+			builder.UseSqlServer(connectionString);
+			return new UniverseContext(builder.Options);
 		}
 	}
 }

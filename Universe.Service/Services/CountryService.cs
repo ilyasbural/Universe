@@ -5,13 +5,13 @@
     using AutoMapper;
     using FluentValidation;
 
-    public class CountryManager : BusinessObject<Country>, ICountryService
+    public class CountryService : BusinessObject<Country>, ICountryService
     {
         readonly IMapper Mapper;
         readonly IUnitOfWork UnitOfWork;
         readonly IValidator<Country> Validator;
 
-        public CountryManager(IMapper mapper, IUnitOfWork unitOfWork, IValidator<Country> validator)
+        public CountryService(IMapper mapper, IUnitOfWork unitOfWork, IValidator<Country> validator)
         {
             Mapper = mapper;
             UnitOfWork = unitOfWork;

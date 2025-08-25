@@ -5,13 +5,13 @@
     using AutoMapper;
     using FluentValidation;
 
-    public class AnnounceDetailManager : BusinessObject<AnnounceDetail>, IAnnounceDetailService
+    public class AnnounceDetailService : BusinessObject<AnnounceDetail>, IAnnounceDetailService
     {
         readonly IMapper Mapper;
         readonly IUnitOfWork UnitOfWork;
         readonly IValidator<AnnounceDetail> Validator;
 
-        public AnnounceDetailManager(IMapper mapper, IUnitOfWork unitOfWork, IValidator<AnnounceDetail> validator)
+        public AnnounceDetailService(IMapper mapper, IUnitOfWork unitOfWork, IValidator<AnnounceDetail> validator)
         {
             Mapper = mapper;
             UnitOfWork = unitOfWork;

@@ -5,13 +5,13 @@
     using AutoMapper;
     using FluentValidation;
 
-    public class EmojiManager : BusinessObject<Emoji>, IEmojiService
+    public class EmojiService : BusinessObject<Emoji>, IEmojiService
     {
         readonly IMapper Mapper;
         readonly IUnitOfWork UnitOfWork;
         readonly IValidator<Emoji> Validator;
 
-        public EmojiManager(IMapper mapper, IUnitOfWork unitOfWork, IValidator<Emoji> validator)
+        public EmojiService(IMapper mapper, IUnitOfWork unitOfWork, IValidator<Emoji> validator)
         {
             Mapper = mapper;
             UnitOfWork = unitOfWork;

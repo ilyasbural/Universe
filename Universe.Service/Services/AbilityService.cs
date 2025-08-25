@@ -5,13 +5,13 @@
     using AutoMapper;
     using FluentValidation;
 
-    public class AbilityManager : BusinessObject<Ability>, IAbilityService
+    public class AbilityService : BusinessObject<Ability>, IAbilityService
     {
         readonly IMapper Mapper;
         readonly IUnitOfWork UnitOfWork;
         readonly IValidator<Ability> Validator;
 
-        public AbilityManager(IMapper mapper, IUnitOfWork unitOfWork, IValidator<Ability> validator)
+        public AbilityService(IMapper mapper, IUnitOfWork unitOfWork, IValidator<Ability> validator)
         {
             Mapper = mapper;
             UnitOfWork = unitOfWork;

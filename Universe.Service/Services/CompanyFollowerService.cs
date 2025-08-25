@@ -5,13 +5,13 @@
 	using AutoMapper;
     using FluentValidation;
 
-    public class CompanyFollowerManager : BusinessObject<CompanyFollower>, ICompanyFollowerService
+    public class CompanyFollowerService : BusinessObject<CompanyFollower>, ICompanyFollowerService
     {
         readonly IMapper Mapper;
         readonly IUnitOfWork UnitOfWork;
         readonly IValidator<CompanyFollower> Validator;
 
-        public CompanyFollowerManager(IMapper mapper, IUnitOfWork unitOfWork, IValidator<CompanyFollower> validator)
+        public CompanyFollowerService(IMapper mapper, IUnitOfWork unitOfWork, IValidator<CompanyFollower> validator)
         {
             Mapper = mapper;
             UnitOfWork = unitOfWork;

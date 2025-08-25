@@ -117,19 +117,19 @@
             Service.AddScoped<IValidator<User>, UserValidator>();
             Service.AddScoped<IValidator<UserVideo>, UserVideoValidator>();
 
-            Service.AddScoped<IAbilityService, AbilityManager>();
-            Service.AddScoped<IAnnounceService, AnnounceManager>();
-            Service.AddScoped<IAnnounceDetailService, AnnounceDetailManager>();
-            Service.AddScoped<IAnnounceLogService, AnnounceLogManager>();
-            Service.AddScoped<ICertificateService, CertificateManager>();
-            Service.AddScoped<ICollegeService, CollegeManager>();
-            Service.AddScoped<ICompanyAboutService, CompanyAboutManager>();
-            Service.AddScoped<ICompanyDetailService, CompanyDetailManager>();
-            Service.AddScoped<ICompanyFollowerService, CompanyFollowerManager>();
-            Service.AddScoped<ICompanyService, CompanyManager>();
-            Service.AddScoped<ICompanySettingsService, CompanySettingsManager>();
-            Service.AddScoped<ICountryService, CountryManager>();
-            Service.AddScoped<IEmojiService, EmojiManager>();
+            Service.AddScoped<IAbilityService, AbilityService>();
+            Service.AddScoped<IAnnounceService, AnnounceService>();
+            Service.AddScoped<IAnnounceDetailService, AnnounceDetailService>();
+            Service.AddScoped<IAnnounceLogService, AnnounceLogService>();
+            Service.AddScoped<ICertificateService, CertificateService>();
+            Service.AddScoped<ICollegeService, CollegeService>();
+            Service.AddScoped<ICompanyAboutService, CompanyAboutService>();
+            Service.AddScoped<ICompanyDetailService, CompanyDetailService>();
+            Service.AddScoped<ICompanyFollowerService, CompanyFollowerService>();
+            Service.AddScoped<ICompanyService, CompanyService>();
+            Service.AddScoped<ICompanySettingsService, CompanySettingsService>();
+            Service.AddScoped<ICountryService, CountryService>();
+            Service.AddScoped<IEmojiService, EmojiService>();
             Service.AddScoped<IJobPostingApplyService, JobPostingApplyManager>();
             Service.AddScoped<IJobPostingDetailService, JobPostingDetailManager>();
             Service.AddScoped<IJobPostingService, JobPostingManager>();
@@ -165,8 +165,8 @@
             Service.AddScoped<IUserPublishService, UserPublishManager>();
             Service.AddScoped<IUserReferanceService, UserReferanceManager>();
             Service.AddScoped<IUserSettingsService, UserSettingsManager>();
-            Service.AddScoped<IUserTypeService, UserTypeManager>();
-            Service.AddScoped<IUserVideoService, UserVideoManager>();
+            Service.AddScoped<IUserTypeService, UserTypeService>();
+            Service.AddScoped<IUserVideoService, UserVideoService>();
 
             return Service;
         }
