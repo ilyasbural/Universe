@@ -5,13 +5,13 @@
     using AutoMapper;
     using FluentValidation;
 
-    public class MessageBoxManager : BusinessObject<MessageBox>, IMessageBoxService
+    public class MessageBoxService : BusinessObject<MessageBox>, IMessageBoxService
     {
         readonly IMapper Mapper;
         readonly IUnitOfWork UnitOfWork;
         readonly IValidator<MessageBox> Validator;
 
-        public MessageBoxManager(IMapper mapper, IUnitOfWork unitOfWork, IValidator<MessageBox> validator)
+        public MessageBoxService(IMapper mapper, IUnitOfWork unitOfWork, IValidator<MessageBox> validator)
         {
             Mapper = mapper;
             UnitOfWork = unitOfWork;

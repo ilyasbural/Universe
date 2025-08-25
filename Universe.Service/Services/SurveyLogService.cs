@@ -5,13 +5,13 @@
     using AutoMapper;
     using FluentValidation;
 
-    public class SurveyLogManager : BusinessObject<SurveyLog>, ISurveyLogService
+    public class SurveyLogService : BusinessObject<SurveyLog>, ISurveyLogService
     {
         readonly IMapper Mapper;
         readonly IUnitOfWork UnitOfWork;
         readonly IValidator<SurveyLog> Validator;
 
-        public SurveyLogManager(IMapper mapper, IUnitOfWork unitOfWork, IValidator<SurveyLog> validator)
+        public SurveyLogService(IMapper mapper, IUnitOfWork unitOfWork, IValidator<SurveyLog> validator)
         {
             Mapper = mapper;
             UnitOfWork = unitOfWork;

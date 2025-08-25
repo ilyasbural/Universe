@@ -5,13 +5,13 @@
     using AutoMapper;
     using FluentValidation;
 
-    public class NetworkActionManager : BusinessObject<NetworkAction>, INetworkActionService
+    public class NetworkActionService : BusinessObject<NetworkAction>, INetworkActionService
     {
         readonly IMapper Mapper;
         readonly IUnitOfWork UnitOfWork;
         readonly IValidator<NetworkAction> Validator;
 
-        public NetworkActionManager(IMapper mapper, IUnitOfWork unitOfWork, IValidator<NetworkAction> validator)
+        public NetworkActionService(IMapper mapper, IUnitOfWork unitOfWork, IValidator<NetworkAction> validator)
         {
             Mapper = mapper;
             UnitOfWork = unitOfWork;

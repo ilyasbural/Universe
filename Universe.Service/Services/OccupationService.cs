@@ -5,13 +5,13 @@
     using AutoMapper;
     using FluentValidation;
 
-    public class OccupationManager : BusinessObject<Occupation>, IOccupationService
+    public class OccupationService : BusinessObject<Occupation>, IOccupationService
     {
         readonly IMapper Mapper;
         readonly IUnitOfWork UnitOfWork;
         readonly IValidator<Occupation> Validator;
 
-        public OccupationManager(IMapper mapper, IUnitOfWork unitOfWork, IValidator<Occupation> validator)
+        public OccupationService(IMapper mapper, IUnitOfWork unitOfWork, IValidator<Occupation> validator)
         {
             Mapper = mapper;
             UnitOfWork = unitOfWork;

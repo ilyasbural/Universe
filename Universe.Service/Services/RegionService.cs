@@ -5,13 +5,13 @@
     using AutoMapper;
     using FluentValidation;
 
-    public class RegionManager : BusinessObject<Region>, IRegionService
+    public class RegionService : BusinessObject<Region>, IRegionService
     {
         readonly IMapper Mapper;
         readonly IUnitOfWork UnitOfWork;
         readonly IValidator<Region> Validator;
 
-        public RegionManager(IMapper mapper, IUnitOfWork unitOfWork, IValidator<Region> validator)
+        public RegionService(IMapper mapper, IUnitOfWork unitOfWork, IValidator<Region> validator)
         {
             Mapper = mapper;
             UnitOfWork = unitOfWork;

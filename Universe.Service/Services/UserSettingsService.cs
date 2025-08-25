@@ -5,13 +5,13 @@
     using AutoMapper;
     using FluentValidation;
 
-    public class UserSettingsManager : BusinessObject<UserSettings>, IUserSettingsService
+    public class UserSettingsService : BusinessObject<UserSettings>, IUserSettingsService
     {
         readonly IMapper Mapper;
         readonly IUnitOfWork UnitOfWork;
         readonly IValidator<UserSettings> Validator;
 
-        public UserSettingsManager(IMapper mapper, IUnitOfWork unitOfWork, IValidator<UserSettings> validator)
+        public UserSettingsService(IMapper mapper, IUnitOfWork unitOfWork, IValidator<UserSettings> validator)
         {
             Mapper = mapper;
             UnitOfWork = unitOfWork;

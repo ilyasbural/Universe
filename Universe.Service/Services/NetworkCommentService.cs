@@ -5,13 +5,13 @@
     using AutoMapper;
     using FluentValidation;
 
-    public class NetworkCommentManager : BusinessObject<NetworkComment>, INetworkCommentService
+    public class NetworkCommentService : BusinessObject<NetworkComment>, INetworkCommentService
     {
         readonly IMapper Mapper;
         readonly IUnitOfWork UnitOfWork;
         readonly IValidator<NetworkComment> Validator;
 
-        public NetworkCommentManager(IMapper mapper, IUnitOfWork unitOfWork, IValidator<NetworkComment> validator)
+        public NetworkCommentService(IMapper mapper, IUnitOfWork unitOfWork, IValidator<NetworkComment> validator)
         {
             Mapper = mapper;
             UnitOfWork = unitOfWork;

@@ -5,13 +5,13 @@
 	using AutoMapper;
     using FluentValidation;
 
-    public class JobPostingApplyManager : BusinessObject<JobPostingApply>, IJobPostingApplyService
+    public class JobPostingApplyService : BusinessObject<JobPostingApply>, IJobPostingApplyService
     {
         readonly IMapper Mapper;
         readonly IUnitOfWork UnitOfWork;
         readonly IValidator<JobPostingApply> Validator;
 
-        public JobPostingApplyManager(IMapper mapper, IUnitOfWork unitOfWork, IValidator<JobPostingApply> validator)
+        public JobPostingApplyService(IMapper mapper, IUnitOfWork unitOfWork, IValidator<JobPostingApply> validator)
         {
             Mapper = mapper;
             UnitOfWork = unitOfWork;

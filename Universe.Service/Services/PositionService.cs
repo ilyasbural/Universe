@@ -5,13 +5,13 @@
     using AutoMapper;
     using FluentValidation;
 
-    public class PositionManager : BusinessObject<Position>, IPositionService
+    public class PositionService : BusinessObject<Position>, IPositionService
     {
         readonly IMapper Mapper;
         readonly IUnitOfWork UnitOfWork;
         readonly IValidator<Position> Validator;
 
-        public PositionManager(IMapper mapper, IUnitOfWork unitOfWork, IValidator<Position> validator)
+        public PositionService(IMapper mapper, IUnitOfWork unitOfWork, IValidator<Position> validator)
         {
             Mapper = mapper;
             UnitOfWork = unitOfWork;

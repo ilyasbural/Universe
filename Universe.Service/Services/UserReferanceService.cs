@@ -5,13 +5,13 @@
     using AutoMapper;
     using FluentValidation;
 
-    public class UserReferanceManager : BusinessObject<UserReferance>, IUserReferanceService
+    public class UserReferanceService : BusinessObject<UserReferance>, IUserReferanceService
     {
         readonly IMapper Mapper;
         readonly IUnitOfWork UnitOfWork;
         readonly IValidator<UserReferance> Validator;
 
-        public UserReferanceManager(IMapper mapper, IUnitOfWork unitOfWork, IValidator<UserReferance> validator)
+        public UserReferanceService(IMapper mapper, IUnitOfWork unitOfWork, IValidator<UserReferance> validator)
         {
             Mapper = mapper;
             UnitOfWork = unitOfWork;

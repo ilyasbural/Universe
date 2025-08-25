@@ -5,13 +5,13 @@
     using AutoMapper;
     using FluentValidation;
 
-    public class ManagementEmailManager : BusinessObject<ManagementEmail>, IManagementEmailService
+    public class ManagementEmailService : BusinessObject<ManagementEmail>, IManagementEmailService
     {
         readonly IMapper Mapper;
         readonly IUnitOfWork UnitOfWork;
         readonly IValidator<ManagementEmail> Validator;
 
-        public ManagementEmailManager(IMapper mapper, IUnitOfWork unitOfWork, IValidator<ManagementEmail> validator)
+        public ManagementEmailService(IMapper mapper, IUnitOfWork unitOfWork, IValidator<ManagementEmail> validator)
         {
             Mapper = mapper;
             UnitOfWork = unitOfWork;
