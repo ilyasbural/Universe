@@ -2,6 +2,7 @@
 {
 	using Core;
 	using Microsoft.EntityFrameworkCore;
+	using Microsoft.Extensions.Configuration;
 
 	public class UniverseContext : DbContext
 	{
@@ -56,17 +57,17 @@
 		public UniverseContext() { }
 		public UniverseContext(DbContextOptions<UniverseContext> options) : base(options) { }
 
-		//protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		//{
-		//	IConfigurationRoot Configuration = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json").Build();
-		//	optionsBuilder.UseSqlServer(Configuration.GetConnectionString("SqlServer"), options =>
-		//	{
-		//		options.MigrationsAssembly("Universe.WebApi");
-		//		options.MigrationsHistoryTable("MigrationHistories");
-		//		options.CommandTimeout(5000);
-		//		options.EnableRetryOnFailure(maxRetryCount: 5);
-		//	});
-		//}
+		protected override void OnConfiguring(DbContextOptionsBuilder OptionsBuilder)
+		{
+			IConfigurationRoot Configuration = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json").Build();
+			OptionsBuilder.UseSqlServer(Configuration.GetConnectionString("SqlServer"), Options =>
+			{
+				Options.MigrationsAssembly("Universe.WebApi");
+				Options.MigrationsHistoryTable("MigrationHistories");
+				Options.CommandTimeout(5000);
+				Options.EnableRetryOnFailure(maxRetryCount: 5);
+			});
+		}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder) => modelBuilder.ApplyConfigurationsFromAssembly(typeof(AssemblyReferance).Assembly);
 	}

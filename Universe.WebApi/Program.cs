@@ -11,8 +11,6 @@ Builder.Services.LoadServices();
 Builder.Services.AddCors(options => options.AddDefaultPolicy(builder => { builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod(); }));
 Builder.Services.AddAutoMapper(cfg => {}, typeof(AbilityMapper));
 
-//Builder.Services.AddDbContext<UniverseContext>(x => x.UseSqlServer(Configuration.GetConnectionString("SqlServer")!));
-
 var app = Builder.Build();
 
 if (app.Environment.IsDevelopment())
