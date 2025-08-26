@@ -5,13 +5,13 @@
     using AutoMapper;
     using FluentValidation;
 
-    public class UserProjectManager : BusinessObject<UserProject>, IUserProjectService
+    public class UserProjectService : BusinessObject<UserProject>, IUserProjectService
     {
         readonly IMapper Mapper;
         readonly IUnitOfWork UnitOfWork;
         readonly IValidator<UserProject> Validator;
 
-        public UserProjectManager(IMapper mapper, IUnitOfWork unitOfWork, IValidator<UserProject> validator)
+        public UserProjectService(IMapper mapper, IUnitOfWork unitOfWork, IValidator<UserProject> validator)
         {
             Mapper = mapper;
             UnitOfWork = unitOfWork;

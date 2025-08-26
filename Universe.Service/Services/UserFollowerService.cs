@@ -5,13 +5,13 @@
     using AutoMapper;
     using FluentValidation;
 
-    public class UserFollowerManager : BusinessObject<UserFollower>, IUserFollowerService
+    public class UserFollowerService : BusinessObject<UserFollower>, IUserFollowerService
     {
         readonly IMapper Mapper;
         readonly IUnitOfWork UnitOfWork;
         readonly IValidator<UserFollower> Validator;
 
-        public UserFollowerManager(IMapper mapper, IUnitOfWork unitOfWork, IValidator<UserFollower> validator)
+        public UserFollowerService(IMapper mapper, IUnitOfWork unitOfWork, IValidator<UserFollower> validator)
         {
             Mapper = mapper;
             UnitOfWork = unitOfWork;
