@@ -22,3 +22,10 @@
 /Universe.slnLaunch.user
 /Universe.UI/Universe.UI.csproj.user
 /.vs
+/Universe.Common/bin/Debug/net10.0
+/Universe.Core/bin/Debug/net10.0
+/Universe.DataAccess/bin/Debug/net10.0
+/Universe.Presentation/bin/Debug/net10.0
+/Universe.UI/bin/Debug/net10.0
+/Universe.WebApi/bin/Debug/net10.0
+/Universe.Service/bin/Debug/net10.0
